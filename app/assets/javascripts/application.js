@@ -20,4 +20,4 @@
 //= require angular-sanitize
 //= require ui-router-extras
 //= require_tree .
-//= require_tree ../templates
+// require_tree ../templates
