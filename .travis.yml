@@ -1,13 +1,3 @@
-language: ruby
-bundler_args: --without development production
-rvm:
-- 2.1.2
-notifications:
-  email:
-    recipients:
-    - rgpass@gmail.com
-    on_success: change
-    on_failure: always
 deploy:
   provider: heroku
   api_key: "80b0141c-c282-4a53-8c6d-cbf898e55bd1"
