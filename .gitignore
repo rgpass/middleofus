@@ -18,3 +18,4 @@
 # Other misc files
 .DS_Store
 database.yml
+lib/assets/bower_components

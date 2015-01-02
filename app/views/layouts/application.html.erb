@@ -2,19 +2,11 @@
 <html>
 <head>
   <title>Middleofus</title>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="myApp">
-
-<div ng-controller="myController">
-  <input type="text" ng-model="query">
-  <h1>{{ query }}</h1>
-
   <%= yield %>
-</div>
-
 </body>
 </html>
