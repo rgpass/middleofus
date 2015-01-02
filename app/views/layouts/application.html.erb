@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
   <title>Middleofus</title>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
@@ -7,13 +7,14 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="myApp">
 
-<body ng-controller="myController">
+<div ng-controller="myController">
   <input type="text" ng-model="query">
   <h1>{{ query }}</h1>
 
-<%= yield %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
