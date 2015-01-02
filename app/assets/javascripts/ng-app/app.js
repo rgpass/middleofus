@@ -4,6 +4,7 @@ angular
       'ui.router',
       'templates'
   ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-  });
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
+    function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  }]);
 
