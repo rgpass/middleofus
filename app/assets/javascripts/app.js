@@ -1,7 +1,6 @@
 angular.module('myApp', []);
 
 angular.module('myApp')
-.controller('myController', function ($scope) {
-  
+.controller('myController', ['$scope', function ($scope) {
   $scope.query = "Heyo";
-});
+}]);
