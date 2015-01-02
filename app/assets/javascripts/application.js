@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require angular
+//= require angular-animate/angular-animate.js
+//= require angular-ui-router
+//= require angular-rails-templates
+//= require angular-sanitize
+//= require ui-router-extras
 //= require_tree .
+//= require_tree ../templates
