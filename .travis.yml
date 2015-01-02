@@ -1,3 +1,6 @@
+language: ruby
+rvm:
+- 2.1.2
 deploy:
   provider: heroku
   api_key: "80b0141c-c282-4a53-8c6d-cbf898e55bd1"
