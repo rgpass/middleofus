@@ -42359,17 +42359,17 @@ angular.module("ct.ui.router.extras").config( [ "$provide",  function ($provide)
 
 })(window, window.angular);
 // Angular Rails Template
+// source: app/assets/templates/address.html
+
+angular.module("templates").run(["$templateCache", function($templateCache) {
+  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <h1>I want to find wi-fi in the MiddleOf.Us</h1>\n  <form name="myForm" novalidate ng-submit="submitAddress();">\n    <p>Address:<br>\n      <input type="text" name="address" ng-model="formData.address" placeholder= "address" required ng-minlength="2" ng-maxlength="50">\n      <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">\n        <span ng-show="myForm.address.$error.required">Address is required.</span>\n        <span ng-show="myForm.address.$error.address">Invalid address.</span>\n      </span>\n    </p>\n   \n    <p>\n      <input type="submit" ng-disabled="myForm.$invalid">\n    </p>\n  </form>\n  <div ng-show="results">\n    <h2>Closest {{results.length}} results</h2>\n    <table class="table table-striped">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Yelp Rating</th>\n          <th>Address</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr ng-repeat="result in results">\n          <td><a href="{{result.website}}">{{result.name}}</a></td>\n          <td><img src="{{result.rating_image}}" /></td>\n          <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div ng-show="error">\n    <h2>{{error}}</h2>\n  </div>\n</div>')
+}]);
+
+// Angular Rails Template
 // source: app/assets/templates/donations.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
   $templateCache.put("donations.html", '<h1>Like our site?</h1>\n<h4>Help a couple of homies out</h4>\n<br>\n<p>MiddleOf.Us continues to evolve on the wings of donations. If you can spare the change, we\'d greatly appreciate your generosity!</p>\n<br>\n<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">\n<input type="hidden" name="cmd" value="_s-xclick">\n<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----\n">\n<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">\n<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">\n</form>\n<br>\n<p>Payments are made through PayPal so all your credit card information is safe.</p>')
-}]);
-
-// Angular Rails Template
-// source: app/assets/templates/home.html
-
-angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("home.html", '<div ng-controller="HomeCtrl">\n  <h1>I want to find wifi in the middleof.us</h1>\n  <form name="myForm" novalidate ng-submit="submitForm();">\n    <p>Address:<br>\n      <input type="text" name="address" ng-model="formData.address" placeholder= "address" required ng-minlength="2" ng-maxlength="50">\n      <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">\n        <span ng-show="myForm.address.$error.required">Address is required.</span>\n        <span ng-show="myForm.address.$error.address">Invalid address.</span>\n      </span>\n    </p>\n   \n    <p>\n      <input type="submit" ng-disabled="myForm.$invalid">\n    </p>\n  </form>\n</div>')
 }]);
 
 /*!
@@ -42394,10 +42394,10 @@ angular
        * Routes and States
        */
       $stateProvider
-          .state('home', {
+          .state('address', {
               url: '/',
-              templateUrl: 'home.html',
-              controller: 'HomeCtrl'
+              templateUrl: 'address.html',
+              controller: 'AddressCtrl'
           })
           .state('donations', {
             url: '/donations',
@@ -42412,13 +42412,32 @@ angular
   }]);
 
 angular.module('myApp')
-.controller('HomeCtrl', ['$scope', function ($scope) {
-  $scope.formData = {
-    address: ''
+.controller('AddressCtrl', ['$scope', 'addressesService', function ($scope, addressesService) {
+
+  $scope.submitAddress = function() {
+    addressesService.getResults($scope.formData.address).success(function(data) {
+      $scope.error = null;
+      $scope.results = data;
+    }).error(function() {
+      $scope.results = null;
+      $scope.error = 'Something went wrong. Please confirm the address is correct and that you have an internet connection.'
+    });
   };
 
-  $scope.submitForm = function() {
-    alert("send a request to the server: " + JSON.stringify($scope.formData));
+}]);
+angular.module('myApp')
+.service('addressesService', ["$http", function($http) {
+
+  var that = this;
+  var resultsUrl = '/results';
+
+  // 1. Validate the user's address
+
+
+  // 2. Submit multiple users' addresses
+  this.getResults = function(address) {
+    params = { address: address };
+    return $http.get(resultsUrl + '.json', { params: params });
   };
 }]);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
