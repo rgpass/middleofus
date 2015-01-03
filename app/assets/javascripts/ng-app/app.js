@@ -24,7 +24,7 @@ angular
           });
 
       // default fall back route
-      // $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/');
 
       // enable HTML5 Mode for SEO
       $locationProvider.html5Mode(true);
