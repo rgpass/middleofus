@@ -12,10 +12,10 @@ angular
        * Routes and States
        */
       $stateProvider
-          .state('home', {
+          .state('address', {
               url: '/',
-              templateUrl: 'home.html',
-              controller: 'HomeCtrl'
+              templateUrl: 'address.html',
+              controller: 'AddressCtrl'
           })
           .state('donations', {
             url: '/donations',

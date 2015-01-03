@@ -1,0 +1,35 @@
+<div ng-controller="AddressCtrl">
+  <h1>I want to find wi-fi in the MiddleOf.Us</h1>
+  <form name="myForm" novalidate ng-submit="submitAddress();">
+    <p>Address:<br>
+      <input type="text" name="address" ng-model="formData.address" placeholder= "address" required ng-minlength="2" ng-maxlength="50">
+      <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
+        <span ng-show="myForm.address.$error.required">Address is required.</span>
+        <span ng-show="myForm.address.$error.address">Invalid address.</span>
+      </span>
+    </p>
+   
+    <p>
+      <input type="submit" ng-disabled="myForm.$invalid">
+    </p>
+  </form>
+  <div ng-show="results">
+    <h2>Closest {{results.length}} results</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Yelp Rating</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="result in results">
+          <td><a href="{{result.website}}">{{result.name}}</a></td>
+          <td><img src="{{result.rating_image}}" /></td>
+          <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
