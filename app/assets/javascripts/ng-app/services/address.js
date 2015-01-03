@@ -4,12 +4,15 @@ angular.module('myApp')
   var that = this;
   var resultsUrl = '/results';
 
-  // 1. Validate the user's address
-
-
-  // 2. Submit multiple users' addresses
   this.getResults = function(address) {
     params = { address: address };
-    return $http.get(resultsUrl + '.json', { params: params });
+    return $http.get(resultsUrl + '.json', { params: params }).success(function(data) {
+      that.error    = null;
+      that.results  = data;
+    }).error(function() {
+      that.error    = 'Something went wrong. Please confirm the address is correct and that you have an internet connection.';
+      that.results  = null;
+    });
   };
+  
 }]);
