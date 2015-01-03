@@ -16,10 +16,15 @@ angular
               url: '/',
               templateUrl: 'home.html',
               controller: 'HomeCtrl'
+          })
+          .state('donations', {
+            url: '/donations',
+            templateUrl: 'donations.html',
+            controller: 'DonationsCtrl'
           });
 
       // default fall back route
-      $urlRouterProvider.otherwise('/');
+      // $urlRouterProvider.otherwise('/');
 
       // enable HTML5 Mode for SEO
       $locationProvider.html5Mode(true);
