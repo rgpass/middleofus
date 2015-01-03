@@ -42,4 +42,8 @@ gem 'spring',        group: :development
 gem 'bower-rails'
 gem 'angular-rails-templates'
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
