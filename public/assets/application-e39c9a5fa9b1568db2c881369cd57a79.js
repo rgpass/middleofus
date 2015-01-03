@@ -42362,7 +42362,7 @@ angular.module("ct.ui.router.extras").config( [ "$provide",  function ($provide)
 // source: app/assets/templates/home.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("home.html", '<div class="container">\n  <h1>The Home View!</h1>\n  <ul>\n    <li ng-repeat="thing in things">{{thing}}</li>\n  </ul>\n</div>')
+  $templateCache.put("home.html", '<div class="container">\n  <h1>The Home View!</h1>\n  <ul>\n    <li ng-repeat="thing in things">{{thing}}</li>\n    <input type="text" ng-model="query">\n    <h2>{{query}}</h2>\n  </ul>\n</div>')
 }]);
 
 angular
