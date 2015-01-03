@@ -1,8 +1,16 @@
-<div class="container-fluid">
-  <h1>The Home View!</h1>
-  <ul>
-    <li ng-repeat="thing in things">{{thing}}</li>
-  </ul>
+<div class="container">
+  <h1>I want to find wifi in the middleof.us</h1>
+    <form ng-controller="HomeCtrl" name="myForm" novalidate ng-submit="submitForm();">
+      <p>Address:<br>
+        <input type="text" name="address" ng-model="formData.address" placeholder= "address" required ng-minlength="2" ng-maxlength="50">
+        <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
+          <span ng-show="myForm.address.$error.required">Address is required.</span>
+          <span ng-show="myForm.address.$error.address">Invalid address.</span>
+        </span>
+      </p>
+     
+      <p>
+        <input type="submit" ng-disabled="myForm.$invalid">
+      </p>
+    </form>
 </div>
-
-<a href="http://www.google.com">Google</a>

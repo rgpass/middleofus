@@ -1,5 +1,11 @@
 angular.module('myApp')
     .controller('HomeCtrl', ['$scope', function ($scope) {
-        $scope.things = ['This is our app', 'What do you think', 'OMG', 'yeaaaaa'];
+        $scope.formData = {
+          address: ''
+        };
+
+        $scope.submitForm = function() {
+          alert("send a request to the server: " + JSON.stringify($scope.formData));
+        };
         
     }]);
