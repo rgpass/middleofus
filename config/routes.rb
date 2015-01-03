@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'application#index'
+
   match '/results',    to: 'places#results',    via: 'get'
+
   get '*path' => 'application#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

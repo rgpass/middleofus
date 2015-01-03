@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="myApp">
-  <%= yield %>
+  <%= render 'layouts/navigation' %>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
 </body>
 </html>

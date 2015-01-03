@@ -16,6 +16,10 @@ angular
               url: '/',
               templateUrl: 'home.html',
               controller: 'HomeCtrl'
+          })
+          .state('donations', {
+            url: '/donations',
+            templateUrl: 'donations.html'
           });
 
       // default fall back route
