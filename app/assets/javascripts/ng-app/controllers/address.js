@@ -3,9 +3,11 @@ angular.module('myApp')
 
   $scope.submitAddress = function() {
     addressesService.getResults($scope.formData.address).success(function(data) {
+      $scope.error = null;
       $scope.results = data;
     }).error(function() {
-      alert('Something went wrong. Please confirm the address is correct and that you have an internet connection.');
+      $scope.results = null;
+      $scope.error = 'Something went wrong. Please confirm the address is correct and that you have an internet connection.'
     });
   };
 
