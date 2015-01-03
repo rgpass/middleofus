@@ -1,4 +1,5 @@
 angular.module('myApp')
     .controller('HomeCtrl', ['$scope', function ($scope) {
-        $scope.things = ['Angasdfasdular', 'Rails 4.1', 'UI Roasdfuter', 'Together!!'];
+        $scope.things = ['This is our app', 'What do you think', 'OMG', 'yeaaaaa'];
+        
     }]);
