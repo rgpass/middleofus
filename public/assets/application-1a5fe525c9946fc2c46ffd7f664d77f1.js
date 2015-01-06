@@ -42362,7 +42362,7 @@ angular.module("ct.ui.router.extras").config( [ "$provide",  function ($provide)
 // source: app/assets/templates/address.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>\n  <form name="myForm" novalidate ng-submit="submitAddress();">\n    <p>Address:<br>\n      <input type="text" name="address" ng-model="formData.address" placeholder= "address" required ng-minlength="2" ng-maxlength="50">\n      <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">\n        <span ng-show="myForm.address.$error.required">Address is required.</span>\n        <span ng-show="myForm.address.$error.address">Invalid address.</span>\n      </span>\n    </p>\n   \n    <p>\n      <input type="submit" ng-disabled="myForm.$invalid">\n    </p>\n  </form>\n  <div ng-show="results">\n    <h2>Closest {{results.length}} results</h2>\n    <table class="table table-striped">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Yelp Rating</th>\n          <th>Address</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr ng-repeat="result in results">\n          <td><a href="{{result.website}}">{{result.name}}</a></td>\n          <td><img src="{{result.rating_image}}" /></td>\n          <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div ng-show="error">\n    <h2>{{error}}</h2>\n  </div>\n</div>')
+  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>\n  <form name="myForm" novalidate ng-submit="submitAddresses();">\n    <fieldset>\n      <div class="form-group">\n        <input type="text" name="address-one" ng-model="formData.addressOne" placeholder="first address" required ng-minlength="2" ng-maxlength="50" class="col-lg-5">\n        <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">\n          <span ng-show="myForm.addressOne.$error.required">Address is required.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->\n          <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->\n        </span>\n        <br><br>\n        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address" ng-minlength="2" class="col-lg-5">\n        <br><br>\n        <input type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">\n      </div>\n    </fieldset>\n  </form>\n  <div ng-show="results">\n    <h2>Closest {{results.length}} results</h2>\n    <table class="table table-striped">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Yelp Rating</th>\n          <th>Address</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr ng-repeat="result in results">\n          <td><a href="{{result.website}}">{{result.name}}</a></td>\n          <td><img src="{{result.rating_image}}" /></td>\n          <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div ng-show="error">\n    <h2>{{error}}</h2>\n  </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -42414,8 +42414,9 @@ angular
 angular.module('myApp')
 .controller('AddressCtrl', ['$scope', 'addressesService', function ($scope, addressesService) {
 
-  $scope.submitAddress = function() {
-    addressesService.getResults($scope.formData.address).success(setVariables).error(setVariables);
+  $scope.submitAddresses = function() {
+    var addresses = [$scope.formData.addressOne, $scope.formData.addressTwo];
+    addressesService.getResults(addresses).success(setVariables).error(setVariables);
   };
 
   function setVariables() {
@@ -42430,13 +42431,13 @@ angular.module('myApp')
   var that = this;
   var resultsUrl = '/results';
 
-  this.getResults = function(address) {
-    params = { address: address };
+  this.getResults = function(addresses) {
+    params = { addresses: JSON.stringify(addresses) };
     return $http.get(resultsUrl + '.json', { params: params }).success(function(data) {
       that.error    = null;
       that.results  = data;
     }).error(function() {
-      that.error    = 'Something went wrong. Please confirm the address is correct and that you have an internet connection.';
+      that.error    = 'Something went wrong. Please check the address(es) and your internet connection.';
       that.results  = null;
     });
   };
