@@ -1,9 +1,9 @@
 class PlacesController < ApplicationController
 
   def results
-    address = params[:address] || "650 North Avenue NE Atlanta GA"
-    coords = Place.coords(address)
-    @places = Place.wifi_near(coords)
+    addresses = JSON.parse(params[:addresses]) || ["650 North Avenue NE Atlanta GA"]
+    average_coords = Place.average_coords(addresses)
+    @places = Place.wifi_near(average_coords)
   end
   
 end

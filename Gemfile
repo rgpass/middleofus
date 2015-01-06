@@ -42,6 +42,10 @@ gem 'spring',        group: :development
 gem 'bower-rails'
 gem 'angular-rails-templates'
 
+group :development, :test do
+  gem 'pry'
+end
+
 group :production do
   gem "rails_12factor"
   gem "rails_stdout_logging"

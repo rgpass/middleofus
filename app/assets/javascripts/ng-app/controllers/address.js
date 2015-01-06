@@ -1,8 +1,9 @@
 angular.module('myApp')
 .controller('AddressCtrl', ['$scope', 'addressesService', function ($scope, addressesService) {
 
-  $scope.submitAddress = function() {
-    addressesService.getResults($scope.formData.address).success(setVariables).error(setVariables);
+  $scope.submitAddresses = function() {
+    var addresses = [$scope.formData.addressOne, $scope.formData.addressTwo];
+    addressesService.getResults(addresses).success(setVariables).error(setVariables);
   };
 
   function setVariables() {
