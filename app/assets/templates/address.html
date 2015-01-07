@@ -2,14 +2,15 @@
   <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>
   <form name="myForm" novalidate ng-submit="submitAddresses();">
     <fieldset>
+      <p>Address, Place, City, or Zip:</p>
       <div class="form-group">
-        <input type="text" name="address-one" ng-model="formData.addressOne" placeholder="first address" ng-required="!formData.addressTwo" ng-minlength="2" ng-maxlength="50" class="col-lg-5">
+        <input type="text" name="address-one" ng-model="formData.addressOne" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" ng-maxlength="50" class="col-lg-5">
         <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
           <span ng-show="myForm.addressOne.$error.required">Address is required.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
           <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
         </span>
         <br><br>
-        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address" ng-minlength="2" class="col-lg-5">
+        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address, place, city, or zip" ng-minlength="2" class="col-lg-5">
         <br><br>
         <input type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">
       </div>
