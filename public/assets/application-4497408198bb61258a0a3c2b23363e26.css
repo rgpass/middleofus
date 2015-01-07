@@ -9419,3 +9419,12 @@ input[type="checkbox"] {
 
 
  */
+/* line 20, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.green {
+  color: green;
+}
+
+/* line 24, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.red {
+  color: red;
+}
