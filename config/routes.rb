@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'application#index'
 
-  match '/results',    to: 'places#results',    via: 'get'
+  match '/results',       to: 'places#results', via: 'get'
+  match '/valid-address', to: 'places#valid',   via: 'get'
 
   get '*path' => 'application#index'
 

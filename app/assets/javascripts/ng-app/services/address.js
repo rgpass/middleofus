@@ -3,6 +3,7 @@ angular.module('myApp')
 
   var that = this;
   var resultsUrl = '/results';
+  var validityUrl = '/valid-address'
 
   this.getResults = function(addresses) {
     params = { addresses: JSON.stringify(addresses) };
@@ -14,5 +15,10 @@ angular.module('myApp')
       that.results  = null;
     });
   };
+
+  this.isValidAddress = function(address) {
+    params = { address: address };
+    return $http.get(validityUrl + '.json', { params: params});
+  }
   
 }]);

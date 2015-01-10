@@ -16,6 +16,10 @@ class Place
     Yelp.client.search_by_coordinates(coords, params).businesses
   end
 
+  def self.valid_address?(input)
+    !!Geocoder.coordinates(input)
+  end
+
   private
 
   def self.coords(address)
