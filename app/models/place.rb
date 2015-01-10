@@ -13,15 +13,16 @@ class Place
 
   def self.wifi_near(coords) # BUG: What if average returns blank
     params = { term: 'free wifi' }
-    Yelp.client.search_by_coordinates(coords, params).businesses
+    places = Yelp.client.search_by_coordinates(coords, params).businesses
+    places.reject { |place| place.is_closed }
   end
 
   private
 
-  def self.coords(address)
-    coords = Geocoder.coordinates(address)
-    coords ? { latitude: coords[0], longitude: coords[1] } : nil
-  end
+    def self.coords(address)
+      coords = Geocoder.coordinates(address)
+      coords ? { latitude: coords[0], longitude: coords[1] } : nil
+    end
 
     def self.sum_coords
       zeroes = { latitude: 0, longitude: 0 }

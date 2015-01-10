@@ -22,7 +22,6 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Open/Closed</th>
           <th>Yelp Rating</th>
           <th>Address</th>
         </tr>
@@ -30,11 +29,6 @@
       <tbody>
         <tr ng-repeat="result in results">
           <td><a href="{{result.website}}">{{result.name}}</a></td>
-          <td ng-class="{ green: result.is_open == true, red: result.is_open == false }">
-            <span ng-show="result.is_open">OPEN</span>
-            <span ng-show="!result.is_open">CLOSED</span>
-            <span ng-show="result.is_open == 'N/A'">N/A</span>
-          </td>
           <td><img src="{{result.rating_image}}" /></td>
           <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>
         </tr>
