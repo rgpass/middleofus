@@ -10,7 +10,7 @@
           <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
         </span>
         <br><br>
-        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address, place, city, or zip" ng-minlength="2" class="col-lg-5">
+        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address, city, or zip" ng-minlength="2" class="col-lg-5">
         <br><br>
         <input type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">
       </div>
