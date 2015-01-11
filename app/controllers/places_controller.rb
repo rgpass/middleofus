@@ -6,5 +6,10 @@ class PlacesController < ApplicationController
     average_coords = Place.average_coords(addresses)
     @places = Place.wifi_near(average_coords)
   end
+
+  def valid
+    address = params[:address] || "650 North Avenue NE Atlanta GA"
+    @is_valid = Place.valid_address?(address)
+  end
   
 end

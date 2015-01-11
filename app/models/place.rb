@@ -17,6 +17,10 @@ class Place
     places.reject { |place| place.is_closed }
   end
 
+  def self.valid_address?(input)
+    !!Geocoder.coordinates(input)
+  end
+
   private
 
     def self.coords(address)

@@ -28,4 +28,3 @@ angular
       // enable HTML5 Mode for SEO
       $locationProvider.html5Mode(true);
   }]);
-
