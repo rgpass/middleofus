@@ -42362,7 +42362,7 @@ angular.module("ct.ui.router.extras").config( [ "$provide",  function ($provide)
 // source: app/assets/templates/address.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>\n  <form name="myForm" novalidate ng-submit="submitAddresses();">\n    <fieldset>\n      <p>Address, City, or Zip:</p>\n      <div class="form-group">\n        <input type="text" name="address-one" ng-model="formData.addressOne" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" ng-maxlength="50" class="col-lg-5">\n        <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">\n          <span ng-show="myForm.addressOne.$error.required">Address is required.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->\n          <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->\n        </span>\n        <br><br>\n        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address, city, or zip" ng-minlength="2" class="col-lg-5">\n        <br><br>\n        <input type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">\n      </div>\n    </fieldset>\n  </form>\n  <div ng-show="results">\n    <h2>Closest {{results.length}} results</h2>\n    <table class="table table-striped">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Yelp Rating</th>\n          <th>Address</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr ng-repeat="result in results">\n          <td><a href="{{result.website}}">{{result.name}}</a></td>\n          <td><img src="{{result.rating_image}}" /></td>\n          <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div ng-show="error">\n    <h2>{{error}}</h2>\n  </div>\n</div>')
+  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>\n  <form name="myForm" novalidate ng-submit="submitAddresses();">\n    <fieldset>\n      <p>Address, City, or Zip:</p>\n      <div class="form-group">\n        <input type="text" name="address-one" ng-model="formData.addressOne" ng-debounce="300" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" ng-maxlength="50" class="col-lg-5">\n        <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">\n          <span ng-show="myForm.addressOne.$error.required">Address is required.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->\n          <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->\n        </span>\n        <i class="fa fa-check green validation-indicator"  ng-show="isFirstValid && !isFirstEmpty"></i>\n        <i class="fa fa-times red validation-indicator"    ng-hide="isFirstValid || isFirstEmpty"></i>\n        <br><br>\n        <input type="text" name="address-two" ng-model="formData.addressTwo" ng-debounce="300" placeholder="optional second address, city, or zip" ng-minlength="2" class="col-lg-5">\n        <i class="fa fa-check green validation-indicator"  ng-show="isSecondValid && !isSecondEmpty"></i>\n        <i class="fa fa-times red validation-indicator"    ng-hide="isSecondValid || isSecondEmpty"></i>\n        <br><br>\n        <input type="submit" ng-disabled="myForm.$invalid || !isFirstValid || !isSecondValid" class="btn btn-primary">\n      </div>\n    </fieldset>\n  </form>\n  <div ng-show="results">\n    <h2>Closest {{results.length}} results</h2>\n    <table class="table table-striped">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Yelp Rating</th>\n          <th>Address</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr ng-repeat="result in results">\n          <td><a href="{{result.website}}">{{result.name}}</a></td>\n          <td><img src="{{result.rating_image}}" /></td>\n          <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div ng-show="error">\n    <h2>{{error}}</h2>\n  </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -42410,9 +42410,38 @@ angular
       // enable HTML5 Mode for SEO
       $locationProvider.html5Mode(true);
   }]);
-
 angular.module('myApp')
 .controller('AddressCtrl', ['$scope', 'addressesService', function ($scope, addressesService) {
+
+  $scope.isFirstValid = true;
+  $scope.isSecondValid = true;
+
+  $scope.$watch('formData.addressOne', setFirstValidations);
+  $scope.$watch('formData.addressTwo', setSecondValidations);
+
+  function setFirstValidations(newValue, oldValue) {
+    if (newValue) {
+      addressesService.isValidAddress($scope.formData.addressOne).success(function(data) {
+        $scope.isFirstValid = data.is_valid;
+        $scope.isFirstEmpty = false;
+      });
+    } else {
+      $scope.isFirstEmpty = true;
+      $scope.isFirstValid = true;
+    }
+  }
+
+  function setSecondValidations(newValue, oldValue) {
+    if (newValue) {
+      addressesService.isValidAddress($scope.formData.addressTwo).success(function(data) {
+        $scope.isSecondValid = data.is_valid;
+        $scope.isSecondEmpty = false;
+      });
+    } else {
+      $scope.isSecondEmpty = true;
+      $scope.isSecondValid = true;
+    }
+  };
 
   $scope.submitAddresses = function() {
     var addresses = [$scope.formData.addressOne, $scope.formData.addressTwo];
@@ -42425,11 +42454,39 @@ angular.module('myApp')
   };
 
 }]);
+angular.module('myApp').directive('ngDebounce', ['$timeout', function($timeout) {
+  return {
+    restrict: 'A',
+    require: 'ngModel',
+    priority: 99,
+    link: function(scope, elm, attr, ngModelCtrl) {
+      if (attr.type === 'radio' || attr.type === 'checkbox') return;
+      
+      elm.unbind('input');
+      
+      var debounce;
+      elm.bind('input', function() {
+        $timeout.cancel(debounce);
+        debounce = $timeout( function() {
+          scope.$apply(function() {
+            ngModelCtrl.$setViewValue(elm.val());
+          });
+        }, attr.ngDebounce || 1000);
+      });
+      elm.bind('blur', function() {
+        scope.$apply(function() {
+          ngModelCtrl.$setViewValue(elm.val());
+        });
+      });
+    }                   
+  }
+}]);
 angular.module('myApp')
 .service('addressesService', ["$http", function($http) {
 
   var that = this;
   var resultsUrl = '/results';
+  var validityUrl = '/valid-address'
 
   this.getResults = function(addresses) {
     params = { addresses: JSON.stringify(addresses) };
@@ -42441,6 +42498,11 @@ angular.module('myApp')
       that.results  = null;
     });
   };
+
+  this.isValidAddress = function(address) {
+    params = { address: address };
+    return $http.get(validityUrl + '.json', { params: params});
+  }
   
 }]);
 // This is a manifest file that'll be compiled into application.js, which will include all the files

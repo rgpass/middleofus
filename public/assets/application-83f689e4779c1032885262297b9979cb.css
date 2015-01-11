@@ -9428,3 +9428,8 @@ input[type="checkbox"] {
 .red {
   color: red;
 }
+
+/* line 28, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.validation-indicator {
+  margin-left: 5px;
+}
