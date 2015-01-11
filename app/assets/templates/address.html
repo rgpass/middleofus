@@ -2,7 +2,7 @@
   <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>
   <form name="myForm" novalidate ng-submit="submitAddresses();">
     <fieldset>
-      <p>Address, Place, City, or Zip:</p>
+      <p>Address, City, or Zip:</p>
       <div class="form-group">
         <input type="text" name="address-one" ng-model="formData.addressOne" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" ng-maxlength="50" class="col-lg-5">
         <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
