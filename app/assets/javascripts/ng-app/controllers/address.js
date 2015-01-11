@@ -9,9 +9,11 @@ angular.module('myApp')
 
   function setFirstValidations(newValue, oldValue) {
     if (newValue) {
+      $scope.isFirstProcessing = true;
       addressesService.isValidAddress($scope.formData.addressOne).success(function(data) {
         $scope.isFirstValid = data.is_valid;
         $scope.isFirstEmpty = false;
+        $scope.isFirstProcessing = false;
       });
     } else {
       $scope.isFirstEmpty = true;
@@ -21,9 +23,11 @@ angular.module('myApp')
 
   function setSecondValidations(newValue, oldValue) {
     if (newValue) {
+      $scope.isSecondProcessing = true;
       addressesService.isValidAddress($scope.formData.addressTwo).success(function(data) {
         $scope.isSecondValid = data.is_valid;
         $scope.isSecondEmpty = false;
+        $scope.isSecondProcessing = false;
       });
     } else {
       $scope.isSecondEmpty = true;
@@ -37,8 +41,9 @@ angular.module('myApp')
   };
 
   function setVariables() {
-    $scope.error    = addressesService.error;
-    $scope.results  = addressesService.results;  
+    $scope.processing = false;
+    $scope.error      = addressesService.error;
+    $scope.results    = addressesService.results;  
   };
 
 }]);
