@@ -2,7 +2,7 @@
   <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>
   <form name="myForm" novalidate ng-submit="submitAddresses();">
     <fieldset>
-      <p>Address, Place, City, or Zip:</p>
+      <p>Address, City, or Zip:</p>
       <div class="form-group">
         <input type="text" name="address-one" ng-model="formData.addressOne" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" ng-maxlength="50" class="col-lg-5">
         <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
@@ -10,7 +10,7 @@
           <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
         </span>
         <br><br>
-        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address, place, city, or zip" ng-minlength="2" class="col-lg-5">
+        <input type="text" name="address-two" ng-model="formData.addressTwo" placeholder="optional second address, city, or zip" ng-minlength="2" class="col-lg-5">
         <br><br>
         <input type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">
       </div>
@@ -22,7 +22,6 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Open/Closed</th>
           <th>Yelp Rating</th>
           <th>Address</th>
         </tr>
@@ -30,11 +29,6 @@
       <tbody>
         <tr ng-repeat="result in results">
           <td><a href="{{result.website}}">{{result.name}}</a></td>
-          <td ng-class="{ green: result.is_open == true, red: result.is_open == false }">
-            <span ng-show="result.is_open">OPEN</span>
-            <span ng-show="!result.is_open">CLOSED</span>
-            <span ng-show="result.is_open == 'N/A'">N/A</span>
-          </td>
           <td><img src="{{result.rating_image}}" /></td>
           <td><a href="https://maps.google.com?q={{result.address}}" target="_blank">{{result.address}}</td>
         </tr>
