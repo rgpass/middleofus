@@ -10,6 +10,7 @@ angular.module('myApp')
   function setFirstValidations(newValue, oldValue) {
     if (newValue) {
       $scope.isFirstProcessing = true;
+      $scope.isFirstEmpty = true;
       addressesService.isValidAddress($scope.formData.addressOne).success(function(data) {
         $scope.isFirstValid = data.is_valid;
         $scope.isFirstEmpty = false;
@@ -24,6 +25,7 @@ angular.module('myApp')
   function setSecondValidations(newValue, oldValue) {
     if (newValue) {
       $scope.isSecondProcessing = true;
+      $scope.isSecondEmpty = true;
       addressesService.isValidAddress($scope.formData.addressTwo).success(function(data) {
         $scope.isSecondValid = data.is_valid;
         $scope.isSecondEmpty = false;
