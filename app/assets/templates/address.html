@@ -9,19 +9,19 @@
           <span ng-show="myForm.addressOne.$error.required">Address is required.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
           <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
         </span>
-        <span class="validation-indicator" ng-show="isFirstProcessing">...</span>
+        <div class="inline-block" ng-show="isFirstProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
         <i class="fa fa-check green validation-indicator"  ng-show="isFirstValid && !isFirstEmpty"></i>
         <i class="fa fa-times red validation-indicator"    ng-hide="isFirstValid || isFirstEmpty"></i>
         <br><br>
         <input type="text" name="address-two" ng-model="formData.addressTwo" ng-debounce="300" placeholder="optional second address, city, or zip" ng-minlength="2" class="col-lg-5">
-        <span class="validation-indicator" ng-show="isSecondProcessing">...</span>
+        <div class="inline-block" ng-show="isSecondProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
         <i class="fa fa-check green validation-indicator"  ng-show="isSecondValid && !isSecondEmpty"></i>
         <i class="fa fa-times red validation-indicator"    ng-hide="isSecondValid || isSecondEmpty"></i>
         <br><br>
         <button type="submit" ng-disabled="myForm.$invalid || !isFirstValid || !isSecondValid" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
-          <span ng-hide="processing">Submit</span>
-          <span ng-show="processing">Processing <i class="fa fa-spinner fa-spin"></i></span>
+          Submit
         </button>
+        <div ng-show="processing" style="display:inline-block;"><i class="fa fa-spin fa-spinner"style="display:inline-block;"></i></div>
       </div>
     </fieldset>
   </form>

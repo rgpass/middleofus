@@ -14,15 +14,19 @@
  *= require_self
  */
 
- @import "ng-app/main";
+@import "ng-app/main";
 
- .green {
-   color: green;
- }
+.inline-block {
+  display: inline-block;
+}
 
- .red {
-   color: red;
- }
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
 
 .validation-indicator {
   margin-left: 5px;
