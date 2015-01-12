@@ -4,7 +4,7 @@
     <fieldset>
       <p>Address, City, or Zip:</p>
       <div class="form-group">
-        <input type="text" name="address-one" ng-model="formData.addressOne" ng-debounce="300" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" ng-maxlength="50" class="col-lg-5">
+        <input type="text" name="address-one" ng-model="formData.addressOne" ng-debounce="300" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" class="col-lg-5">
         <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
           <span ng-show="myForm.addressOne.$error.required">Address is required.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
           <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
