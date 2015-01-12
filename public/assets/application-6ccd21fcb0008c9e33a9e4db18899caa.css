@@ -9420,16 +9420,21 @@ input[type="checkbox"] {
 
  */
 /* line 20, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.inline-block {
+  display: inline-block;
+}
+
+/* line 24, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .green {
   color: green;
 }
 
-/* line 24, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 28, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .red {
   color: red;
 }
 
-/* line 28, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 32, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .validation-indicator {
   margin-left: 5px;
 }
