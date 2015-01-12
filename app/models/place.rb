@@ -18,7 +18,8 @@ class Place
   end
 
   def self.valid_address?(input)
-    !!Geocoder.coordinates(input)
+    address = Geocoder.address(input)
+    address ? address.split(" ").last == "USA" : false
   end
 
   private
