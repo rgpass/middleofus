@@ -6778,88 +6778,100 @@ a.thumbnail.active {
   border-color: #3db5d8;
   color: #ffffff;
 }
-
-/* line 4732, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4731, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-info hr {
   border-top-color: #2aabd2;
 }
-
-/* line 4735, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4734, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-info .alert-link {
   color: #e6e6e6;
 }
 
 /* line 4738, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+.alert-primary {
+  background-color: #008cba;
+  color: #ffffff;
+}
+/* line 4741, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+.alert-primary hr {
+  border-top-color: #2aabd2;
+}
+/* line 4744, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+.alert-primary .alert-link {
+  color: #e6e6e6;
+}
+
+/* line 4748, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-warning {
   background-color: #e99002;
   border-color: #d08002;
   color: #ffffff;
 }
 
-/* line 4743, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4753, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-warning hr {
   border-top-color: #b67102;
 }
 
-/* line 4746, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4756, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-warning .alert-link {
   color: #e6e6e6;
 }
 
-/* line 4749, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4759, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-danger {
   background-color: #f04124;
   border-color: #ea2f10;
   color: #ffffff;
 }
 
-/* line 4754, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4764, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-danger hr {
   border-top-color: #d32a0e;
 }
 
-/* line 4757, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4767, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert-danger .alert-link {
   color: #e6e6e6;
 }
 
 @-webkit-keyframes progress-bar-stripes {
-  /* line 4761, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 4771, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   from {
     background-position: 40px 0;
   }
 
-  /* line 4764, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 4774, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   to {
     background-position: 0 0;
   }
 }
 
 @-o-keyframes progress-bar-stripes {
-  /* line 4769, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 4779, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   from {
     background-position: 40px 0;
   }
 
-  /* line 4772, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 4782, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   to {
     background-position: 0 0;
   }
 }
 
 @keyframes progress-bar-stripes {
-  /* line 4777, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 4787, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   from {
     background-position: 40px 0;
   }
 
-  /* line 4780, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 4790, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   to {
     background-position: 0 0;
   }
 }
 
-/* line 4784, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4794, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress {
   overflow: hidden;
   height: 21px;
@@ -6870,7 +6882,7 @@ a.thumbnail.active {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 4793, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4803, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-bar {
   float: left;
   width: 0%;
@@ -6887,7 +6899,7 @@ a.thumbnail.active {
   transition: width 0.6s ease;
 }
 
-/* line 4809, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4819, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-striped .progress-bar,
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -6897,7 +6909,7 @@ a.thumbnail.active {
   background-size: 40px 40px;
 }
 
-/* line 4817, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4827, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress.active .progress-bar,
 .progress-bar.active {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
@@ -6905,77 +6917,77 @@ a.thumbnail.active {
   animation: progress-bar-stripes 2s linear infinite;
 }
 
-/* line 4822, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4832, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-bar-success {
   background-color: #43ac6a;
 }
 
-/* line 4825, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4835, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-/* line 4830, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4840, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-bar-info {
   background-color: #5bc0de;
 }
 
-/* line 4833, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4843, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-/* line 4838, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4848, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-bar-warning {
   background-color: #e99002;
 }
 
-/* line 4841, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4851, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-/* line 4846, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4856, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-bar-danger {
   background-color: #f04124;
 }
 
-/* line 4849, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4859, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-/* line 4854, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4864, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media {
   margin-top: 15px;
 }
 
-/* line 4857, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4867, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media:first-child {
   margin-top: 0;
 }
 
-/* line 4861, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4871, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media-right,
 .media > .pull-right {
   padding-left: 10px;
 }
 
-/* line 4865, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4875, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media-left,
 .media > .pull-left {
   padding-right: 10px;
 }
 
-/* line 4870, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4880, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media-left,
 .media-right,
 .media-body {
@@ -6983,35 +6995,35 @@ a.thumbnail.active {
   vertical-align: top;
 }
 
-/* line 4874, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4884, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media-middle {
   vertical-align: middle;
 }
 
-/* line 4877, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4887, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media-bottom {
   vertical-align: bottom;
 }
 
-/* line 4880, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4890, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media-heading {
   margin-top: 0;
   margin-bottom: 5px;
 }
 
-/* line 4884, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4894, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .media-list {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 4888, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4898, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group {
   margin-bottom: 20px;
   padding-left: 0;
 }
 
-/* line 4892, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4902, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item {
   position: relative;
   display: block;
@@ -7021,30 +7033,30 @@ a.thumbnail.active {
   border: 1px solid #dddddd;
 }
 
-/* line 4900, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4910, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
-/* line 4904, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4914, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-/* line 4909, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4919, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item {
   color: #555555;
 }
 
-/* line 4912, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4922, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item .list-group-item-heading {
   color: #333333;
 }
 
-/* line 4916, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4926, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item:hover,
 a.list-group-item:focus {
   text-decoration: none;
@@ -7052,7 +7064,7 @@ a.list-group-item:focus {
   background-color: #f5f5f5;
 }
 
-/* line 4923, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4933, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item.disabled,
 .list-group-item.disabled:hover,
 .list-group-item.disabled:focus {
@@ -7061,21 +7073,21 @@ a.list-group-item:focus {
   cursor: not-allowed;
 }
 
-/* line 4930, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4940, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item.disabled .list-group-item-heading,
 .list-group-item.disabled:hover .list-group-item-heading,
 .list-group-item.disabled:focus .list-group-item-heading {
   color: inherit;
 }
 
-/* line 4935, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4945, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item.disabled .list-group-item-text,
 .list-group-item.disabled:hover .list-group-item-text,
 .list-group-item.disabled:focus .list-group-item-text {
   color: #999999;
 }
 
-/* line 4940, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4950, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
@@ -7085,7 +7097,7 @@ a.list-group-item:focus {
   border-color: #008cba;
 }
 
-/* line 4954, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4964, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,
 .list-group-item.active:focus .list-group-item-heading,
@@ -7098,37 +7110,37 @@ a.list-group-item:focus {
   color: inherit;
 }
 
-/* line 4959, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4969, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item.active .list-group-item-text,
 .list-group-item.active:hover .list-group-item-text,
 .list-group-item.active:focus .list-group-item-text {
   color: #87e1ff;
 }
 
-/* line 4962, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4972, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item-success {
   color: #43ac6a;
   background-color: #dff0d8;
 }
 
-/* line 4966, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4976, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-success {
   color: #43ac6a;
 }
 
-/* line 4969, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4979, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-success .list-group-item-heading {
   color: inherit;
 }
 
-/* line 4973, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4983, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-success:hover,
 a.list-group-item-success:focus {
   color: #43ac6a;
   background-color: #d0e9c6;
 }
 
-/* line 4979, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4989, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-success.active,
 a.list-group-item-success.active:hover,
 a.list-group-item-success.active:focus {
@@ -7137,30 +7149,30 @@ a.list-group-item-success.active:focus {
   border-color: #43ac6a;
 }
 
-/* line 4984, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4994, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item-info {
   color: #5bc0de;
   background-color: #d9edf7;
 }
 
-/* line 4988, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 4998, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-info {
   color: #5bc0de;
 }
 
-/* line 4991, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5001, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-info .list-group-item-heading {
   color: inherit;
 }
 
-/* line 4995, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5005, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-info:hover,
 a.list-group-item-info:focus {
   color: #5bc0de;
   background-color: #c4e3f3;
 }
 
-/* line 5001, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5011, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-info.active,
 a.list-group-item-info.active:hover,
 a.list-group-item-info.active:focus {
@@ -7169,30 +7181,30 @@ a.list-group-item-info.active:focus {
   border-color: #5bc0de;
 }
 
-/* line 5006, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5016, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item-warning {
   color: #e99002;
   background-color: #fcf8e3;
 }
 
-/* line 5010, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5020, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-warning {
   color: #e99002;
 }
 
-/* line 5013, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5023, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-warning .list-group-item-heading {
   color: inherit;
 }
 
-/* line 5017, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5027, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-warning:hover,
 a.list-group-item-warning:focus {
   color: #e99002;
   background-color: #faf2cc;
 }
 
-/* line 5023, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5033, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-warning.active,
 a.list-group-item-warning.active:hover,
 a.list-group-item-warning.active:focus {
@@ -7201,30 +7213,30 @@ a.list-group-item-warning.active:focus {
   border-color: #e99002;
 }
 
-/* line 5028, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5038, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item-danger {
   color: #f04124;
   background-color: #f2dede;
 }
 
-/* line 5032, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5042, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-danger {
   color: #f04124;
 }
 
-/* line 5035, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5045, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-danger .list-group-item-heading {
   color: inherit;
 }
 
-/* line 5039, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5049, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-danger:hover,
 a.list-group-item-danger:focus {
   color: #f04124;
   background-color: #ebcccc;
 }
 
-/* line 5045, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5055, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 a.list-group-item-danger.active,
 a.list-group-item-danger.active:hover,
 a.list-group-item-danger.active:focus {
@@ -7233,19 +7245,19 @@ a.list-group-item-danger.active:focus {
   border-color: #f04124;
 }
 
-/* line 5050, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5060, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item-heading {
   margin-top: 0;
   margin-bottom: 5px;
 }
 
-/* line 5054, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5064, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group-item-text {
   margin-bottom: 0;
   line-height: 1.3;
 }
 
-/* line 5058, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5068, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel {
   margin-bottom: 21px;
   background-color: #ffffff;
@@ -7255,12 +7267,12 @@ a.list-group-item-danger.active:focus {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-/* line 5066, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5076, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-body {
   padding: 15px;
 }
 
-/* line 5069, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5079, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
@@ -7268,12 +7280,12 @@ a.list-group-item-danger.active:focus {
   border-top-left-radius: -1;
 }
 
-/* line 5075, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5085, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
 }
 
-/* line 5078, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5088, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -7281,12 +7293,12 @@ a.list-group-item-danger.active:focus {
   color: inherit;
 }
 
-/* line 5084, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5094, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-title > a {
   color: inherit;
 }
 
-/* line 5087, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5097, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-footer {
   padding: 10px 15px;
   background-color: #f5f5f5;
@@ -7295,20 +7307,20 @@ a.list-group-item-danger.active:focus {
   border-bottom-left-radius: -1;
 }
 
-/* line 5095, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5105, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {
   margin-bottom: 0;
 }
 
-/* line 5099, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5109, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .list-group .list-group-item,
 .panel > .panel-collapse > .list-group .list-group-item {
   border-width: 1px 0;
   border-radius: 0;
 }
 
-/* line 5104, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5114, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .list-group:first-child .list-group-item:first-child,
 .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
   border-top: 0;
@@ -7316,7 +7328,7 @@ a.list-group-item-danger.active:focus {
   border-top-left-radius: -1;
 }
 
-/* line 5110, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5120, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .list-group:last-child .list-group-item:last-child,
 .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
   border-bottom: 0;
@@ -7324,24 +7336,24 @@ a.list-group-item-danger.active:focus {
   border-bottom-left-radius: -1;
 }
 
-/* line 5115, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5125, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-heading + .list-group .list-group-item:first-child {
   border-top-width: 0;
 }
 
-/* line 5118, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5128, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group + .panel-footer {
   border-top-width: 0;
 }
 
-/* line 5123, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5133, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table,
 .panel > .table-responsive > .table,
 .panel > .panel-collapse > .table {
   margin-bottom: 0;
 }
 
-/* line 5128, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5138, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table caption,
 .panel > .table-responsive > .table caption,
 .panel > .panel-collapse > .table caption {
@@ -7349,14 +7361,14 @@ a.list-group-item-danger.active:focus {
   padding-right: 15px;
 }
 
-/* line 5133, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5143, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:first-child,
 .panel > .table-responsive:first-child > .table:first-child {
   border-top-right-radius: -1;
   border-top-left-radius: -1;
 }
 
-/* line 5140, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5150, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
@@ -7365,7 +7377,7 @@ a.list-group-item-danger.active:focus {
   border-top-right-radius: -1;
 }
 
-/* line 5151, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5161, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
@@ -7377,7 +7389,7 @@ a.list-group-item-danger.active:focus {
   border-top-left-radius: -1;
 }
 
-/* line 5161, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5171, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
@@ -7389,14 +7401,14 @@ a.list-group-item-danger.active:focus {
   border-top-right-radius: -1;
 }
 
-/* line 5165, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5175, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:last-child,
 .panel > .table-responsive:last-child > .table:last-child {
   border-bottom-right-radius: -1;
   border-bottom-left-radius: -1;
 }
 
-/* line 5172, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5182, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
@@ -7405,7 +7417,7 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: -1;
 }
 
-/* line 5183, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5193, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
@@ -7417,7 +7429,7 @@ a.list-group-item-danger.active:focus {
   border-bottom-left-radius: -1;
 }
 
-/* line 5193, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5203, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
@@ -7429,7 +7441,7 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: -1;
 }
 
-/* line 5199, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5209, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .panel-body + .table,
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
@@ -7437,19 +7449,19 @@ a.list-group-item-danger.active:focus {
   border-top: 1px solid #dddddd;
 }
 
-/* line 5203, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5213, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
   border-top: 0;
 }
 
-/* line 5207, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5217, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table-bordered,
 .panel > .table-responsive > .table-bordered {
   border: 0;
 }
 
-/* line 5221, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5231, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table-bordered > thead > tr > th:first-child,
 .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
 .panel > .table-bordered > tbody > tr > th:first-child,
@@ -7465,7 +7477,7 @@ a.list-group-item-danger.active:focus {
   border-left: 0;
 }
 
-/* line 5235, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5245, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table-bordered > thead > tr > th:last-child,
 .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
 .panel > .table-bordered > tbody > tr > th:last-child,
@@ -7481,7 +7493,7 @@ a.list-group-item-danger.active:focus {
   border-right: 0;
 }
 
-/* line 5245, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5255, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table-bordered > thead > tr:first-child > td,
 .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
 .panel > .table-bordered > tbody > tr:first-child > td,
@@ -7493,7 +7505,7 @@ a.list-group-item-danger.active:focus {
   border-bottom: 0;
 }
 
-/* line 5255, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5265, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table-bordered > tbody > tr:last-child > td,
 .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
 .panel > .table-bordered > tfoot > tr:last-child > td,
@@ -7505,218 +7517,218 @@ a.list-group-item-danger.active:focus {
   border-bottom: 0;
 }
 
-/* line 5258, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5268, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel > .table-responsive {
   border: 0;
   margin-bottom: 0;
 }
 
-/* line 5262, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5272, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-group {
   margin-bottom: 21px;
 }
 
-/* line 5265, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5275, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-group .panel {
   margin-bottom: 0;
   border-radius: 0;
 }
 
-/* line 5269, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5279, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-group .panel + .panel {
   margin-top: 5px;
 }
 
-/* line 5272, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5282, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-group .panel-heading {
   border-bottom: 0;
 }
 
-/* line 5276, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5286, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-group .panel-heading + .panel-collapse > .panel-body,
 .panel-group .panel-heading + .panel-collapse > .list-group {
   border-top: 1px solid #dddddd;
 }
 
-/* line 5279, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5289, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-group .panel-footer {
   border-top: 0;
 }
 
-/* line 5282, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5292, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-group .panel-footer + .panel-collapse .panel-body {
   border-bottom: 1px solid #dddddd;
 }
 
-/* line 5285, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5295, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-default {
   border-color: #dddddd;
 }
 
-/* line 5288, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5298, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-default > .panel-heading {
   color: #333333;
   background-color: #f5f5f5;
   border-color: #dddddd;
 }
 
-/* line 5293, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5303, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #dddddd;
 }
 
-/* line 5296, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5306, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-default > .panel-heading .badge {
   color: #f5f5f5;
   background-color: #333333;
 }
 
-/* line 5300, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5310, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #dddddd;
 }
 
-/* line 5303, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5313, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-primary {
   border-color: #008cba;
 }
 
-/* line 5306, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5316, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-primary > .panel-heading {
   color: #ffffff;
   background-color: #008cba;
   border-color: #008cba;
 }
 
-/* line 5311, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5321, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #008cba;
 }
 
-/* line 5314, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5324, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-primary > .panel-heading .badge {
   color: #008cba;
   background-color: #ffffff;
 }
 
-/* line 5318, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5328, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #008cba;
 }
 
-/* line 5321, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5331, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-success {
   border-color: #3c9a5f;
 }
 
-/* line 5324, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5334, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-success > .panel-heading {
   color: #ffffff;
   background-color: #43ac6a;
   border-color: #3c9a5f;
 }
 
-/* line 5329, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5339, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-success > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #3c9a5f;
 }
 
-/* line 5332, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5342, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-success > .panel-heading .badge {
   color: #43ac6a;
   background-color: #ffffff;
 }
 
-/* line 5336, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5346, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-success > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #3c9a5f;
 }
 
-/* line 5339, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5349, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-info {
   border-color: #3db5d8;
 }
 
-/* line 5342, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5352, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-info > .panel-heading {
   color: #ffffff;
   background-color: #5bc0de;
   border-color: #3db5d8;
 }
 
-/* line 5347, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5357, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-info > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #3db5d8;
 }
 
-/* line 5350, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5360, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-info > .panel-heading .badge {
   color: #5bc0de;
   background-color: #ffffff;
 }
 
-/* line 5354, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5364, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-info > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #3db5d8;
 }
 
-/* line 5357, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5367, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-warning {
   border-color: #d08002;
 }
 
-/* line 5360, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5370, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-warning > .panel-heading {
   color: #ffffff;
   background-color: #e99002;
   border-color: #d08002;
 }
 
-/* line 5365, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5375, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-warning > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #d08002;
 }
 
-/* line 5368, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5378, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-warning > .panel-heading .badge {
   color: #e99002;
   background-color: #ffffff;
 }
 
-/* line 5372, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5382, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-warning > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #d08002;
 }
 
-/* line 5375, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5385, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-danger {
   border-color: #ea2f10;
 }
 
-/* line 5378, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5388, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-danger > .panel-heading {
   color: #ffffff;
   background-color: #f04124;
   border-color: #ea2f10;
 }
 
-/* line 5383, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5393, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-danger > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ea2f10;
 }
 
-/* line 5386, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5396, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-danger > .panel-heading .badge {
   color: #f04124;
   background-color: #ffffff;
 }
 
-/* line 5390, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5400, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ea2f10;
 }
 
-/* line 5393, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5403, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .embed-responsive {
   position: relative;
   display: block;
@@ -7725,7 +7737,7 @@ a.list-group-item-danger.active:focus {
   overflow: hidden;
 }
 
-/* line 5404, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5414, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .embed-responsive .embed-responsive-item,
 .embed-responsive iframe,
 .embed-responsive embed,
@@ -7740,17 +7752,17 @@ a.list-group-item-danger.active:focus {
   border: 0;
 }
 
-/* line 5413, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5423, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .embed-responsive.embed-responsive-16by9 {
   padding-bottom: 56.25%;
 }
 
-/* line 5416, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5426, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .embed-responsive.embed-responsive-4by3 {
   padding-bottom: 75%;
 }
 
-/* line 5419, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5429, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .well {
   min-height: 20px;
   padding: 19px;
@@ -7762,25 +7774,25 @@ a.list-group-item-danger.active:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-/* line 5429, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5439, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .well blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
 }
 
-/* line 5433, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5443, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .well-lg {
   padding: 24px;
   border-radius: 0;
 }
 
-/* line 5437, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5447, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .well-sm {
   padding: 9px;
   border-radius: 0;
 }
 
-/* line 5441, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5451, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .close {
   float: right;
   font-size: 22.5px;
@@ -7792,7 +7804,7 @@ a.list-group-item-danger.active:focus {
   filter: alpha(opacity=20);
 }
 
-/* line 5452, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5462, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .close:hover,
 .close:focus {
   color: #ffffff;
@@ -7802,7 +7814,7 @@ a.list-group-item-danger.active:focus {
   filter: alpha(opacity=50);
 }
 
-/* line 5459, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5469, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 button.close {
   padding: 0;
   cursor: pointer;
@@ -7811,12 +7823,12 @@ button.close {
   -webkit-appearance: none;
 }
 
-/* line 5466, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5476, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-open {
   overflow: hidden;
 }
 
-/* line 5469, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5479, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal {
   display: none;
   overflow: hidden;
@@ -7830,7 +7842,7 @@ button.close {
   outline: 0;
 }
 
-/* line 5481, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5491, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
@@ -7841,7 +7853,7 @@ button.close {
   transition: transform 0.3s ease-out;
 }
 
-/* line 5490, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5500, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
@@ -7849,20 +7861,20 @@ button.close {
   transform: translate(0, 0);
 }
 
-/* line 5496, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5506, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-/* line 5500, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5510, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-dialog {
   position: relative;
   width: auto;
   margin: 10px;
 }
 
-/* line 5505, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5515, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-content {
   position: relative;
   background-color: #ffffff;
@@ -7876,7 +7888,7 @@ button.close {
   outline: 0;
 }
 
-/* line 5517, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5527, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-backdrop {
   position: absolute;
   top: 0;
@@ -7885,66 +7897,66 @@ button.close {
   background-color: #000000;
 }
 
-/* line 5524, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5534, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-backdrop.fade {
   opacity: 0;
   filter: alpha(opacity=0);
 }
 
-/* line 5528, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5538, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-backdrop.in {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
 
-/* line 5532, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5542, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-header {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
   min-height: 16.4px;
 }
 
-/* line 5537, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5547, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-header .close {
   margin-top: -2px;
 }
 
-/* line 5540, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5550, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-title {
   margin: 0;
   line-height: 1.4;
 }
 
-/* line 5544, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5554, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-body {
   position: relative;
   padding: 20px;
 }
 
-/* line 5548, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5558, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-footer {
   padding: 20px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
 
-/* line 5553, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5563, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-footer .btn + .btn {
   margin-left: 5px;
   margin-bottom: 0;
 }
 
-/* line 5557, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5567, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
 
-/* line 5560, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5570, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
 }
 
-/* line 5563, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5573, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal-scrollbar-measure {
   position: absolute;
   top: -9999px;
@@ -7954,30 +7966,30 @@ button.close {
 }
 
 @media (min-width: 768px) {
-  /* line 5571, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5581, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .modal-dialog {
     width: 600px;
     margin: 30px auto;
   }
 
-  /* line 5575, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5585, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
 
-  /* line 5579, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5589, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .modal-sm {
     width: 300px;
   }
 }
 @media (min-width: 992px) {
-  /* line 5584, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5594, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .modal-lg {
     width: 900px;
   }
 }
-/* line 5588, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5598, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip {
   position: absolute;
   z-index: 1070;
@@ -7991,37 +8003,37 @@ button.close {
   filter: alpha(opacity=0);
 }
 
-/* line 5600, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5610, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.in {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 
-/* line 5604, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5614, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.top {
   margin-top: -3px;
   padding: 5px 0;
 }
 
-/* line 5608, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5618, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.right {
   margin-left: 3px;
   padding: 0 5px;
 }
 
-/* line 5612, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5622, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.bottom {
   margin-top: 3px;
   padding: 5px 0;
 }
 
-/* line 5616, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5626, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.left {
   margin-left: -3px;
   padding: 0 5px;
 }
 
-/* line 5620, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5630, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
@@ -8032,7 +8044,7 @@ button.close {
   border-radius: 0;
 }
 
-/* line 5629, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5639, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip-arrow {
   position: absolute;
   width: 0;
@@ -8041,7 +8053,7 @@ button.close {
   border-style: solid;
 }
 
-/* line 5636, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5646, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.top .tooltip-arrow {
   bottom: 0;
   left: 50%;
@@ -8050,7 +8062,7 @@ button.close {
   border-top-color: #333333;
 }
 
-/* line 5643, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5653, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
   right: 5px;
@@ -8059,7 +8071,7 @@ button.close {
   border-top-color: #333333;
 }
 
-/* line 5650, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5660, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   left: 5px;
@@ -8068,7 +8080,7 @@ button.close {
   border-top-color: #333333;
 }
 
-/* line 5657, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5667, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
@@ -8077,7 +8089,7 @@ button.close {
   border-right-color: #333333;
 }
 
-/* line 5664, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5674, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
@@ -8086,7 +8098,7 @@ button.close {
   border-left-color: #333333;
 }
 
-/* line 5671, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5681, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
@@ -8095,7 +8107,7 @@ button.close {
   border-bottom-color: #333333;
 }
 
-/* line 5678, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5688, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   right: 5px;
@@ -8104,7 +8116,7 @@ button.close {
   border-bottom-color: #333333;
 }
 
-/* line 5685, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5695, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   left: 5px;
@@ -8113,7 +8125,7 @@ button.close {
   border-bottom-color: #333333;
 }
 
-/* line 5692, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5702, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover {
   position: absolute;
   top: 0;
@@ -8138,27 +8150,27 @@ button.close {
   white-space: normal;
 }
 
-/* line 5715, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5725, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.top {
   margin-top: -10px;
 }
 
-/* line 5718, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5728, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.right {
   margin-left: 10px;
 }
 
-/* line 5721, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5731, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.bottom {
   margin-top: 10px;
 }
 
-/* line 5724, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5734, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.left {
   margin-left: -10px;
 }
 
-/* line 5727, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5737, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover-title {
   margin: 0;
   padding: 8px 14px;
@@ -8168,12 +8180,12 @@ button.close {
   border-radius: -1 -1 0 0;
 }
 
-/* line 5735, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5745, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover-content {
   padding: 9px 14px;
 }
 
-/* line 5739, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5749, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover > .arrow,
 .popover > .arrow:after {
   position: absolute;
@@ -8184,18 +8196,18 @@ button.close {
   border-style: solid;
 }
 
-/* line 5747, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5757, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover > .arrow {
   border-width: 11px;
 }
 
-/* line 5750, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5760, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover > .arrow:after {
   border-width: 10px;
   content: "";
 }
 
-/* line 5754, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5764, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.top > .arrow {
   left: 50%;
   margin-left: -11px;
@@ -8205,7 +8217,7 @@ button.close {
   bottom: -11px;
 }
 
-/* line 5762, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5772, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.top > .arrow:after {
   content: " ";
   bottom: 1px;
@@ -8214,7 +8226,7 @@ button.close {
   border-top-color: #333333;
 }
 
-/* line 5769, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5779, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.right > .arrow {
   top: 50%;
   left: -11px;
@@ -8224,7 +8236,7 @@ button.close {
   border-right-color: rgba(0, 0, 0, 0.05);
 }
 
-/* line 5777, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5787, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.right > .arrow:after {
   content: " ";
   left: 1px;
@@ -8233,7 +8245,7 @@ button.close {
   border-right-color: #333333;
 }
 
-/* line 5784, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5794, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.bottom > .arrow {
   left: 50%;
   margin-left: -11px;
@@ -8243,7 +8255,7 @@ button.close {
   top: -11px;
 }
 
-/* line 5792, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5802, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.bottom > .arrow:after {
   content: " ";
   top: 1px;
@@ -8252,7 +8264,7 @@ button.close {
   border-bottom-color: #333333;
 }
 
-/* line 5799, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5809, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.left > .arrow {
   top: 50%;
   right: -11px;
@@ -8262,7 +8274,7 @@ button.close {
   border-left-color: rgba(0, 0, 0, 0.05);
 }
 
-/* line 5807, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5817, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover.left > .arrow:after {
   content: " ";
   right: 1px;
@@ -8271,19 +8283,19 @@ button.close {
   bottom: -10px;
 }
 
-/* line 5814, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5824, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel {
   position: relative;
 }
 
-/* line 5817, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5827, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
 
-/* line 5822, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5832, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .item {
   display: none;
   position: relative;
@@ -8292,14 +8304,14 @@ button.close {
   transition: 0.6s ease-in-out left;
 }
 
-/* line 5830, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5840, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   line-height: 1;
 }
 
 @media all and (transform-3d), (-webkit-transform-3d) {
-  /* line 5834, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5844, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-inner > .item {
     -webkit-transition: -webkit-transform 0.6s ease-in-out;
     -o-transition: -o-transform 0.6s ease-in-out;
@@ -8310,7 +8322,7 @@ button.close {
     perspective: 1000;
   }
 
-  /* line 5844, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5854, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-inner > .item.next,
   .carousel-inner > .item.active.right {
     -webkit-transform: translate3d(100%, 0, 0);
@@ -8318,7 +8330,7 @@ button.close {
     left: 0;
   }
 
-  /* line 5850, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5860, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-inner > .item.prev,
   .carousel-inner > .item.active.left {
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -8326,7 +8338,7 @@ button.close {
     left: 0;
   }
 
-  /* line 5857, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 5867, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-inner > .item.next.left,
   .carousel-inner > .item.prev.right,
   .carousel-inner > .item.active {
@@ -8335,19 +8347,19 @@ button.close {
     left: 0;
   }
 }
-/* line 5865, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5875, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .active,
 .carousel-inner > .next,
 .carousel-inner > .prev {
   display: block;
 }
 
-/* line 5868, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5878, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .active {
   left: 0;
 }
 
-/* line 5872, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5882, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .next,
 .carousel-inner > .prev {
   position: absolute;
@@ -8355,33 +8367,33 @@ button.close {
   width: 100%;
 }
 
-/* line 5877, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5887, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .next {
   left: 100%;
 }
 
-/* line 5880, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5890, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .prev {
   left: -100%;
 }
 
-/* line 5884, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5894, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .next.left,
 .carousel-inner > .prev.right {
   left: 0;
 }
 
-/* line 5887, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5897, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .active.left {
   left: -100%;
 }
 
-/* line 5890, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5900, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-inner > .active.right {
   left: 100%;
 }
 
-/* line 5893, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5903, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control {
   position: absolute;
   top: 0;
@@ -8396,7 +8408,7 @@ button.close {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* line 5906, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5916, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control.left {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
@@ -8406,7 +8418,7 @@ button.close {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
 }
 
-/* line 5914, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5924, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control.right {
   left: auto;
   right: 0;
@@ -8418,7 +8430,7 @@ button.close {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
 }
 
-/* line 5925, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5935, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control:hover,
 .carousel-control:focus {
   outline: 0;
@@ -8428,7 +8440,7 @@ button.close {
   filter: alpha(opacity=90);
 }
 
-/* line 5935, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5945, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
 .carousel-control .glyphicon-chevron-left,
@@ -8439,21 +8451,21 @@ button.close {
   display: inline-block;
 }
 
-/* line 5942, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5952, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control .icon-prev,
 .carousel-control .glyphicon-chevron-left {
   left: 50%;
   margin-left: -10px;
 }
 
-/* line 5947, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5957, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control .icon-next,
 .carousel-control .glyphicon-chevron-right {
   right: 50%;
   margin-right: -10px;
 }
 
-/* line 5952, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5962, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control .icon-prev,
 .carousel-control .icon-next {
   width: 20px;
@@ -8462,17 +8474,17 @@ button.close {
   font-family: serif;
 }
 
-/* line 5958, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5968, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control .icon-prev:before {
   content: '\2039';
 }
 
-/* line 5961, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5971, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-control .icon-next:before {
   content: '\203a';
 }
 
-/* line 5964, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5974, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-indicators {
   position: absolute;
   bottom: 10px;
@@ -8485,7 +8497,7 @@ button.close {
   text-align: center;
 }
 
-/* line 5975, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5985, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-indicators li {
   display: inline-block;
   width: 10px;
@@ -8499,7 +8511,7 @@ button.close {
   background-color: rgba(0, 0, 0, 0);
 }
 
-/* line 5987, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 5997, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-indicators .active {
   margin: 0;
   width: 12px;
@@ -8507,7 +8519,7 @@ button.close {
   background-color: #ffffff;
 }
 
-/* line 5993, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6003, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-caption {
   position: absolute;
   left: 15%;
@@ -8521,13 +8533,13 @@ button.close {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* line 6005, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6015, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .carousel-caption .btn {
   text-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 6012, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6022, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-prev,
@@ -8538,31 +8550,31 @@ button.close {
     font-size: 30px;
   }
 
-  /* line 6019, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6029, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .icon-prev {
     margin-left: -15px;
   }
 
-  /* line 6023, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6033, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-next {
     margin-right: -15px;
   }
 
-  /* line 6026, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6036, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-caption {
     left: 20%;
     right: 20%;
     padding-bottom: 30px;
   }
 
-  /* line 6031, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6041, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .carousel-indicators {
     bottom: 20px;
   }
 }
-/* line 6064, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6074, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .clearfix:before,
 .clearfix:after,
 .dl-horizontal dd:before,
@@ -8597,7 +8609,7 @@ button.close {
   display: table;
 }
 
-/* line 6082, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6092, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .clearfix:after,
 .dl-horizontal dd:after,
 .container:after,
@@ -8616,39 +8628,39 @@ button.close {
   clear: both;
 }
 
-/* line 6085, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6095, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 6090, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6100, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pull-right {
   float: right !important;
 }
 
-/* line 6093, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6103, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pull-left {
   float: left !important;
 }
 
-/* line 6096, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6106, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .hide {
   display: none !important;
 }
 
-/* line 6099, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6109, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .show {
   display: block !important;
 }
 
-/* line 6102, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6112, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 6105, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6115, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .text-hide {
   font: 0/0 a;
   color: transparent;
@@ -8657,13 +8669,13 @@ button.close {
   border: 0;
 }
 
-/* line 6112, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6122, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .hidden {
   display: none !important;
   visibility: hidden !important;
 }
 
-/* line 6116, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6126, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .affix {
   position: fixed;
 }
@@ -8672,7 +8684,7 @@ button.close {
   width: device-width;
 }
 
-/* line 6125, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6135, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .visible-xs,
 .visible-sm,
 .visible-md,
@@ -8680,7 +8692,7 @@ button.close {
   display: none !important;
 }
 
-/* line 6139, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6149, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .visible-xs-block,
 .visible-xs-inline,
 .visible-xs-inline-block,
@@ -8697,298 +8709,298 @@ button.close {
 }
 
 @media (max-width: 767px) {
-  /* line 6143, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6153, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-xs {
     display: block !important;
   }
 
-  /* line 6146, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6156, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   table.visible-xs {
     display: table;
   }
 
-  /* line 6149, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6159, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   tr.visible-xs {
     display: table-row !important;
   }
 
-  /* line 6153, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6163, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   th.visible-xs,
   td.visible-xs {
     display: table-cell !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 6158, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6168, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-xs-block {
     display: block !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 6163, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6173, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-xs-inline {
     display: inline !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 6168, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6178, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-xs-inline-block {
     display: inline-block !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 6173, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6183, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-sm {
     display: block !important;
   }
 
-  /* line 6176, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6186, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   table.visible-sm {
     display: table;
   }
 
-  /* line 6179, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6189, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   tr.visible-sm {
     display: table-row !important;
   }
 
-  /* line 6183, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6193, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   th.visible-sm,
   td.visible-sm {
     display: table-cell !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 6188, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6198, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-sm-block {
     display: block !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 6193, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6203, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-sm-inline {
     display: inline !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 6198, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6208, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-sm-inline-block {
     display: inline-block !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 6203, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6213, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-md {
     display: block !important;
   }
 
-  /* line 6206, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6216, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   table.visible-md {
     display: table;
   }
 
-  /* line 6209, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6219, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   tr.visible-md {
     display: table-row !important;
   }
 
-  /* line 6213, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6223, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   th.visible-md,
   td.visible-md {
     display: table-cell !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 6218, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6228, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-md-block {
     display: block !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 6223, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6233, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-md-inline {
     display: inline !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 6228, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6238, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-md-inline-block {
     display: inline-block !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 6233, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6243, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-lg {
     display: block !important;
   }
 
-  /* line 6236, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6246, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   table.visible-lg {
     display: table;
   }
 
-  /* line 6239, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6249, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   tr.visible-lg {
     display: table-row !important;
   }
 
-  /* line 6243, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6253, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   th.visible-lg,
   td.visible-lg {
     display: table-cell !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 6248, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6258, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-lg-block {
     display: block !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 6253, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6263, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-lg-inline {
     display: inline !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 6258, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6268, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-lg-inline-block {
     display: inline-block !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 6263, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6273, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .hidden-xs {
     display: none !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 6268, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6278, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .hidden-sm {
     display: none !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 6273, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6283, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .hidden-md {
     display: none !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 6278, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6288, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .hidden-lg {
     display: none !important;
   }
 }
-/* line 6282, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6292, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .visible-print {
   display: none !important;
 }
 
 @media print {
-  /* line 6286, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6296, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-print {
     display: block !important;
   }
 
-  /* line 6289, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6299, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   table.visible-print {
     display: table;
   }
 
-  /* line 6292, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6302, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   tr.visible-print {
     display: table-row !important;
   }
 
-  /* line 6296, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6306, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   th.visible-print,
   td.visible-print {
     display: table-cell !important;
   }
 }
-/* line 6300, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6310, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .visible-print-block {
   display: none !important;
 }
 
 @media print {
-  /* line 6304, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6314, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-print-block {
     display: block !important;
   }
 }
-/* line 6308, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6318, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .visible-print-inline {
   display: none !important;
 }
 
 @media print {
-  /* line 6312, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6322, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-print-inline {
     display: inline !important;
   }
 }
-/* line 6316, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6326, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .visible-print-inline-block {
   display: none !important;
 }
 
 @media print {
-  /* line 6320, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6330, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .visible-print-inline-block {
     display: inline-block !important;
   }
 }
 @media print {
-  /* line 6325, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+  /* line 6335, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
   .hidden-print {
     display: none !important;
   }
 }
-/* line 6329, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6339, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar {
   border: none;
   font-size: 13px;
   font-weight: 300;
 }
 
-/* line 6334, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6344, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar .navbar-toggle:hover .icon-bar {
   background-color: #b3b3b3;
 }
 
-/* line 6337, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6347, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-collapse {
   border-top-color: rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-/* line 6342, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6352, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar .btn {
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-/* line 6346, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6356, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-form {
   margin-top: 7px;
   margin-bottom: 5px;
 }
 
-/* line 6350, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6360, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-form .form-control {
   height: auto;
   padding: 4px 6px;
 }
 
-/* line 6354, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6364, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar .dropdown-menu {
   border: none;
 }
 
-/* line 6358, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6368, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar .dropdown-menu > li > a,
 .navbar .dropdown-menu > li > a:focus {
   background-color: transparent;
@@ -8996,214 +9008,214 @@ button.close {
   font-weight: 300;
 }
 
-/* line 6363, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6373, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar .dropdown-header {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 6366, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6376, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-default .dropdown-menu {
   background-color: #333333;
 }
 
-/* line 6370, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6380, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-default .dropdown-menu > li > a,
 .navbar-default .dropdown-menu > li > a:focus {
   color: #ffffff;
 }
 
-/* line 6375, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6385, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-default .dropdown-menu > li > a:hover,
 .navbar-default .dropdown-menu > .active > a,
 .navbar-default .dropdown-menu > .active > a:hover {
   background-color: #272727;
 }
 
-/* line 6378, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6388, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-inverse .dropdown-menu {
   background-color: #008cba;
 }
 
-/* line 6382, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6392, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-inverse .dropdown-menu > li > a,
 .navbar-inverse .dropdown-menu > li > a:focus {
   color: #ffffff;
 }
 
-/* line 6387, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6397, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .navbar-inverse .dropdown-menu > li > a:hover,
 .navbar-inverse .dropdown-menu > .active > a,
 .navbar-inverse .dropdown-menu > .active > a:hover {
   background-color: #006687;
 }
 
-/* line 6390, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6400, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn {
   padding: 8px 12px;
 }
 
-/* line 6393, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6403, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-lg {
   padding: 16px 20px;
 }
 
-/* line 6396, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6406, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-sm {
   padding: 8px 12px;
 }
 
-/* line 6399, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6409, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-xs {
   padding: 4px 6px;
 }
 
-/* line 6402, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6412, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .btn ~ .dropdown-toggle {
   padding-left: 16px;
   padding-right: 16px;
 }
 
-/* line 6406, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6416, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-menu {
   border-top-width: 0;
 }
 
-/* line 6409, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6419, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group.dropup .dropdown-menu {
   border-top-width: 1px;
   border-bottom-width: 0;
   margin-bottom: 0;
 }
 
-/* line 6414, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6424, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-default ~ .dropdown-menu {
   background-color: #e7e7e7;
   border-color: #cccccc;
 }
 
-/* line 6418, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6428, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-default ~ .dropdown-menu > li > a {
   color: #333333;
 }
 
-/* line 6421, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6431, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-default ~ .dropdown-menu > li > a:hover {
   background-color: #d3d3d3;
 }
 
-/* line 6424, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6434, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu {
   background-color: #008cba;
   border-color: #0079a1;
 }
 
-/* line 6428, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6438, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu > li > a {
   color: #ffffff;
 }
 
-/* line 6431, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6441, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu > li > a:hover {
   background-color: #006d91;
 }
 
-/* line 6434, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6444, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu {
   background-color: #43ac6a;
   border-color: #3c9a5f;
 }
 
-/* line 6438, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6448, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu > li > a {
   color: #ffffff;
 }
 
-/* line 6441, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6451, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-success ~ .dropdown-menu > li > a:hover {
   background-color: #388f58;
 }
 
-/* line 6444, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6454, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
 
-/* line 6448, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6458, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu > li > a {
   color: #ffffff;
 }
 
-/* line 6451, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6461, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-info ~ .dropdown-menu > li > a:hover {
   background-color: #39b3d7;
 }
 
-/* line 6454, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6464, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu {
   background-color: #e99002;
   border-color: #d08002;
 }
 
-/* line 6458, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6468, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu > li > a {
   color: #ffffff;
 }
 
-/* line 6461, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6471, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-warning ~ .dropdown-menu > li > a:hover {
   background-color: #c17702;
 }
 
-/* line 6464, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6474, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu {
   background-color: #f04124;
   border-color: #ea2f10;
 }
 
-/* line 6468, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6478, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu > li > a {
   color: #ffffff;
 }
 
-/* line 6471, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6481, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .btn-group .dropdown-toggle.btn-danger ~ .dropdown-menu > li > a:hover {
   background-color: #dc2c0f;
 }
 
-/* line 6474, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6484, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .lead {
   color: #6f6f6f;
 }
 
-/* line 6477, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6487, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 cite {
   font-style: italic;
 }
 
-/* line 6480, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6490, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 blockquote {
   border-left-width: 1px;
   color: #6f6f6f;
 }
 
-/* line 6484, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6494, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 blockquote.pull-right {
   border-right-width: 1px;
 }
 
-/* line 6487, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6497, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 blockquote small {
   font-size: 12px;
   font-weight: 300;
 }
 
-/* line 6491, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6501, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 table {
   font-size: 12px;
 }
 
-/* line 6498, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6508, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 label,
 .control-label,
 .help-block,
@@ -9213,37 +9225,37 @@ label,
   font-weight: normal;
 }
 
-/* line 6503, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6513, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 input[type="radio"],
 input[type="checkbox"] {
   margin-top: 1px;
 }
 
-/* line 6508, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6518, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
   border-color: transparent;
 }
 
-/* line 6511, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6521, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .nav-tabs > li > a {
   background-color: #e7e7e7;
   color: #222222;
 }
 
-/* line 6515, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6525, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .nav-tabs .caret {
   border-top-color: #222222;
   border-bottom-color: #222222;
 }
 
-/* line 6519, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6529, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .nav-pills {
   font-weight: 300;
 }
 
-/* line 6522, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6532, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .breadcrumb {
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -9252,27 +9264,27 @@ input[type="checkbox"] {
   text-transform: uppercase;
 }
 
-/* line 6529, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6539, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pagination {
   font-size: 12px;
   font-weight: 300;
   color: #999999;
 }
 
-/* line 6535, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6545, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pagination > li > a,
 .pagination > li > span {
   margin-left: 4px;
   color: #999999;
 }
 
-/* line 6540, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6550, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pagination > .active > a,
 .pagination > .active > span {
   color: #fff;
 }
 
-/* line 6548, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6558, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pagination > li > a,
 .pagination > li:first-child > a,
 .pagination > li:last-child > a,
@@ -9282,57 +9294,57 @@ input[type="checkbox"] {
   border-radius: 3px;
 }
 
-/* line 6551, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6561, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pagination-lg > li > a {
   padding-left: 22px;
   padding-right: 22px;
 }
 
-/* line 6555, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6565, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pagination-sm > li > a {
   padding: 0 5px;
 }
 
-/* line 6558, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6568, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .pager {
   font-size: 12px;
   font-weight: 300;
   color: #999999;
 }
 
-/* line 6563, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6573, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .list-group {
   font-size: 12px;
   font-weight: 300;
 }
 
-/* line 6567, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6577, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .close {
   opacity: 0.4;
   text-decoration: none;
   text-shadow: none;
 }
 
-/* line 6573, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6583, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .close:hover,
 .close:focus {
   opacity: 1;
 }
 
-/* line 6576, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6586, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert {
   font-size: 12px;
   font-weight: 300;
 }
 
-/* line 6580, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6590, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .alert .alert-link {
   font-weight: normal;
   color: #fff;
   text-decoration: underline;
 }
 
-/* line 6585, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6595, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .label {
   padding-left: 1em;
   padding-right: 1em;
@@ -9340,18 +9352,18 @@ input[type="checkbox"] {
   font-weight: 300;
 }
 
-/* line 6591, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6601, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .label-default {
   background-color: #e7e7e7;
   color: #333333;
 }
 
-/* line 6595, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6605, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .badge {
   font-weight: 300;
 }
 
-/* line 6598, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6608, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .progress {
   height: 22px;
   padding: 2px;
@@ -9361,19 +9373,19 @@ input[type="checkbox"] {
   box-shadow: none;
 }
 
-/* line 6606, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6616, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .dropdown-menu {
   padding: 0;
   margin-top: 0;
   font-size: 12px;
 }
 
-/* line 6611, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6621, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .dropdown-menu > li > a {
   padding: 12px 15px;
 }
 
-/* line 6614, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6624, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .dropdown-header {
   padding-left: 15px;
   padding-right: 15px;
@@ -9381,26 +9393,26 @@ input[type="checkbox"] {
   text-transform: uppercase;
 }
 
-/* line 6620, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6630, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .popover {
   color: #fff;
   font-size: 12px;
   font-weight: 300;
 }
 
-/* line 6626, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6636, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-heading,
 .panel-footer {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
-/* line 6630, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6640, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .panel-default .close {
   color: #222222;
 }
 
-/* line 6633, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
+/* line 6643, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/bootstrap.css.scss */
 .modal .close {
   color: #222222;
 }
@@ -9437,4 +9449,9 @@ input[type="checkbox"] {
 /* line 32, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .validation-indicator {
   margin-left: 5px;
+}
+
+/* line 36, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+#results tr {
+  cursor: pointer;
 }
