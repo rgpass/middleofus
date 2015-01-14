@@ -48,4 +48,12 @@ angular.module('myApp')
     $scope.results    = addressesService.results;  
   };
 
+  $scope.selectResult = function(result) {
+    $scope.selectedResult = result;
+  }
+
+  $scope.clearSelectedResult = function() {
+    $scope.selectedResult = null;
+  }
+
 }]);
