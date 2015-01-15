@@ -1,28 +1,22 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Overview
+MiddleOf.us is a web application that helps users find a convenient place to meet. The app calculates the midpoint for a group of selected users and generates a list of potential meeting places with Wifi. This suggested list is ranked by distance and provides the user with details such as the yelp rating, a brief description, and of course the address. 
 
-Things you may want to cover:
+Check it out at [MiddleOf.us](www.MiddleOf.us).
 
-* Ruby version
+##Technologies Used
+* Ruby 2.1.3
+* Rails 4.1.6
+* AngularJS 1.2.0
+* Bootstrap 3.2.0
+[Yelp API](http://www.yelp.com/developers/documentation) & [HTTParty](https://github.com/jnunemaker/httparty)
+* Heroku
 
-* System dependencies
+##User Stories Completed
 
-* Configuration
+User Stories can be found at [Trello](https://trello.com/b/gymddw4R/middleof-us). 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Production
+Check it out at [MiddleOf.us](www.MiddleOf.us).
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
