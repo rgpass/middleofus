@@ -20,6 +20,10 @@ angular
           .state('donations', {
             url: '/donations',
             templateUrl: 'donations.html'
+          })
+          .state('team', {
+            url: '/team',
+            templateUrl: 'team.html'
           });
 
       // default fall back route
