@@ -14,6 +14,7 @@ angular.module('myApp')
   };
 
   $scope.$watch('addresses', function(newValue, oldValue) {
+
     for (var i = 0; i < newValue.length; i++) {
       newLocation = newValue[i];
       oldLocation = oldValue[i];
@@ -47,6 +48,7 @@ angular.module('myApp')
   };
 
   function setVariables() {
+    $scope.clearSelectedResult();
     $scope.processing = false;
     $scope.error      = addressesService.error;
     $scope.results    = addressesService.results;  
