@@ -1,30 +1,22 @@
 <div ng-controller="AddressCtrl">
   <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>
-  <form name="myForm" novalidate ng-submit="submitAddresses();">
-    <fieldset>
-      <p>Address, City, or Zip:</p>
-      <div class="form-group">
-        <input type="text" name="address-one" ng-model="formData.addressOne" ng-debounce="300" placeholder="i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305" ng-required="!formData.addressTwo" ng-minlength="2" class="col-md-5">
-        <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
-          <span ng-show="myForm.addressOne.$error.required">Address is required.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
-          <span ng-show="myForm.addressOne.$error.address">Invalid address.</span> <!-- TODO: Check if it should be what it was: "myForm.address.$error" -->
-        </span>
-        <div class="inline-block" ng-show="isFirstProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
-        <i class="fa fa-check green validation-indicator"  ng-show="isFirstValid && !isFirstEmpty"></i>
-        <i class="fa fa-times red validation-indicator"    ng-hide="isFirstValid || isFirstEmpty"></i>
-        <br><br>
-        <input type="text" name="address-two" ng-model="formData.addressTwo" ng-debounce="300" placeholder="optional second address, city, or zip" ng-minlength="2" class="col-md-5">
-        <div class="inline-block" ng-show="isSecondProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
-        <i class="fa fa-check green validation-indicator"  ng-show="isSecondValid && !isSecondEmpty"></i>
-        <i class="fa fa-times red validation-indicator"    ng-hide="isSecondValid || isSecondEmpty"></i>
-        <br><br>
-        <button type="submit" ng-disabled="myForm.$invalid || !isFirstValid || !isSecondValid" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
-          Submit
-        </button>
-        <div ng-show="processing" style="display:inline-block;"><i class="fa fa-spin fa-spinner"style="display:inline-block;"></i></div>
-      </div>
-    </fieldset>
+  <form name="addressForm" ng-submit="submitAddresses();">
+    <p>Address, City, or Zip:</p>
+    <div ng-repeat="address in addresses">
+      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5">
+      <div class="inline-block" ng-show="address.isProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
+      <i class="fa fa-check green validation-indicator"  ng-show="address.isValid && !address.isEmpty"></i>
+      <i class="fa fa-times red validation-indicator"    ng-hide="address.isValid || address.isEmpty"></i>
+      <br><br>
+    </div>
+    
+    <a class="btn btn-primary" ng-click="addLocation();">Add location</a>
+    <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
+      Submit
+    </button>
+    <div ng-show="processing" style="display:inline-block;"><i class="fa fa-spin fa-spinner"style="display:inline-block;"></i></div>
   </form>
+
   <div ng-show="results && !selectedResult">
     <h2>Closest {{results.length}} results</h2>
     <p>Click for more info</p>
@@ -57,7 +49,7 @@
       <table>
         <tbody>
           <tr>
-            <td><h5 style="display:inline"><strong>Yelp Rating:</strong></h5></td>
+            <td><h5 style="display:inline"><strong>Yelp rating:</strong></h5></td>
             <td><h5 style="display:inline;margin-left:10px">{{selectedResult.rating}} / 5</h5></td>
           </tr>
           <tr>
@@ -70,8 +62,8 @@
       <h4>Actions:</h4>
       <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">View on Yelp</a>
       <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info" target="_blank">View on Google Maps</a>
-      <br><br>
-<!--       <h4>Text Address To:</h4>
+<!--       <br><br>
+      <h4>Text Address To:</h4>
       <input type="text" style="height:38px;color:black;font-size:150%" placeholder="5558675309">
       <a href="#" class="btn btn-info" style="margin-top:-5px;">Send</a> -->
     </div>
