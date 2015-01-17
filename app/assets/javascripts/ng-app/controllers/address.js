@@ -1,7 +1,8 @@
 angular.module('myApp')
 .controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', function ($scope, $timeout, addressesService) {
 
-  $scope.isAllValid = false;
+  $scope.isAllValid = true;
+  $scope.isAllEmpty = true;
 
   var firstAddress = { address: "", placeholder: "i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305", isProcessing: false, isValid: true, isEmpty: true };
   var secondAddress = { address: "", placeholder: "optional second address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
@@ -31,9 +32,13 @@ angular.module('myApp')
     if (newValue != oldValue) {
       $timeout(function() {
         $scope.isAllValid = true;
+        $scope.isAllEmpty = true;
         _.each($scope.addresses, function(address) {
           if (address.isValid == false) {
             $scope.isAllValid = false;
+          }
+          if (address.isEmpty == false) {
+            $scope.isAllEmpty = false;
           }
         })
       }, 1);
