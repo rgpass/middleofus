@@ -38,7 +38,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'twilio-ruby'
 gem 'bower-rails'
 gem 'angular-rails-templates'
 

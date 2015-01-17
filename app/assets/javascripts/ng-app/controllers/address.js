@@ -35,7 +35,7 @@ angular.module('myApp')
       $scope.isSecondEmpty = true;
       $scope.isSecondValid = true;
     }
-  };
+  }
 
   $scope.submitAddresses = function() {
     var addresses = [$scope.formData.addressOne, $scope.formData.addressTwo];
@@ -46,14 +46,25 @@ angular.module('myApp')
     $scope.processing = false;
     $scope.error      = addressesService.error;
     $scope.results    = addressesService.results;  
-  };
+  }
 
   $scope.selectResult = function(result) {
     $scope.selectedResult = result;
-  }
+  };
 
   $scope.clearSelectedResult = function() {
     $scope.selectedResult = null;
-  }
+  };
+
+  $scope.createMessage = function() {
+    var phoneNumber = $scope.phoneNumber;
+    var place       = $scope.selectedResult.name;
+    var address     = $scope.selectedResult.address;
+    addressesService.sendMessage(phoneNumber, place, address).success(function(data) {
+      console.log(data);
+    }).error(function(data) {
+      console.log(data);
+    });
+  };
 
 }]);

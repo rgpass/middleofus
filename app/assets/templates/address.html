@@ -71,9 +71,9 @@
       <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">View on Yelp</a>
       <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info" target="_blank">View on Google Maps</a>
       <br><br>
-<!--       <h4>Text Address To:</h4>
-      <input type="text" style="height:38px;color:black;font-size:150%" placeholder="5558675309">
-      <a href="#" class="btn btn-info" style="margin-top:-5px;">Send</a> -->
+      <h4>Text Address To:</h4>
+      <input type="text" ng-model="phoneNumber" style="height:38px;color:black;font-size:150%" placeholder="5558675309">
+      <button ng-click="createMessage()" class="btn btn-info" style="margin-top:-5px;">Send</button>
     </div>
   </div>
 </div>
