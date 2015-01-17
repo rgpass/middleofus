@@ -1,45 +1,49 @@
 angular.module('myApp')
-.controller('AddressCtrl', ['$scope', 'addressesService', function ($scope, addressesService) {
+.controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', function ($scope, $timeout, addressesService) {
 
-  $scope.isFirstValid = true;
-  $scope.isSecondValid = true;
+  $scope.isAllValid = false;
 
-  $scope.$watch('formData.addressOne', setFirstValidations);
-  $scope.$watch('formData.addressTwo', setSecondValidations);
+  var firstAddress = { address: "", placeholder: "i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305", isProcessing: false, isValid: true, isEmpty: true };
+  var secondAddress = { address: "", placeholder: "optional second address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+  $scope.addresses = [firstAddress, secondAddress];
 
-  function setFirstValidations(newValue, oldValue) {
-    if (newValue) {
-      $scope.isFirstProcessing = true;
-      $scope.isFirstEmpty = true;
-      addressesService.isValidAddress($scope.formData.addressOne).success(function(data) {
-        $scope.isFirstValid = data.is_valid;
-        $scope.isFirstEmpty = false;
-        $scope.isFirstProcessing = false;
-      });
-    } else {
-      $scope.isFirstEmpty = true;
-      $scope.isFirstValid = true;
-    }
-  }
-
-  function setSecondValidations(newValue, oldValue) {
-    if (newValue) {
-      $scope.isSecondProcessing = true;
-      $scope.isSecondEmpty = true;
-      addressesService.isValidAddress($scope.formData.addressTwo).success(function(data) {
-        $scope.isSecondValid = data.is_valid;
-        $scope.isSecondEmpty = false;
-        $scope.isSecondProcessing = false;
-      });
-    } else {
-      $scope.isSecondEmpty = true;
-      $scope.isSecondValid = true;
-    }
+  $scope.addLocation = function() {
+    // TODO: Figure out why this causes an error
+    var newLocation = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+    $scope.addresses.push(newLocation);
   };
 
+  $scope.$watch('addresses', function(newValue, oldValue) {
+    for (var i = 0; i < newValue.length; i++) {
+      newLocation = newValue[i];
+      oldLocation = oldValue[i];
+      if (newLocation.address != oldLocation.address) {
+        newLocation.isEmpty = true;
+        newLocation.isProcessing = true;
+        addressesService.isValidAddress2(newLocation);
+      } else if (newLocation.address == "") {
+        newLocation.isEmpty = true;
+        newLocation.isProcessing = false;
+        newLocation.isValid = true;
+      }
+    }
+    if (newValue != oldValue) {
+      $timeout(function() {
+        $scope.isAllValid = true;
+        _.each($scope.addresses, function(address) {
+          if (address.isValid == false) {
+            $scope.isAllValid = false;
+          }
+        })
+      }, 1);
+    }
+  }, true);
+
   $scope.submitAddresses = function() {
-    var addresses = [$scope.formData.addressOne, $scope.formData.addressTwo];
-    addressesService.getResults(addresses).success(setVariables).error(setVariables);
+    var addressesOnly = _.map($scope.addresses, function(address) {
+      return address.address;
+    })
+    addressesService.getResults(addressesOnly).success(setVariables).error(setVariables);    
   };
 
   function setVariables() {

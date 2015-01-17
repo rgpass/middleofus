@@ -20,5 +20,14 @@ angular.module('myApp')
     params = { address: address };
     return $http.get(validityUrl + '.json', { params: params});
   }
+
+  this.isValidAddress2 = function(location) {
+    params = { address: location.address };
+    return $http.get(validityUrl + '.json', { params: params}).success(function(data) {
+      location.isValid = data.is_valid;
+      location.isEmpty = false;
+      location.isProcessing = false;
+    });
+  }
   
 }]);
