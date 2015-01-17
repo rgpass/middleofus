@@ -8,6 +8,7 @@ angular.module('myApp')
   $scope.addresses = [firstAddress, secondAddress];
 
   $scope.addLocation = function() {
+    // TODO: Figure out why this causes an error
     var newLocation = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
     $scope.addresses.push(newLocation);
   };
