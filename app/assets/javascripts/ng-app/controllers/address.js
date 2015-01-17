@@ -21,7 +21,7 @@ angular.module('myApp')
       if (newLocation.address != oldLocation.address) {
         newLocation.isEmpty = true;
         newLocation.isProcessing = true;
-        addressesService.isValidAddress2(newLocation);
+        addressesService.isValidAddress(newLocation);
       } else if (newLocation.address == "") {
         newLocation.isEmpty = true;
         newLocation.isProcessing = false;
@@ -41,14 +41,16 @@ angular.module('myApp')
   }, true);
 
   $scope.submitAddresses = function() {
+    $scope.results = false;
+    $scope.clearSelectedResult();
     var addressesOnly = _.map($scope.addresses, function(address) {
       return address.address;
     })
-    addressesService.getResults(addressesOnly).success(setVariables).error(setVariables);    
+    $scope.addressesOnly = _.filter(addressesOnly, function(address) { return address });
+    addressesService.getResults($scope.addressesOnly).success(setVariables).error(setVariables);
   };
 
   function setVariables() {
-    $scope.clearSelectedResult();
     $scope.processing = false;
     $scope.error      = addressesService.error;
     $scope.results    = addressesService.results;  

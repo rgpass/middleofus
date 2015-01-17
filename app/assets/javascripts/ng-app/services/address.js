@@ -16,12 +16,7 @@ angular.module('myApp')
     });
   };
 
-  this.isValidAddress = function(address) {
-    params = { address: address };
-    return $http.get(validityUrl + '.json', { params: params});
-  }
-
-  this.isValidAddress2 = function(location) {
+  this.isValidAddress = function(location) {
     params = { address: location.address };
     return $http.get(validityUrl + '.json', { params: params}).success(function(data) {
       location.isValid = data.is_valid;

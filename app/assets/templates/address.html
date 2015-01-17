@@ -24,7 +24,8 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>From My / Mid Point</th>
+          <th ng-show="addressesOnly.length > 1">From Midpoint</th>
+          <th ng-hide="addressesOnly.length > 1">Distance</th>
           <th>Yelp Rating</th>
           <th>Address</th>
         </tr>
