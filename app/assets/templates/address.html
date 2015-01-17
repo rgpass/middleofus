@@ -3,7 +3,7 @@
   <form name="addressForm" ng-submit="submitAddresses();">
     <p>Address, City, or Zip:</p>
     <div ng-repeat="address in addresses">
-      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5">
+      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">
       <div class="inline-block" ng-show="address.isProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
       <i class="fa fa-check green validation-indicator"  ng-show="address.isValid && !address.isEmpty"></i>
       <i class="fa fa-times red validation-indicator"    ng-hide="address.isValid || address.isEmpty"></i>
