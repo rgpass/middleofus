@@ -17,14 +17,18 @@ angular.module('myApp')
     });
   };
 
-  this.isValidAddress = function(address) {
-    params = { address: address };
-    return $http.get(validityUrl + '.json', { params: params});
-  };
-
   this.sendMessage = function(phoneNumber, place, address) {
     params = { phone_number: phoneNumber, place: place, address: address };
     return $http.post(messageUrl + '.json', params);
   };
+  
+  this.isValidAddress = function(location) {
+    params = { address: location.address };
+    return $http.get(validityUrl + '.json', { params: params}).success(function(data) {
+      location.isValid = data.is_valid;
+      location.isEmpty = false;
+      location.isProcessing = false;
+    });
+  }
   
 }]);
