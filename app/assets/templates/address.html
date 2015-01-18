@@ -67,6 +67,9 @@
       <h4>Text Address To:</h4>
       <input type="text" ng-model="phoneNumber" style="height:38px;color:black;font-size:150%" placeholder="5558675309">
       <button ng-click="createMessage()" class="btn btn-info" style="margin-top:-5px;">Send</button>
+      <div ng-show="sendingText" style="display:inline-block;"><i class="fa fa-spin fa-spinner" style="display:inline-block;"></i></div>
+      <i ng-show="sentText"  class="fa fa-check white validation-indicator"></i>
+      <i ng-show="textError"  class="fa fa-times white validation-indicator"></i>
     </div>
   </div>
 </div>

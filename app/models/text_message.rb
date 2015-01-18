@@ -2,7 +2,7 @@ class TextMessage
 
   def self.send_location_info(args)
     args[:address]      ||= "123 Fake Street"
-    args[:phone_number] ||= "4042180454"
+    args[:phone_number] ||= "8042918214"
     args[:place]        ||= "Taco Bell"
     phone_number  = args[:phone_number]
     place         = args[:place]

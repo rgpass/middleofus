@@ -19,9 +19,15 @@ angular.module('myApp')
 
   this.sendMessage = function(phoneNumber, place, address) {
     params = { phone_number: phoneNumber, place: place, address: address };
-    return $http.post(messageUrl + '.json', params);
+    return $http.post(messageUrl + '.json', params).success(function() {
+      that.textError = null;
+      that.sentText  = true;
+    }).error(function() {
+      that.textError = true;
+      that.sentText  = null;
+    })
   };
-  
+
   this.isValidAddress = function(location) {
     params = { address: location.address };
     return $http.get(validityUrl + '.json', { params: params}).success(function(data) {
@@ -29,6 +35,6 @@ angular.module('myApp')
       location.isEmpty = false;
       location.isProcessing = false;
     });
-  }
+  };
   
 }]);
