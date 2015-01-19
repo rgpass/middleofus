@@ -1,7 +1,7 @@
 angular.module('myApp')
 .controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', function ($scope, $timeout, addressesService) {
 
-  $scope.placeType  = "wifi";
+  $scope.placeType  = "free wifi";
   $scope.isAllValid = true;
   $scope.isAllEmpty = true;
 
