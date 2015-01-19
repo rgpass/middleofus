@@ -9483,3 +9483,8 @@ p.lead {
   height: 300px;
   width: 300px;
 }
+
+/* line 43, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+a {
+  cursor: pointer;
+}
