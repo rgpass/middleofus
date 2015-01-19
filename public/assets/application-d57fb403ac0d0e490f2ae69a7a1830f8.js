@@ -61626,10 +61626,10 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 }]);
 
 // Angular Rails Template
-// source: app/assets/templates/gmap.html
+// source: app/assets/templates/team.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("gmap.html", '<div ng-controller="AddressCtrl">\n\n  <div class="angular-google-map-container">\n    <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">\n    </ui-gmap-google-map>\n  </div>\n\n</div>')
+  $templateCache.put("team.html", '<div class="container">\n  <div class="row text-center">\n    <div class="col-sm-3">\n      <p><img src="assets/Gerry400.jpg" class="img-circle team"/></p>\n      <p class="lead">Gerry Pass</p>\n      <p class="role">Lead Developer</p>\n      <p class="bio">Gerry had a useful idea for how he could hack the planet, but being short on time, he gave the idea to Chris and Amanda for their group project at General Assembly. After seeing what they could accomplish, he asked them if they wanted to remake it from scratch to continue their learning, and like that, MiddleOf.Us was born.</p>\n    </div>\n    <div class="col-sm-3">\n      <p><img src="assets/Amanda400.jpg" class="img-circle team"/></p>\n      <p class="lead">Amanda Raymond</p>\n      <p class="role">Developer</p>\n      <p class="bio">Amanda joined MiddleOf.Us excited to create, code, and collaborate. She is enjoying advancing her full-stack skills and working with such a great team. Outside of MiddleOf.Us and other coding ventures, Amanda likes traveling and going to concerts.</small></p>\n    </div>\n    <div class="col-sm-3">\n      <p><img src="assets/Chris400.jpg" class="img-circle team"/></p>\n      <p class="lead">Chris Markel</p>\n      <p class="role">Developer</p>\n      <p class="bio">Chris joined MiddleOf.Us excited to recreate and improve upon its predecessor, Connect.Us. He is enjoying sharpening his development skills while collaborating with the team on core functionalities, UX, and design. When away from the code, Chris is likely dabbling outdoors or spending time with his wife.</small></p>\n    </div>\n    <div class="col-sm-3">\n      <p><img src="assets/Kevin400.jpg" class="img-circle team"/></p>\n      <p class="lead">Kevin Abdo</p>\n      <p class="role">Product Manager</p>\n      <p class="bio">Kevin approached the MiddleOf.Us team to gain experience to product management within the tech sector. Since then he has helped develop a vision for the site based on strong functionality for users and intuitive designs. Outside of MiddleOf.Us, Kevin can be found playing guitar in his rock band, The Better Brother.</small></p>\n    </div>\n  </div>\n</div>')
 }]);
 
 /*!
@@ -61670,17 +61670,17 @@ angular
        */
       $stateProvider
         .state('address', {
-          url: '/',
-          templateUrl: 'address.html',
-          controller: 'AddressCtrl'
+            url: '/',
+            templateUrl: 'address.html',
+            controller: 'AddressCtrl'
         })
         .state('donations', {
           url: '/donations',
           templateUrl: 'donations.html'
         })
-        .state('gmap', {
-          url: '/gmap',
-          templateUrl: 'gmap.html'
+        .state('team', {
+          url: '/team',
+          templateUrl: 'team.html'
         });
 
       // default fall back route

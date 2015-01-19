@@ -21,17 +21,17 @@ angular
        */
       $stateProvider
         .state('address', {
-          url: '/',
-          templateUrl: 'address.html',
-          controller: 'AddressCtrl'
+            url: '/',
+            templateUrl: 'address.html',
+            controller: 'AddressCtrl'
         })
         .state('donations', {
           url: '/donations',
           templateUrl: 'donations.html'
         })
-        .state('geoloc', {
-          url: '/geoloc',
-          templateUrl: 'geoloc.html'
+        .state('team', {
+          url: '/team',
+          templateUrl: 'team.html'
         });
 
       // default fall back route

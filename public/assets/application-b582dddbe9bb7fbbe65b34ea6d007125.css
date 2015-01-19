@@ -9416,6 +9416,28 @@ input[type="checkbox"] {
 .modal .close {
   color: #222222;
 }
+/* line 1, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/custom.css.scss */
+img.team {
+  width: 75%;
+  border: 2px #007196 solid;
+}
+
+/* line 6, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/custom.css.scss */
+p.bio {
+  text-align: left;
+  font-size: smaller;
+}
+
+/* line 11, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/custom.css.scss */
+p.role {
+  font-weight: 200;
+  margin-bottom: 17px;
+}
+
+/* line 16, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/custom.css.scss */
+p.lead {
+  margin-bottom: 2px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -9431,32 +9453,32 @@ input[type="checkbox"] {
 
 
  */
-/* line 20, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 18, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .inline-block {
   display: inline-block;
 }
 
-/* line 24, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 22, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .green {
   color: green;
 }
 
-/* line 28, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 26, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .red {
   color: red;
 }
 
-/* line 32, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 30, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .validation-indicator {
   margin-left: 5px;
 }
 
-/* line 36, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 34, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 #results tr {
   cursor: pointer;
 }
 
-/* line 40, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 38, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .angular-google-map-container {
   height: 300px;
   width: 300px;
