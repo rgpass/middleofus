@@ -19,13 +19,14 @@
     <div ng-repeat="address in addresses">
       <p ng-show="addresses.indexOf(address) == 1">Others (optional):</p>
       <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">
+      <a ng-click="addLocation();" ng-show="addresses[addresses.length - 1] === address"><i class="fa fa-plus validation-indicator" style="margin-top:5px"></i></a>
+      <a ng-click="removeLocation(address);" ng-show="addresses.indexOf(address) != 0"><i class="fa fa-minus validation-indicator" style="margin-top:5px"></i></a>
       <div class="inline-block" ng-show="address.isProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
       <i class="fa fa-check green validation-indicator"  ng-show="address.isValid && !address.isEmpty"></i>
       <i class="fa fa-times red validation-indicator"    ng-hide="address.isValid || address.isEmpty"></i>
       <br><br>
     </div>
     
-    <a class="btn btn-primary" ng-click="addLocation();">Add location</a>
     <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
       Submit
     </button>

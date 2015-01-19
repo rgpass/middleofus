@@ -6,7 +6,7 @@ angular.module('myApp')
   $scope.isAllEmpty = true;
 
   var firstAddress = { address: "", placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
-  var secondAddress = { address: "", placeholder: "optional second address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+  var secondAddress = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
   $scope.addresses = [firstAddress, secondAddress];
 
   $scope.addLocation = function() {
@@ -122,6 +122,11 @@ angular.module('myApp')
       $scope.isGeolocationProcessing = false;
       $scope.isGeolocationError = true;
     }
+  }
+
+  $scope.removeLocation = function(address) {
+    var i = $scope.addresses.indexOf(address);
+    $scope.addresses.splice(i, 1);
   }
 
 }]);
