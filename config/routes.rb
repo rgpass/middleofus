@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   match '/results',       to: 'places#results',                   via: 'get'
   match '/valid-address', to: 'places#valid',                     via: 'get'
   match '/message',       to: 'text_messages#send_location_info', via: 'post'
+  match '/geolocation',   to: 'places#geolocation',                via: 'get'
 
   get '*path' => 'application#index'
 
