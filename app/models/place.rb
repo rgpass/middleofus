@@ -5,10 +5,9 @@ class Place
 
     return '' if @@list_of_coords.blank?
 
-    average_latitude  = sum_coords[:latitude]   / @@list_of_coords.size
-    average_longitude = sum_coords[:longitude]  / @@list_of_coords.size
+    average_coords = Geocoder::Calculations.geographic_center(@@list_of_coords)
 
-    { latitude: average_latitude, longitude: average_longitude }
+    { latitude: average_coords[0], longitude: average_coords[1] }
   end
 
   def self.wifi_near(coords) # BUG: What if average returns blank
@@ -25,18 +24,7 @@ class Place
   private
 
     def self.coords(address)
-      coords = Geocoder.coordinates(address)
-      coords ? { latitude: coords[0], longitude: coords[1] } : nil
-    end
-
-    def self.sum_coords
-      zeroes = { latitude: 0, longitude: 0 }
-
-      @@list_of_coords.reduce(zeroes) do |sum_hash, coords|
-        sum_latitude = coords[:latitude] + sum_hash[:latitude]
-        sum_longitude = coords[:longitude] + sum_hash[:longitude]
-        { latitude: sum_latitude, longitude: sum_longitude }
-      end
+      Geocoder.coordinates(address)
     end
 
 end

@@ -59,14 +59,28 @@ angular.module('myApp')
     $scope.processing = false;
     $scope.error      = addressesService.error;
     $scope.results    = addressesService.results;  
-  };
+  }
 
   $scope.selectResult = function(result) {
     $scope.selectedResult = result;
-  }
+  };
 
   $scope.clearSelectedResult = function() {
     $scope.selectedResult = null;
+  };
+
+  $scope.createMessage = function() {
+    $scope.sendingText = true;
+    var phoneNumber = $scope.phoneNumber;
+    var place       = $scope.selectedResult.name;
+    var address     = $scope.selectedResult.address;
+    addressesService.sendMessage(phoneNumber, place, address).success(setTextVariables).error(setTextVariables);
+  };
+
+  function setTextVariables() {
+    $scope.sendingText = null;
+    $scope.sentText    = addressesService.sentText;
+    $scope.textError   = addressesService.textError;  
   }
 
 }]);
