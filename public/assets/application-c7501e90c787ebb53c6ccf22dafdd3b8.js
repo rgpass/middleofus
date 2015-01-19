@@ -61615,7 +61615,7 @@ angular.module('uiGmapgoogle-maps.extensions')
 // source: app/assets/templates/address.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>\n  <form name="addressForm" ng-submit="submitAddresses();">\n    <p>Address, City, or Zip:</p>\n    <div ng-repeat="address in addresses">\n      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">\n      <div class="inline-block" ng-show="address.isProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>\n      <i class="fa fa-check green validation-indicator"  ng-show="address.isValid && !address.isEmpty"></i>\n      <i class="fa fa-times red validation-indicator"    ng-hide="address.isValid || address.isEmpty"></i>\n      <br><br>\n    </div>\n    \n    <a class="btn btn-primary" ng-click="addLocation();">Add location</a>\n    <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">\n      Submit\n    </button>\n    <div ng-show="processing" style="display:inline-block;"><i class="fa fa-spin fa-spinner"style="display:inline-block;"></i></div>\n  </form>\n\n  <div ng-show="results && !selectedResult">\n    <h2>Closest {{results.length}} results</h2>\n    <p>Click for more info</p>\n    <table class="table table-striped table-hover">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th ng-show="addressesOnly.length > 1">From Midpoint</th>\n          <th ng-hide="addressesOnly.length > 1">Distance</th>\n          <th>Yelp Rating</th>\n          <th>Address</th>\n        </tr>\n      </thead>\n      <tbody id="results">\n        <tr ng-repeat="result in results" ng-click="selectResult(result);">\n          <td>{{result.name}}</td>\n          <td>{{result.distance}} mile(s)</td>\n          <td><img src="{{result.rating_image}}" /></td>\n          <td>{{result.address}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div ng-show="error">\n    <h2>{{error}}</h2>\n  </div>\n  <div ng-show="selectedResult">\n    <div class="alert alert-dismissable alert-primary">\n      <button type="button" class="close" ng-click="clearSelectedResult();">close</button>\n      <h2>{{selectedResult.name}}</h2>\n      <table>\n        <tbody>\n          <tr>\n            <td><h5 style="display:inline"><strong>Yelp rating:</strong></h5></td>\n            <td><h5 style="display:inline;margin-left:10px">{{selectedResult.rating}} / 5</h5></td>\n          </tr>\n          <tr>\n            <td><h5 style="display:inline"><strong>Address:</strong></h5></td>\n            <td><h5 style="display:inline-block;margin-left:10px">{{selectedResult.address}}</h5></td>\n          </tr>\n        </tbody>\n      </table>\n      <br>\n      <h4>Actions:</h4>\n      <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">View on Yelp</a>\n      <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info" target="_blank">View on Google Maps</a>\n      <br><br>\n      <h4>Text Address To:</h4>\n      <input type="text" ng-model="phoneNumber" style="height:38px;color:black;font-size:150%" placeholder="5558675309">\n      <button ng-click="createMessage()" class="btn btn-info" style="margin-top:-5px;">Send</button>\n      <div ng-show="sendingText" style="display:inline-block;"><i class="fa fa-spin fa-spinner" style="display:inline-block;"></i></div>\n      <i ng-show="sentText"  class="fa fa-check white validation-indicator"></i>\n      <i ng-show="textError"  class="fa fa-times white validation-indicator"></i>\n    </div>\n  </div>\n</div>')
+  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>\n  <form name="addressForm" ng-submit="submitAddresses();">\n    <span style="padding-bottom:10px;display:inline-block;">\n      My location: (or <a ng-click="getGeolocation();">find my location</a>)\n      <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>\n      <span ng-show="isGeolocationError">Enable location services</span>\n    </span>\n    <div ng-repeat="address in addresses">\n      <p ng-show="addresses.indexOf(address) == 1">Others (optional):</p>\n      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">\n      <div class="inline-block" ng-show="address.isProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>\n      <i class="fa fa-check green validation-indicator"  ng-show="address.isValid && !address.isEmpty"></i>\n      <i class="fa fa-times red validation-indicator"    ng-hide="address.isValid || address.isEmpty"></i>\n      <br><br>\n    </div>\n    \n    <a class="btn btn-primary" ng-click="addLocation();">Add location</a>\n    <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">\n      Submit\n    </button>\n    <div ng-show="processing" style="display:inline-block;"><i class="fa fa-spin fa-spinner"style="display:inline-block;"></i></div>\n  </form>\n\n  <div ng-show="results && !selectedResult">\n    <h2>Closest {{results.length}} results</h2>\n    <p>Click for more info</p>\n    <table class="table table-striped table-hover">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th ng-show="addressesOnly.length > 1">From Midpoint</th>\n          <th ng-hide="addressesOnly.length > 1">Distance</th>\n          <th>Yelp Rating</th>\n          <th>Address</th>\n        </tr>\n      </thead>\n      <tbody id="results">\n        <tr ng-repeat="result in results" ng-click="selectResult(result);">\n          <td>{{result.name}}</td>\n          <td>{{result.distance}} mile(s)</td>\n          <td><img src="{{result.rating_image}}" /></td>\n          <td>{{result.address}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div ng-show="error">\n    <h2>{{error}}</h2>\n  </div>\n  <div ng-show="selectedResult">\n    <div class="alert alert-dismissable alert-primary">\n      <button type="button" class="close" ng-click="clearSelectedResult();">close</button>\n      <h2>{{selectedResult.name}}</h2>\n      <table>\n        <tbody>\n          <tr>\n            <td><h5 style="display:inline"><strong>Yelp rating:</strong></h5></td>\n            <td><h5 style="display:inline;margin-left:10px">{{selectedResult.rating}} / 5</h5></td>\n          </tr>\n          <tr>\n            <td><h5 style="display:inline"><strong>Address:</strong></h5></td>\n            <td><h5 style="display:inline-block;margin-left:10px">{{selectedResult.address}}</h5></td>\n          </tr>\n        </tbody>\n      </table>\n      <br>\n      <h4>Actions:</h4>\n      <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">View on Yelp</a>\n      <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info" target="_blank">View on Google Maps</a>\n      <br><br>\n      <h4>Text Address To:</h4>\n      <input type="text" ng-model="phoneNumber" style="height:38px;color:black;font-size:150%" placeholder="5558675309">\n      <button ng-click="createMessage()" class="btn btn-info" style="margin-top:-5px;">Send</button>\n      <div ng-show="sendingText" style="display:inline-block;"><i class="fa fa-spin fa-spinner" style="display:inline-block;"></i></div>\n      <i ng-show="sentText"  class="fa fa-check white validation-indicator"></i>\n      <i ng-show="textError"  class="fa fa-times white validation-indicator"></i>\n    </div>\n  </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -61695,7 +61695,7 @@ angular.module('myApp')
   $scope.isAllValid = true;
   $scope.isAllEmpty = true;
 
-  var firstAddress = { address: "", placeholder: "i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305", isProcessing: false, isValid: true, isEmpty: true };
+  var firstAddress = { address: "", placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
   var secondAddress = { address: "", placeholder: "optional second address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
   $scope.addresses = [firstAddress, secondAddress];
 
@@ -61784,6 +61784,35 @@ angular.module('myApp')
   $scope.options = {
     scrollWheel: false
   };
+
+  $scope.getGeolocation = function() {
+    $scope.isGeolocationProcessing = true;
+    $scope.isGeolocationError = false;
+    $scope.addresses[0].placeholder = "Finding your location...";
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        $timeout(function() {
+          $scope.addresses[0].address = position.coords.latitude + ", " + position.coords.longitude;
+          $scope.isGeolocationProcessing = false;
+          $scope.addresses[0].placeholder = "address, city, or zip";
+        }, 1);
+      }, function() {
+        handleNoGeolocation(true);
+      });
+    } else {
+      handleNoGeolocation(false);
+    }
+  }
+
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag) {
+      $scope.isGeolocationProcessing = false;
+      $scope.isGeolocationError = true;
+    } else {
+      $scope.isGeolocationProcessing = false;
+      $scope.isGeolocationError = true;
+    }
+  }
 
 }]);
 angular.module('myApp').directive('ngDebounce', ['$timeout', function($timeout) {
