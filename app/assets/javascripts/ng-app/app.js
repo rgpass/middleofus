@@ -28,6 +28,10 @@ angular
         .state('donations', {
           url: '/donations',
           templateUrl: 'donations.html'
+        })
+        .state('geoloc', {
+          url: '/geoloc',
+          templateUrl: 'geoloc.html'
         });
 
       // default fall back route
