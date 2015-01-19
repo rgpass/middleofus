@@ -83,4 +83,15 @@ angular.module('myApp')
     $scope.textError   = addressesService.textError;  
   }
 
+  $scope.map = {
+    center: {
+      latitude: 30,
+      longitude: -84
+    },
+    zoom: 10
+  };
+  $scope.options = {
+    scrollWheel: false
+  };
+
 }]);
