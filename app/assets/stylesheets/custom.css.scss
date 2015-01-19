@@ -3,6 +3,16 @@ img.team {
   border: 2px #007196 solid;
 }
 
-p.team {
-  text-align: justify;
+p.bio {
+  text-align: left;
+  font-size: smaller;
+}
+
+p.role {
+  font-weight: 200;
+  margin-bottom: 17px;
+}
+
+p.lead {
+  margin-bottom: 2px;
 }
