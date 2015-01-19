@@ -1,9 +1,10 @@
 angular.module('myApp')
 .service('addressesService', ["$http", function($http) {
 
-  var that = this;
-  var resultsUrl = '/results';
-  var validityUrl = '/valid-address'
+  var that        = this;
+  var resultsUrl  = '/results';
+  var validityUrl = '/valid-address';
+  var messageUrl  = '/message';
 
   this.getResults = function(addresses) {
     params = { addresses: JSON.stringify(addresses) };
@@ -16,6 +17,17 @@ angular.module('myApp')
     });
   };
 
+  this.sendMessage = function(phoneNumber, place, address) {
+    params = { phone_number: phoneNumber, place: place, address: address };
+    return $http.post(messageUrl + '.json', params).success(function() {
+      that.textError = null;
+      that.sentText  = true;
+    }).error(function() {
+      that.textError = true;
+      that.sentText  = null;
+    })
+  };
+
   this.isValidAddress = function(location) {
     params = { address: location.address };
     return $http.get(validityUrl + '.json', { params: params}).success(function(data) {
@@ -23,6 +35,6 @@ angular.module('myApp')
       location.isEmpty = false;
       location.isProcessing = false;
     });
-  }
+  };
   
 }]);
