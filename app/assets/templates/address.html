@@ -4,6 +4,7 @@
     <span style="padding-bottom:10px;display:inline-block;">
       My location: (or <a ng-click="getGeolocation();">find my location</a>)
       <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
+      <span ng-show="isGeolocationError">Enable location services</span>
     </span>
     <div ng-repeat="address in addresses">
       <p ng-show="addresses.indexOf(address) == 1">Others (optional):</p>

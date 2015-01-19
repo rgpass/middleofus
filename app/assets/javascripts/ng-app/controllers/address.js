@@ -96,14 +96,31 @@ angular.module('myApp')
 
   $scope.getGeolocation = function() {
     $scope.isGeolocationProcessing = true;
+    $scope.isGeolocationError = false;
     $scope.addresses[0].placeholder = "Finding your location...";
-    navigator.geolocation.getCurrentPosition(function(position) {
-      $timeout(function() {
-        $scope.addresses[0].address = position.coords.latitude + ", " + position.coords.longitude;
-        $scope.isGeolocationProcessing = false;
-        $scope.addresses[0].placeholder = "address, city, or zip";
-      }, 1);
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        $timeout(function() {
+          $scope.addresses[0].address = position.coords.latitude + ", " + position.coords.longitude;
+          $scope.isGeolocationProcessing = false;
+          $scope.addresses[0].placeholder = "address, city, or zip";
+        }, 1);
+      }, function() {
+        handleNoGeolocation(true);
+      });
+    } else {
+      handleNoGeolocation(false);
+    }
+  }
+
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag) {
+      $scope.isGeolocationProcessing = false;
+      $scope.isGeolocationError = true;
+    } else {
+      $scope.isGeolocationProcessing = false;
+      $scope.isGeolocationError = true;
+    }
   }
 
 }]);
