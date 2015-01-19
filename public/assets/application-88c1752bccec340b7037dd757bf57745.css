@@ -9455,3 +9455,9 @@ input[type="checkbox"] {
 #results tr {
   cursor: pointer;
 }
+
+/* line 40, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.angular-google-map-container {
+  height: 300px;
+  width: 300px;
+}
