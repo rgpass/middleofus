@@ -10,8 +10,8 @@ class Place
     { latitude: average_coords[0], longitude: average_coords[1] }
   end
 
-  def self.wifi_near(coords) # BUG: What if average returns blank
-    params = { term: 'free wifi' }
+  def self.search_near(coords, place_type) # BUG: What if average returns blank
+    params = { term: place_type }
     places = Yelp.client.search_by_coordinates(coords, params).businesses
     places.reject { |place| place.is_closed }.sort_by { |place| place.distance }
   end

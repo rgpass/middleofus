@@ -1,6 +1,17 @@
 <div ng-controller="AddressCtrl">
-  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>
-  <form name="addressForm" ng-submit="submitAddresses();">
+
+  <h1>I want to find
+    <select id="select" ng-model="placeType">
+      <option value="wifi">wifi</option>
+      <option value="restaurant">restaurants</option>
+      <option value="coffee">coffee</option>
+      <option value="bar">bars</option>
+    </select>
+    in the MiddleOf.Us
+  </h1>
+
+  <form name="addressForm" ng-submit="submitInfo();">
+    <p>Address, City, or Zip:</p>
     <span style="padding-bottom:10px;display:inline-block;">
       My location: (or <a ng-click="getGeolocation();">find my location</a>)
       <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
