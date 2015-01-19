@@ -4,7 +4,7 @@ angular.module('myApp')
   $scope.isAllValid = true;
   $scope.isAllEmpty = true;
 
-  var firstAddress = { address: "", placeholder: "i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305", isProcessing: false, isValid: true, isEmpty: true };
+  var firstAddress = { address: "", placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
   var secondAddress = { address: "", placeholder: "optional second address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
   $scope.addresses = [firstAddress, secondAddress];
 
@@ -93,5 +93,17 @@ angular.module('myApp')
   $scope.options = {
     scrollWheel: false
   };
+
+  $scope.getGeolocation = function() {
+    $scope.isGeolocationProcessing = true;
+    $scope.addresses[0].placeholder = "Finding your location...";
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $timeout(function() {
+        $scope.addresses[0].address = position.coords.latitude + ", " + position.coords.longitude;
+        $scope.isGeolocationProcessing = false;
+        $scope.addresses[0].placeholder = "address, city, or zip";
+      }, 1);
+    });
+  }
 
 }]);
