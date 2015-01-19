@@ -1,6 +1,7 @@
 angular.module('myApp')
 .controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', function ($scope, $timeout, addressesService) {
 
+  $scope.placeType  = "wifi";
   $scope.isAllValid = true;
   $scope.isAllEmpty = true;
 
@@ -45,14 +46,14 @@ angular.module('myApp')
     }
   }, true);
 
-  $scope.submitAddresses = function() {
+  $scope.submitInfo = function() {
     $scope.results = false;
     $scope.clearSelectedResult();
     var addressesOnly = _.map($scope.addresses, function(address) {
       return address.address;
     })
     $scope.addressesOnly = _.filter(addressesOnly, function(address) { return address });
-    addressesService.getResults($scope.addressesOnly).success(setVariables).error(setVariables);
+    addressesService.getResults($scope.addressesOnly, $scope.placeType).success(setVariables).error(setVariables);
   };
 
   function setVariables() {

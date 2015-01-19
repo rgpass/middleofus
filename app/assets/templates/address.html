@@ -1,6 +1,16 @@
 <div ng-controller="AddressCtrl">
-  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>
-  <form name="addressForm" ng-submit="submitAddresses();">
+
+  <h1>I want to find
+    <select id="select" ng-model="placeType">
+      <option value="wifi">wifi</option>
+      <option value="restaurant">restaurants</option>
+      <option value="coffee">coffee</option>
+      <option value="bar">bars</option>
+    </select>
+    in the MiddleOf.Us
+  </h1>
+
+  <form name="addressForm" ng-submit="submitInfo();">
     <p>Address, City, or Zip:</p>
     <div ng-repeat="address in addresses">
       <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">
