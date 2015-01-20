@@ -64,6 +64,9 @@ angular.module('myApp')
 
   $scope.selectResult = function(result) {
     $scope.selectedResult = result;
+    $scope.sentText       = false;
+    $scope.textError      = false; 
+
   };
 
   $scope.clearSelectedResult = function() {
@@ -71,6 +74,8 @@ angular.module('myApp')
   };
 
   $scope.createMessage = function() {
+    $scope.sentText       = false;
+    $scope.textError      = false; 
     $scope.sendingText = true;
     var phoneNumber = $scope.phoneNumber;
     var place       = $scope.selectedResult.name;
@@ -79,7 +84,7 @@ angular.module('myApp')
   };
 
   function setTextVariables() {
-    $scope.sendingText = null;
+    $scope.sendingText = false;
     $scope.sentText    = addressesService.sentText;
     $scope.textError   = addressesService.textError;  
   }
@@ -129,5 +134,6 @@ angular.module('myApp')
     var i = $scope.addresses.indexOf(address);
     $scope.addresses.splice(i, 1);
   }
+
 
 }]);
