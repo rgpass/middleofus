@@ -58,6 +58,9 @@ angular.module('myApp')
 
   $scope.selectResult = function(result) {
     $scope.selectedResult = result;
+    $scope.sentText       = false;
+    $scope.textError      = false; 
+
   };
 
   $scope.clearSelectedResult = function() {
@@ -73,9 +76,10 @@ angular.module('myApp')
   };
 
   function setTextVariables() {
-    $scope.sendingText = null;
+    $scope.sendingText = false;
     $scope.sentText    = addressesService.sentText;
     $scope.textError   = addressesService.textError;  
   }
+
 
 }]);

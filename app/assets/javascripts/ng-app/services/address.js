@@ -20,11 +20,11 @@ angular.module('myApp')
   this.sendMessage = function(phoneNumber, place, address) {
     params = { phone_number: phoneNumber, place: place, address: address };
     return $http.post(messageUrl + '.json', params).success(function() {
-      that.textError = null;
+      that.textError = false;
       that.sentText  = true;
     }).error(function() {
       that.textError = true;
-      that.sentText  = null;
+      that.sentText  = false;
     })
   };
 
