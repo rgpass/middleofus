@@ -99,6 +99,7 @@ angular.module('myApp')
     $scope.isGeolocationProcessing = true;
     $scope.isGeolocationError = false;
     $scope.addresses[0].placeholder = "Finding your location...";
+    $scope.addresses[0].address = "";
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         $timeout(function() {

@@ -5,5 +5,6 @@ json.array!(@places) do |place|
   json.rating_image   place.rating_img_url
   json.website        place.url
   json.distance       (place.distance*0.000621371).round(1)
+  json.deals          place.try(:deals).try(:first).try(:options).try(:first)
 end
 
