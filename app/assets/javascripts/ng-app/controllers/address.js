@@ -1,10 +1,12 @@
 angular.module('myApp')
 .controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', function ($scope, $timeout, addressesService) {
 
-  $scope.isAllValid = false;
+  $scope.placeType  = "free wifi";
+  $scope.isAllValid = true;
+  $scope.isAllEmpty = true;
 
-  var firstAddress = { address: "", placeholder: "i.e. 273 Buckhead Avenue Northeast, Atlanta, GA 30305", isProcessing: false, isValid: true, isEmpty: true };
-  var secondAddress = { address: "", placeholder: "optional second address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+  var firstAddress = { address: "", placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+  var secondAddress = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
   $scope.addresses = [firstAddress, secondAddress];
 
   $scope.addLocation = function() {
@@ -31,23 +33,27 @@ angular.module('myApp')
     if (newValue != oldValue) {
       $timeout(function() {
         $scope.isAllValid = true;
+        $scope.isAllEmpty = true;
         _.each($scope.addresses, function(address) {
           if (address.isValid == false) {
             $scope.isAllValid = false;
+          }
+          if (address.isEmpty == false) {
+            $scope.isAllEmpty = false;
           }
         })
       }, 1);
     }
   }, true);
 
-  $scope.submitAddresses = function() {
+  $scope.submitInfo = function() {
     $scope.results = false;
     $scope.clearSelectedResult();
     var addressesOnly = _.map($scope.addresses, function(address) {
       return address.address;
     })
     $scope.addressesOnly = _.filter(addressesOnly, function(address) { return address });
-    addressesService.getResults($scope.addressesOnly).success(setVariables).error(setVariables);
+    addressesService.getResults($scope.addressesOnly, $scope.placeType).success(setVariables).error(setVariables);
   };
 
   function setVariables() {
@@ -81,5 +87,53 @@ angular.module('myApp')
     $scope.textError   = addressesService.textError;  
   }
 
+<<<<<<< HEAD
+=======
+  $scope.map = {
+    center: {
+      latitude: 30,
+      longitude: -84
+    },
+    zoom: 10
+  };
+  $scope.options = {
+    scrollWheel: false
+  };
+
+  $scope.getGeolocation = function() {
+    $scope.isGeolocationProcessing = true;
+    $scope.isGeolocationError = false;
+    $scope.addresses[0].placeholder = "Finding your location...";
+    $scope.addresses[0].address = "";
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        $timeout(function() {
+          $scope.addresses[0].address = position.coords.latitude + ", " + position.coords.longitude;
+          $scope.isGeolocationProcessing = false;
+          $scope.addresses[0].placeholder = "address, city, or zip";
+        }, 1);
+      }, function() {
+        handleNoGeolocation(true);
+      });
+    } else {
+      handleNoGeolocation(false);
+    }
+  }
+
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag) {
+      $scope.isGeolocationProcessing = false;
+      $scope.isGeolocationError = true;
+    } else {
+      $scope.isGeolocationProcessing = false;
+      $scope.isGeolocationError = true;
+    }
+  }
+
+  $scope.removeLocation = function(address) {
+    var i = $scope.addresses.indexOf(address);
+    $scope.addresses.splice(i, 1);
+  }
+>>>>>>> master
 
 }]);

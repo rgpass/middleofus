@@ -1,17 +1,35 @@
 <div ng-controller="AddressCtrl">
-  <h1>I want to find <br class="visible-xs">wi-fi in the MiddleOf.Us</h1>
-  <form name="addressForm" ng-submit="submitAddresses();">
-    <p>Address, City, or Zip:</p>
+
+  <h1>I want to find
+    <select class="btn btn-primary btn-lg" ng-model="placeType">
+      <option value="free wifi">free wifi</option>
+      <option value="food">food</option>
+      <option value="coffee">coffee</option>
+      <option value="bar">bars</option>
+      <option value="yogurt">yogurt</option>
+      <option value="">anything</option>
+    </select>
+    in the MiddleOf.Us
+  </h1>
+
+  <form name="addressForm" ng-submit="submitInfo();">
+    <span style="padding-bottom:10px;display:inline-block;">
+      My location: (or <a ng-click="getGeolocation();">find my location</a>)
+      <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
+      <span ng-show="isGeolocationError">Enable location services</span>
+    </span>
     <div ng-repeat="address in addresses">
-      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5">
+      <p ng-show="addresses.indexOf(address) == 1">Others (optional):</p>
+      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">
+      <a ng-click="addLocation();" ng-show="addresses[addresses.length - 1] === address"><i class="fa fa-plus validation-indicator" style="margin-top:5px"></i></a>
+      <a ng-click="removeLocation(address);" ng-show="addresses.indexOf(address) != 0"><i class="fa fa-minus validation-indicator" style="margin-top:5px"></i></a>
       <div class="inline-block" ng-show="address.isProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
       <i class="fa fa-check green validation-indicator"  ng-show="address.isValid && !address.isEmpty"></i>
       <i class="fa fa-times red validation-indicator"    ng-hide="address.isValid || address.isEmpty"></i>
       <br><br>
     </div>
     
-    <a class="btn btn-primary" ng-click="addLocation();">Add location</a>
-    <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
+    <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
       Submit
     </button>
     <div ng-show="processing" style="display:inline-block;"><i class="fa fa-spin fa-spinner"style="display:inline-block;"></i></div>
@@ -31,8 +49,10 @@
         </tr>
       </thead>
       <tbody id="results">
-        <tr ng-repeat="result in results" ng-click="selectResult(result);">
-          <td>{{result.name}}</td>
+        <tr ng-repeat="result in results" ng-click="selectResult(result);" ng-class="{success: result.deals}">
+          <td>
+            <i class="fa fa-dollar strong" style="margin-right:5px;" ng-show="result.deals"></i>{{result.name}}
+          </td>
           <td>{{result.distance}} mile(s)</td>
           <td><img src="{{result.rating_image}}" /></td>
           <td>{{result.address}}</td>
@@ -61,6 +81,7 @@
       </table>
       <br>
       <h4>Actions:</h4>
+      <a href="{{selectedResult.deals['hash']['purchase_url']}}" class="btn btn-success" target="_blank" ng-show="selectedResult.deals">Coupon: {{selectedResult.deals["hash"]["title"]}}</a>
       <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">View on Yelp</a>
       <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info" target="_blank">View on Google Maps</a>
       <br><br>

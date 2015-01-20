@@ -6,8 +6,8 @@ angular.module('myApp')
   var validityUrl = '/valid-address';
   var messageUrl  = '/message';
 
-  this.getResults = function(addresses) {
-    params = { addresses: JSON.stringify(addresses) };
+  this.getResults = function(addresses, placeType) {
+    params = { addresses: JSON.stringify(addresses), place_type: placeType };
     return $http.get(resultsUrl + '.json', { params: params }).success(function(data) {
       that.error    = null;
       that.results  = data;

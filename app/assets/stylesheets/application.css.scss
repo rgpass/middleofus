@@ -14,18 +14,20 @@
  *= require_self
  */
 
-@import "ng-app/main";
-
 .inline-block {
   display: inline-block;
 }
 
+.strong {
+  font-weight: bold;
+}
+
 .green {
-  color: green;
+  color: #43ac6a;
 }
 
 .red {
-  color: red;
+  color: #f04124;
 }
 
 .validation-indicator {
@@ -33,5 +35,14 @@
 }
 
 #results tr {
+  cursor: pointer;
+}
+
+.angular-google-map-container {
+  height: 300px;
+  width: 300px;
+}
+
+a {
   cursor: pointer;
 }
