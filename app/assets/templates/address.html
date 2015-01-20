@@ -3,9 +3,11 @@
   <h1>I want to find
     <select class="btn btn-primary btn-lg" ng-model="placeType">
       <option value="free wifi">free wifi</option>
-      <option value="restaurant">restaurants</option>
+      <option value="food">food</option>
       <option value="coffee">coffee</option>
       <option value="bar">bars</option>
+      <option value="yogurt">yogurt</option>
+      <option value="">anything</option>
     </select>
     in the MiddleOf.Us
   </h1>
@@ -47,8 +49,10 @@
         </tr>
       </thead>
       <tbody id="results">
-        <tr ng-repeat="result in results" ng-click="selectResult(result);">
-          <td>{{result.name}}</td>
+        <tr ng-repeat="result in results" ng-click="selectResult(result);" ng-class="{success: result.deals}">
+          <td>
+            <i class="fa fa-dollar strong" style="margin-right:5px;" ng-show="result.deals"></i>{{result.name}}
+          </td>
           <td>{{result.distance}} mile(s)</td>
           <td><img src="{{result.rating_image}}" /></td>
           <td>{{result.address}}</td>
@@ -77,6 +81,7 @@
       </table>
       <br>
       <h4>Actions:</h4>
+      <a href="{{selectedResult.deals['hash']['purchase_url']}}" class="btn btn-success" target="_blank" ng-show="selectedResult.deals">Coupon: {{selectedResult.deals["hash"]["title"]}}</a>
       <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">View on Yelp</a>
       <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info" target="_blank">View on Google Maps</a>
       <br><br>
