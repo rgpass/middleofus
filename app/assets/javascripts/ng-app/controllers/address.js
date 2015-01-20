@@ -74,6 +74,8 @@ angular.module('myApp')
   };
 
   $scope.createMessage = function() {
+    $scope.sentText       = false;
+    $scope.textError      = false; 
     $scope.sendingText = true;
     var phoneNumber = $scope.phoneNumber;
     var place       = $scope.selectedResult.name;
@@ -87,8 +89,6 @@ angular.module('myApp')
     $scope.textError   = addressesService.textError;  
   }
 
-<<<<<<< HEAD
-=======
   $scope.map = {
     center: {
       latitude: 30,
@@ -134,6 +134,6 @@ angular.module('myApp')
     var i = $scope.addresses.indexOf(address);
     $scope.addresses.splice(i, 1);
   }
->>>>>>> master
+
 
 }]);
