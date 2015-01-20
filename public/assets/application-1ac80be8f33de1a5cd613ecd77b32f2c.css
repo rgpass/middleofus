@@ -9459,32 +9459,37 @@ p.lead {
 }
 
 /* line 22, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-.green {
-  color: green;
+.strong {
+  font-weight: bold;
 }
 
 /* line 26, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-.red {
-  color: red;
+.green {
+  color: #43ac6a;
 }
 
 /* line 30, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.red {
+  color: #f04124;
+}
+
+/* line 34, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .validation-indicator {
   margin-left: 5px;
 }
 
-/* line 34, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 38, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 #results tr {
   cursor: pointer;
 }
 
-/* line 38, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 42, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .angular-google-map-container {
   height: 300px;
   width: 300px;
 }
 
-/* line 43, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 47, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 a {
   cursor: pointer;
 }
