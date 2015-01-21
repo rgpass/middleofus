@@ -30,6 +30,10 @@
   color: #f04124;
 }
 
+.white {
+  color: white;
+}
+
 .validation-indicator {
   margin-left: 5px;
 }
@@ -45,4 +49,18 @@
 
 a {
   cursor: pointer;
+}
+
+.top-pad {
+  padding-top:5px;
+}
+
+.first-address {
+  display:block;
+  padding-top:27px;
+}
+
+.other-addresses {
+  display:block;
+  margin-top: 4px;
 }

@@ -16,19 +16,24 @@
 
   <form name="addressForm" ng-submit="submitInfo();">
     <span style="padding-bottom:10px;display:inline-block;">
-      My location: (or <a ng-click="getGeolocation();">find my location</a>)
+      My location or <a ng-click="getGeolocation();"><i class="fa fa-location-arrow"></i> Locate Me</a>
       <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
       <span ng-show="isGeolocationError">Enable location services</span>
     </span>
     <div ng-repeat="address in addresses">
-      <p ng-show="addresses.indexOf(address) == 1">Others (optional):</p>
+      <p ng-show="addresses.indexOf(address) == 1">
+        Other(s) <a ng-click="addLocation();"><i class="fa fa-plus validation-indicator" style="margin-top:5px"></i> Add Location</a>
+      </p>
       <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">
-      <a ng-click="addLocation();" ng-show="addresses[addresses.length - 1] === address"><i class="fa fa-plus validation-indicator" style="margin-top:5px"></i></a>
-      <a ng-click="removeLocation(address);" ng-show="addresses.indexOf(address) != 0"><i class="fa fa-minus validation-indicator" style="margin-top:5px"></i></a>
-      <div class="inline-block" ng-show="address.isProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
-      <i class="fa fa-check green validation-indicator"  ng-show="address.isValid && !address.isEmpty"></i>
-      <i class="fa fa-times red validation-indicator"    ng-hide="address.isValid || address.isEmpty"></i>
-      <br><br>
+      
+      <a ng-click="removeLocation(address);" ng-show="addresses.indexOf(address) != 0"><i class="fa fa-minus validation-indicator top-pad"></i></a>
+      <div class="address-status" style="margin-bottom:5px;" ng-class="{'first-address': addresses.indexOf(address) == 0, 'other-addresses': addresses.indexOf(address) > 0}">
+        <span class="white" ng-show="address.isEmpty && !address.isProcessing">Placeholder</span>
+        <span ng-show="address.isProcessing">Searching...</span>
+        <span class="green" ng-show="address.isValid && !address.isEmpty">Found: 3040 Peachtree Road, Atlanta, GA 30305, USA</span>
+        <span class="red" ng-hide="address.isValid || address.isEmpty">Address not found</span>
+      </div>
+      <p ng-show="addresses.length == 1"><a ng-click="addLocation();"><i class="fa fa-plus validation-indicator" style="margin-top:5px"></i> Add Location</a></p>
     </div>
     
     <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
