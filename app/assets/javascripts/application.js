@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_ui
+//= require touch_punch
 //= require angular
 //= require angular-animate/angular-animate.js
 //= require angular-ui-router
@@ -23,7 +25,7 @@
 //= require_tree ../templates
 //= require_tree .
 
-$(document).on('click tap', function (event) {
+$(document).on('click', function (event) {
   var clickover = $(event.target);
   var $navbar = $(".navbar-collapse");               
   var _opened = $navbar.hasClass("in");
