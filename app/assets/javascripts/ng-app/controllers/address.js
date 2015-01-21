@@ -67,7 +67,7 @@ angular.module('myApp')
 
   function scrollToResults() {
     $('body').animate({
-        scrollTop: $("#results").offset().top
+      scrollTop: $("#results").offset().top
     }, 500);
   }
 
