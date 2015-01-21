@@ -59,7 +59,16 @@ angular.module('myApp')
   function setVariables() {
     $scope.processing = false;
     $scope.error      = addressesService.error;
-    $scope.results    = addressesService.results;  
+    $scope.results    = addressesService.results;
+    if ($scope.error == null) {
+      $timeout(scrollToResults, 1);
+    }
+  }
+
+  function scrollToResults() {
+    $('body').animate({
+        scrollTop: $("#results").offset().top
+    }, 500);
   }
 
   $scope.selectResult = function(result) {
@@ -71,6 +80,7 @@ angular.module('myApp')
 
   $scope.clearSelectedResult = function() {
     $scope.selectedResult = null;
+    $timeout(scrollToResults, 1);
   };
 
   $scope.createMessage = function() {
