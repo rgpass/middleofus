@@ -61950,7 +61950,7 @@ angular.module('myApp')
 
 
 
-$(document).on('click tap', function (event) {
+$(document).on('click tap touchend', function (event) {
   var clickover = $(event.target);
   var $navbar = $(".navbar-collapse");               
   var _opened = $navbar.hasClass("in");
