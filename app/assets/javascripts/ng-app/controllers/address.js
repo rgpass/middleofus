@@ -75,8 +75,14 @@ angular.module('myApp')
     $scope.selectedResult = result;
     $scope.sentText       = false;
     $scope.textError      = false; 
-
+    $timeout(scrollToResult, 1);
   };
+
+  function scrollToResult() {
+    $('body').animate({
+      scrollTop: $("#result").offset().top
+    }, 250);
+  }
 
   $scope.clearSelectedResult = function() {
     $scope.selectedResult = null;
