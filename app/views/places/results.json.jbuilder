@@ -1,6 +1,6 @@
 json.array!(@places) do |place|
   json.name           place.name
-  json.address        place.location.display_address.join(' ')
+  json.address        "#{place.location.display_address.first}, #{place.location.display_address.last}"
   json.rating         place.rating
   json.rating_image   place.rating_img_url
   json.website        place.url
