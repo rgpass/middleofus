@@ -134,9 +134,11 @@ angular.module('myApp')
     if (errorFlag) {
       $scope.isGeolocationProcessing = false;
       $scope.isGeolocationError = true;
+      $scope.geolocationErrorMessage = "Geolocation failed. Try again."
     } else {
       $scope.isGeolocationProcessing = false;
       $scope.isGeolocationError = true;
+      $scope.geolocationErrorMessage = "Your browser does not support geolocation."
     }
   }
 

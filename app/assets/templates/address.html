@@ -18,7 +18,7 @@
     <span style="padding-bottom:10px;display:inline-block;">
       Starting point (or <a ng-click="getGeolocation();"><i class="fa fa-location-arrow"></i> Use My Location</a>)
       <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
-      <span ng-show="isGeolocationError">Enable location services</span>
+      <span ng-show="isGeolocationError">Error: {{geolocationErrorMessage}}</span>
     </span>
     <div ng-repeat="address in addresses">
       <p ng-show="addresses.indexOf(address) == 1">
