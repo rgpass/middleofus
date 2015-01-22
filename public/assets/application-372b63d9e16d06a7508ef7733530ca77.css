@@ -9474,22 +9474,51 @@ p.lead {
 }
 
 /* line 34, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.orange {
+  color: #e99002;
+}
+
+/* line 38, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.white {
+  color: white;
+}
+
+/* line 42, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .validation-indicator {
   margin-left: 5px;
 }
 
-/* line 38, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 46, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 #results tr {
   cursor: pointer;
 }
 
-/* line 42, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 50, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .angular-google-map-container {
   height: 300px;
   width: 300px;
 }
 
-/* line 47, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 55, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 a {
   cursor: pointer;
+}
+
+/* line 59, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.top-pad {
+  padding-top: 5px;
+}
+
+/* line 63, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.first-address {
+  display: block;
+  padding-top: 29px;
+  padding-bottom: 10px;
+}
+
+/* line 69, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.other-addresses {
+  display: block;
+  margin-top: 6px;
+  padding-bottom: 10px;
 }
