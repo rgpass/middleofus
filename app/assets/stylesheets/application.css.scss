@@ -30,6 +30,10 @@
   color: #f04124;
 }
 
+.orange {
+  color: #e99002;
+}
+
 .white {
   color: white;
 }
@@ -57,10 +61,12 @@ a {
 
 .first-address {
   display:block;
-  padding-top:27px;
+  padding-top: 31px;
+  padding-bottom: 10px;
 }
 
 .other-addresses {
   display:block;
-  margin-top: 4px;
+  margin-top: 8px;
+  padding-bottom: 10px;
 }
