@@ -17,7 +17,7 @@ class Place
   end
 
   def self.address(input)
-    address = Geocoder.address(input)
+    address = Geocoder.address(input) || ""
     address.split(" ").last == "USA" ? address : false
   end
 
