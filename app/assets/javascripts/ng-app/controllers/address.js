@@ -2,12 +2,23 @@ angular.module('myApp')
 .controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', function ($scope, $timeout, addressesService) {
 
   $scope.placeType  = "free wifi";
-  $scope.isAllValid = true;
-  $scope.isAllEmpty = true;
+  $scope.addresses = addressesService.addresses;
+  checkIfAllEmptyAndValid();
 
-  var firstAddress = { address: "", placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
-  var secondAddress = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
-  $scope.addresses = [firstAddress, secondAddress];
+  function checkIfAllEmptyAndValid() {
+    $scope.isAllValid = true;
+    $scope.isAllEmpty = true;
+    _.each($scope.addresses, function(address) {
+      if (address.isValid == false) {
+        $scope.isAllValid = false;
+      }
+      if (address.address != "") {
+        $scope.isAllEmpty = false;
+      }
+    })
+  }
+
+  
 
   $scope.addLocation = function() {
     // TODO: Figure out why this causes an error
@@ -31,19 +42,9 @@ angular.module('myApp')
       }
     }
     if (newValue != oldValue) {
-      $timeout(function() {
-        $scope.isAllValid = true;
-        $scope.isAllEmpty = true;
-        _.each($scope.addresses, function(address) {
-          if (address.isValid == false) {
-            $scope.isAllValid = false;
-          }
-          if (address.isEmpty == false) {
-            $scope.isAllEmpty = false;
-          }
-        })
-      }, 1);
+      $timeout(checkIfAllEmptyAndValid, 1);
     }
+    addressesService.setAddresses($scope.addresses);
   }, true);
 
   $scope.submitInfo = function() {

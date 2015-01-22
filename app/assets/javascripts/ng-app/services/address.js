@@ -6,6 +6,11 @@ angular.module('myApp')
   var validityUrl = '/valid-address';
   var messageUrl  = '/message';
 
+
+  var firstAddress = { address: "", placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+  var secondAddress = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+  this.addresses = [firstAddress, secondAddress];
+
   this.getResults = function(addresses, placeType) {
     params = { addresses: JSON.stringify(addresses), place_type: placeType };
     return $http.get(resultsUrl + '.json', { params: params }).success(function(data) {
@@ -37,5 +42,9 @@ angular.module('myApp')
       location.foundAddress = data.found_address;
     });
   };
+
+  this.setAddresses = function(addresses) {
+    that.addresses = addresses;
+  }
   
 }]);
