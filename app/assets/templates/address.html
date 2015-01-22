@@ -30,7 +30,7 @@
       <div class="address-status" style="margin-bottom:5px;font-size:80%" ng-class="{'first-address': addresses.indexOf(address) == 0, 'other-addresses': addresses.indexOf(address) > 0}">
         <span class="white" ng-show="address.isEmpty && !address.isProcessing">Placeholder</span>
         <span ng-show="address.isProcessing">Searching...</span>
-        <span class="green" ng-show="address.isValid && !address.isEmpty">Address found</span>
+        <span class="green" ng-show="address.isValid && !address.isEmpty">Found: {{address.foundAddress}}</span>
         <span class="red" ng-hide="address.isValid || address.isEmpty">Address not found</span>
       </div>
       <p ng-show="addresses.length == 1"><a ng-click="addLocation();"><i class="fa fa-plus validation-indicator" style="margin-top:5px"></i> Add Location</a></p>

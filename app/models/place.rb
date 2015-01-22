@@ -16,9 +16,9 @@ class Place
     places.reject { |place| place.is_closed }.sort_by { |place| place.distance }
   end
 
-  def self.valid_address?(input)
+  def self.address(input)
     address = Geocoder.address(input)
-    address ? address.split(" ").last == "USA" : false
+    address.split(" ").last == "USA" ? address : false
   end
 
   private
