@@ -30,6 +30,14 @@
   color: #f04124;
 }
 
+.orange {
+  color: #e99002;
+}
+
+.white {
+  color: white;
+}
+
 .validation-indicator {
   margin-left: 5px;
 }
@@ -45,4 +53,20 @@
 
 a {
   cursor: pointer;
+}
+
+.top-pad {
+  padding-top:5px;
+}
+
+.first-address {
+  display:block;
+  padding-top: 29px;
+  padding-bottom: 10px;
+}
+
+.other-addresses {
+  display:block;
+  margin-top: 6px;
+  padding-bottom: 10px;
 }

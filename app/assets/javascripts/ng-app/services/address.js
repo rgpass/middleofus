@@ -34,6 +34,7 @@ angular.module('myApp')
       location.isValid = data.is_valid;
       location.isEmpty = false;
       location.isProcessing = false;
+      location.foundAddress = data.found_address;
     });
   };
   

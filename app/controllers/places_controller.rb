@@ -10,7 +10,8 @@ class PlacesController < ApplicationController
 
   def valid
     address = params[:address] || "650 North Avenue NE Atlanta GA"
-    @is_valid = Place.valid_address?(address)
+    @found_address = Place.address(address)
+    @is_valid = !!@found_address
   end
   
 end
