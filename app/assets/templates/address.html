@@ -14,7 +14,7 @@
     in the MiddleOf.Us
   </h1>
 
-  <form name="addressForm" ng-submit="submitInfo();">
+  <form name="addressForm" ng-submit="submitInfo();" focus-first-empty-input>
     <span style="padding-bottom:10px;display:inline-block;">
       Starting point (or <a ng-click="getGeolocation();"><i class="fa fa-location-arrow"></i> Use My Location</a>)
       <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
@@ -24,7 +24,7 @@
       <p ng-show="addresses.indexOf(address) == 1">
         Other(s) <a ng-click="addLocation();"><i class="fa fa-plus validation-indicator" style="margin-top:5px"></i> Add Location</a>
       </p>
-      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5" autofocus="true">
+      <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="col-md-5">
       
       <a ng-click="removeLocation(address);" ng-show="addresses.indexOf(address) != 0"><i class="fa fa-minus validation-indicator top-pad"></i></a>
       <div class="address-status" style="margin-bottom:5px;font-size:80%" ng-class="{'first-address': addresses.indexOf(address) == 0, 'other-addresses': addresses.indexOf(address) > 0}">
