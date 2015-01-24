@@ -122,6 +122,7 @@
           <h4>Text Address To:</h4>
           <form name="addressForm" ng-submit="createMessage();">
             <input type="text" ng-model="phoneNumber" style="height:38px;color:black;font-size:150%" placeholder="5558675309">
+            <br class="visible-xs"><br class="visible-xs">
             <button type="submit" class="btn btn-info" style="margin-top:-5px;">Send</button>
             <div ng-show="sendingText" style="display:inline-block;"><i class="fa fa-spin fa-spinner" style="display:inline-block;"></i></div>
             <i ng-show="sentText"  class="fa fa-check white validation-indicator"></i>
