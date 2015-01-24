@@ -9489,7 +9489,7 @@ p.lead {
 }
 
 /* line 46, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-#results tr {
+#results tbody tr {
   cursor: pointer;
 }
 
@@ -9505,20 +9505,37 @@ a {
 }
 
 /* line 59, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-.top-pad {
-  padding-top: 5px;
+form label {
+  font-size: 15px !important;
 }
 
 /* line 63, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-.first-address {
-  display: block;
-  padding-top: 29px;
-  padding-bottom: 10px;
+.input {
+  padding-left: 0px;
 }
 
-/* line 69, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-.other-addresses {
+/* line 67, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.minus {
+  margin-left: 0px;
+  padding-left: 5px;
+  padding-top: 9px;
+}
+
+/* line 73, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.address-status {
   display: block;
-  margin-top: 6px;
-  padding-bottom: 10px;
+  margin-bottom: 0px;
+  font-size: 80%;
+  padding-bottom: 0px;
+  padding-top: 25px;
+}
+
+/* line 81, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.first-address {
+  padding-bottom: 15px;
+}
+
+/* line 85, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.deal {
+  margin-right: 5px;
 }
