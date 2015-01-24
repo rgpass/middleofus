@@ -84,8 +84,10 @@ angular.module('myApp')
   }
 
   $scope.clearSelectedResult = function() {
-    $scope.selectedResult = null;
     $timeout(scrollToResults, 1);
+    $timeout(function() {
+      $scope.selectedResult = null;
+    }, 500);
   };
 
   $scope.createMessage = function() {

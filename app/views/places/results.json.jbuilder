@@ -1,6 +1,8 @@
 json.array!(@places) do |place|
   json.name           place.name
   json.address        "#{place.location.display_address.first}, #{place.location.display_address.last}"
+  json.address_first  place.location.display_address.first
+  json.address_last   place.location.display_address.last
   json.rating         place.rating
   json.rating_image   place.rating_img_url
   json.website        place.url
