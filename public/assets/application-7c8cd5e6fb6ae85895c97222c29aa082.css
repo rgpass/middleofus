@@ -9539,3 +9539,8 @@ form label {
 .deal {
   margin-right: 5px;
 }
+
+/* line 89, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.container-fluid {
+  margin-left: 0px;
+}
