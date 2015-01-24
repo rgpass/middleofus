@@ -18,8 +18,6 @@ angular.module('myApp')
     })
   }
 
-  
-
   $scope.addLocation = function() {
     // TODO: Figure out why this causes an error
     var newLocation = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
@@ -91,14 +89,43 @@ angular.module('myApp')
   };
 
   $scope.createMessage = function() {
-    $scope.sentText       = false;
-    $scope.textError      = false; 
+    $scope.sentText    = false;
+    $scope.textError   = false; 
     $scope.sendingText = true;
     var phoneNumber = $scope.phoneNumber;
     var place       = $scope.selectedResult.name;
     var address     = $scope.selectedResult.address;
     addressesService.sendMessage(phoneNumber, place, address).success(setTextVariables).error(setTextVariables);
   };
+
+  $scope.$watch('phoneNumber', function(newValue, oldValue) {
+    if (newValue != oldValue) {
+      $scope.sendingText = false;
+      $scope.sentText    = false;
+      $scope.textError   = false; 
+    }
+  });
+
+  $scope.$watch('addresses', function(newValue, oldValue) {
+
+    for (var i = 0; i < newValue.length; i++) {
+      newLocation = newValue[i];
+      oldLocation = oldValue[i];
+      if (newLocation.address != oldLocation.address) {
+        newLocation.isEmpty = true;
+        newLocation.isProcessing = true;
+        addressesService.isValidAddress(newLocation);
+      } else if (newLocation.address == "") {
+        newLocation.isEmpty = true;
+        newLocation.isProcessing = false;
+        newLocation.isValid = true;
+      }
+    }
+    if (newValue != oldValue) {
+      $timeout(checkIfAllEmptyAndValid, 1);
+    }
+    addressesService.setAddresses($scope.addresses);
+  }, true);
 
   function setTextVariables() {
     $scope.sendingText = false;
