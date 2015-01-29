@@ -98,3 +98,14 @@ form label {
   padding-right:0;
   padding-left:0;
 }
+
+select.custom {
+  padding: 0px 15px 0px 0px;
+}
+
+@-moz-document url-prefix() {
+  .btn-info {
+    margin-top: 5px !important;
+    margin-bottom: 5px;
+  }
+}
