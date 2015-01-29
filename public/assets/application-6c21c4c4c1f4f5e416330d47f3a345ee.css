@@ -9454,74 +9454,80 @@ p.lead {
 
  */
 /* line 18, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* line 23, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .inline-block {
   display: inline-block;
 }
 
-/* line 22, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 27, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .strong {
   font-weight: bold;
 }
 
-/* line 26, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 31, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .green {
   color: #43ac6a;
 }
 
-/* line 30, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 35, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .red {
   color: #f04124;
 }
 
-/* line 34, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 39, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .orange {
   color: #e99002;
 }
 
-/* line 38, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 43, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .white {
   color: white;
 }
 
-/* line 42, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 47, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .validation-indicator {
   margin-left: 5px;
 }
 
-/* line 46, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 51, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 #results tbody tr {
   cursor: pointer;
 }
 
-/* line 50, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 55, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .angular-google-map-container {
   height: 300px;
   width: 300px;
 }
 
-/* line 55, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 60, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 a {
   cursor: pointer;
 }
 
-/* line 59, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 64, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 form label {
   font-size: 15px !important;
 }
 
-/* line 63, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 68, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .input {
   padding-left: 0px;
 }
 
-/* line 67, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 72, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .minus {
   margin-left: 0px;
   padding-left: 5px;
   padding-top: 9px;
 }
 
-/* line 73, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 78, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .address-status {
   display: block;
   margin-bottom: 0px;
@@ -9530,17 +9536,17 @@ form label {
   padding-top: 25px;
 }
 
-/* line 81, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 86, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .first-address {
   padding-bottom: 15px;
 }
 
-/* line 85, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 90, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .deal {
   margin-right: 5px;
 }
 
-/* line 89, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 94, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .container-fluid {
   margin-left: 0px;
 }
