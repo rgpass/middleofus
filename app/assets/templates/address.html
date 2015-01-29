@@ -1,5 +1,5 @@
 <div ng-controller="AddressCtrl">
-  <div class="row">
+  <div class="row no-gutter">
     <div class="col-md-9 col-md-offset-2">
       <h1>I want to find
         <select class="btn btn-primary btn-lg" ng-model="placeType">
@@ -17,7 +17,7 @@
     </div>
   </div>
   <br>
-  <div class="row">
+  <div class="row no-gutter">
     <div class="col-md-9 col-md-offset-2">
       <form name="addressForm" ng-submit="submitInfo();" focus-first-empty-input>
         <div ng-repeat="address in addresses" ng-class="{'first-address' : addresses.indexOf(address) == 0}">
@@ -59,7 +59,7 @@
     </div>
   </div>
   <br class="hidden-xs">
-  <div class="row">
+  <div class="row no-gutter">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div ng-show="results" id="results">
         <h2>Closest {{results.length}} results</h2>
@@ -99,7 +99,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row no-gutter">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div ng-show="selectedResult" id="result">
         <div class="alert alert-dismissable alert-primary">
