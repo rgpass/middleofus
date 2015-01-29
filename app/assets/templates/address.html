@@ -2,7 +2,7 @@
   <div class="row no-gutter">
     <div class="col-md-9 col-md-offset-2">
       <h1>I want to find
-        <select class="btn btn-primary btn-lg" ng-model="placeType">
+        <select class="btn btn-primary btn-lg custom" ng-model="placeType">
           <option value="free wifi">free wifi</option>
           <option value="food">food</option>
           <option value="coffee">coffee</option>
@@ -116,6 +116,7 @@
           <br>
           <h4>Actions:</h4>
           <a href="{{selectedResult.deals['hash']['purchase_url']}}" class="btn btn-success" target="_blank" ng-show="selectedResult.deals">Coupon: {{selectedResult.deals["hash"]["title"]}}</a>
+          <br class="visible-xs" ng-show="selectedResult.deals"><br class="visible-xs" ng-show="selectedResult.deals">
           <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">
             View on Yelp
           </a>
