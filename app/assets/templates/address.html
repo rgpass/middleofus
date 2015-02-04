@@ -113,13 +113,15 @@
           </h4>
           <br>
           <h4>Actions:</h4>
-          <a href="{{selectedResult.deals['hash']['purchase_url']}}" class="btn btn-success" target="_blank" ng-show="selectedResult.deals">Coupon: {{selectedResult.deals["hash"]["title"]}}</a>
-          <br class="visible-xs" ng-show="selectedResult.deals"><br class="visible-xs" ng-show="selectedResult.deals">
-          <a href="{{selectedResult.website}}" class="btn btn-info" target="_blank">
+          <a href="{{selectedResult.deals['hash']['purchase_url']}}" class="btn btn-success action" target="_blank" ng-show="selectedResult.deals">
+            Coupon: {{selectedResult.deals["hash"]["title"]}}
+          </a>
+          <a href="{{selectedResult.website}}" class="btn btn-info action" target="_blank">
             View on Yelp
           </a>
-          <br class="visible-xs"><br class="visible-xs">
-          <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info" target="_blank">View on Google Maps</a>
+          <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info action" target="_blank">
+            View on Google Maps
+          </a>
           <br><br>
           <h4>Text Address To:</h4>
           <form name="addressForm" ng-submit="createMessage();">
