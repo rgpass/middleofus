@@ -154,9 +154,9 @@ angular.module('myApp')
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         $timeout(function() {
-          $scope.addresses[0].address = position.coords.latitude + ", " + position.coords.longitude;
+          var coords = position.coords.latitude + ", " + position.coords.longitude;
+          addressesService.addressFromGeolocation(coords);
           $scope.isGeolocationProcessing = false;
-          $scope.addresses[0].placeholder = "address, city, or zip";
         }, 1);
       }, function() {
         handleNoGeolocation(true);

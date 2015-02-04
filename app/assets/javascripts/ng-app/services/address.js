@@ -35,13 +35,25 @@ angular.module('myApp')
 
   this.isValidAddress = function(location) {
     params = { address: location.address };
-    return $http.get(validityUrl + '.json', { params: params}).success(function(data) {
+    return $http.get(validityUrl + '.json', { params: params }).success(function(data) {
       location.isValid = data.is_valid;
       location.isEmpty = false;
       location.isProcessing = false;
       location.foundAddress = data.found_address;
     });
   };
+
+  this.addressFromGeolocation = function(coords) {
+    params = { address: coords };
+    return $http.get(validityUrl + '.json', { params: params }).success(function(data) {
+      that.addresses[0].address = data.found_address;
+      that.addresses[0].isValid = data.is_valid;
+      that.addresses[0].isEmpty = false;
+      that.addresses[0].isProcessing = false;
+      that.addresses[0].foundAddress = data.found_address;
+      that.addresses[0].placeholder = "address, city, or zip";
+    });
+  }
 
   this.setAddresses = function(addresses) {
     that.addresses = addresses;
