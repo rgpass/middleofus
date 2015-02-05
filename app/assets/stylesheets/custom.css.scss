@@ -16,3 +16,7 @@ p.role {
 p.lead {
   margin-bottom: 2px;
 }
+
+.results-hover > tbody > tr:hover{
+  background-color: rgba(0,120,174,0.4);
+}
