@@ -9438,6 +9438,11 @@ p.role {
 p.lead {
   margin-bottom: 2px;
 }
+
+/* line 19, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/custom.css.scss */
+.fa-star, .fa-star-half-o, .fa-star-o {
+  color: #007196;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
