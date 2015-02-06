@@ -13,5 +13,19 @@ class PlacesController < ApplicationController
     @found_address = Place.address(address)
     @is_valid = !!@found_address
   end
+
+  def addresses
+    addresses = Address.where(key: params[:key])
+    @addresses = addresses.blank? ? ['', ''] : addresses.map { |address| address.address }
+  end
+
+  def generate
+    @key = rand(36**8).to_s(36)
+    example = ["650 North Avenue NE Atlanta GA"]
+    addresses = params[:addresses] ? JSON.parse(params[:addresses]) : example
+    addresses.each do |address|
+      Address.create(key: @key, address: address)
+    end
+  end
   
 end
