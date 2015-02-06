@@ -1,10 +1,12 @@
 angular.module('myApp')
-.service('addressesService', ["$http", function($http) {
+.service('addressesService', ["$http", '$timeout', function($http, $timeout) {
 
   var that        = this;
   var resultsUrl  = '/results';
   var validityUrl = '/valid-address';
+  var addressesUrl = '/addresses'
   var messageUrl  = '/message';
+  var generateUrl = '/generate';
 
 
   var firstAddress = { address: "", placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
@@ -57,6 +59,21 @@ angular.module('myApp')
 
   this.setAddresses = function(addresses) {
     that.addresses = addresses;
+  }
+
+  this.loadInAddresses = function(key) {
+    params = { key: key };
+    $http.get(addressesUrl + '.json', { params: params }).success(function(data) {
+      var addressesOnly = data.addresses;
+      for (var i = 0; i < addressesOnly.length; i++) {
+        that.addresses[i] = { address: addressesOnly[i], placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
+      }
+    });
+  }
+
+  this.generateCustomUrl = function(addresses) {
+    params = { addresses: JSON.stringify(addresses) }
+    return $http.get(generateUrl + '.json', { params: params });
   }
   
 }]);

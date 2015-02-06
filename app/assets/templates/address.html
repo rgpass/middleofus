@@ -1,6 +1,6 @@
 <div ng-controller="AddressCtrl">
-  <div class="row no-gutter">
-    <div class="col-md-9 col-md-offset-2">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-2 dynamic-center">
       <h1>I want to find
         <select class="btn btn-primary btn-lg custom" ng-model="placeType">
           <option value="free wifi">free wifi</option>
@@ -12,12 +12,13 @@
           <option value="yogurt">yogurt</option>
           <option value="">anything</option>
         </select>
-        in the middle of
+        <br class="visible-xs">
+        in the middle of...
       </h1>
     </div>
   </div>
   <br>
-  <div class="row no-gutter">
+  <div class="row">
     <div class="col-md-9 col-md-offset-2">
       <form name="addressForm" ng-submit="submitInfo();" focus-first-empty-input>
         <div ng-repeat="address in addresses" class="addresses">
@@ -52,10 +53,20 @@
           <a ng-show="addresses.length == 1" ng-click="addLocation();"><i class="fa fa-plus validation-indicator"></i> Add Location</a>
         </div>
         <br>
-        <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary">
-          Get Places
-        </button>
-        <div ng-show="processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>
+        <div class="row">
+          <div class="col-sm-5">
+            <a ng-click="generateCustomUrl()" class="btn btn-primary">Generate Custom URL</a>
+            <br>
+            <small ng-class="{ white: !customUrl }">http://www.middleof.us/?l={{customUrl}}</small>
+          </div>
+          <br class="visible-xs">
+          <div class="col-sm-2 col-sm-offset-3">
+            <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary text-right">
+              Get Places
+            </button>
+            <div ng-show="processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -86,7 +97,16 @@
                 {{result.distance}} <span class="hidden-xs">mile(s)</span><span class="visible-xs">mi</span>
               </td>
               <td>
-                <img src="{{result.rating_image}}" />
+                <div ng-show="result.rating == 5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                 <div ng-show="result.rating == 4.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
+                <div ng-show="result.rating == 4.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>
+                <div ng-show="result.rating == 3.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>
+                <div ng-show="result.rating == 3.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                <div ng-show="result.rating == 2.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                <div ng-show="result.rating == 2.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                <div ng-show="result.rating == 1.5"><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                <div ng-show="result.rating == 1.0"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                <div ng-show="result.rating == 0.5"><i class="fa fa-star-half-o"></i></div>    
               </td>
               <td class="hidden-xs">{{result.address}}</td>
             </tr>

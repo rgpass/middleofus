@@ -1,9 +1,25 @@
 angular.module('myApp')
-.controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', function ($scope, $timeout, addressesService) {
+.controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', '$location', function ($scope, $timeout, addressesService, $location) {
 
   $scope.placeType  = "free wifi";
   $scope.addresses = addressesService.addresses;
-  checkIfAllEmptyAndValid();
+
+  if ($location.search().l) {
+    console.log($location.search().l);
+    $scope.addresses = [];
+    $timeout(function() {
+      addressesService.loadInAddresses($location.search().l).success(function() {
+        $scope.addresses = addressesService.addresses;
+      });
+    }, 1);
+    $timeout(function() {
+        _.each($scope.addresses, function(address) {
+        address.isEmpty = true;
+        address.isProcessing = true;
+        addressesService.isValidAddress(address);
+      });
+    }, 1000);
+  }
 
   function checkIfAllEmptyAndValid() {
     $scope.isAllValid = true;
@@ -50,7 +66,7 @@ angular.module('myApp')
     $scope.selectedResult = null;
     var addressesOnly = _.map($scope.addresses, function(address) {
       return address.address;
-    })
+    });
     $scope.addressesOnly = _.filter(addressesOnly, function(address) { return address });
     addressesService.getResults($scope.addressesOnly, $scope.placeType).success(setVariables).error(setVariables);
   };
@@ -114,6 +130,7 @@ angular.module('myApp')
       newLocation = newValue[i];
       oldLocation = oldValue[i];
       if (newLocation.address != oldLocation.address) {
+        $scope.customUrl = null;
         newLocation.isEmpty = true;
         newLocation.isProcessing = true;
         addressesService.isValidAddress(newLocation);
@@ -183,5 +200,13 @@ angular.module('myApp')
     $scope.addresses.splice(i, 1);
   }
 
+  $scope.generateCustomUrl = function() {
+    var addressesOnly = _.map($scope.addresses, function(address) {
+      return address.address;
+    });
+    addressesService.generateCustomUrl(addressesOnly).success(function(data) {
+      $scope.customUrl = data.key;
+    })
+  }
 
 }]);
