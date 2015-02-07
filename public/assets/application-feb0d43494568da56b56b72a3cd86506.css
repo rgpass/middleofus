@@ -9527,12 +9527,11 @@ form label {
 
 /* line 72, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .minus {
-  margin-left: 0px;
   padding-left: 5px;
   padding-top: 9px;
 }
 
-/* line 78, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 77, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .address-status {
   display: block;
   margin-bottom: 0px;
@@ -9541,46 +9540,51 @@ form label {
   padding-top: 25px;
 }
 
-/* line 86, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 85, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .addresses {
   padding-bottom: 15px;
 }
 
-/* line 90, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 89, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .single-address {
   margin-bottom: 15px;
 }
 
-/* line 94, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 93, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .deal {
   margin-right: 5px;
 }
 
-/* line 98, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 97, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .container-fluid {
   margin-left: 0px;
 }
 
-/* line 102, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 101, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .no-gutter > [class*='col-'] {
   padding-right: 0;
   padding-left: 0;
 }
 
-/* line 107, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 106, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 select.custom {
   padding: 0px 15px 0px 0px;
 }
 
 @-moz-document url-prefix() {
-  /* line 112, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+  /* line 111, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
   .btn-info {
     margin-top: 5px !important;
     margin-bottom: 5px;
   }
 }
 
-/* line 118, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 117, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .action {
   margin-bottom: 3px;
+}
+
+/* line 121, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.full-width {
+  width: 100%;
 }
