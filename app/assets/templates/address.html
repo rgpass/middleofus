@@ -19,7 +19,7 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-md-9 col-md-offset-2">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <form name="addressForm" ng-submit="submitInfo();" focus-first-empty-input>
         <div ng-repeat="address in addresses" class="addresses">
           <div class="form-group">
@@ -35,7 +35,7 @@
               </span>
             </label>
             <br>
-            <div class="col-md-10 col-xs-11 input">
+            <div class="col-xs-11 input">
               <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="form-control">
             </div>
             <div class="col-xs-1 minus">
@@ -54,24 +54,27 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-sm-5">
-            <a ng-click="generateCustomUrl()" class="btn btn-primary">Create Shareable URL</a>
+          <div class="col-sm-6 col-xs-12">
+            <a ng-click="generateCustomUrl()" class="btn btn-success full-width">Create Shareable Link</a>
             <br>
-            <small ng-class="{ white: !customUrl }">http://www.middleof.us/?l={{customUrl}}</small>
           </div>
-          <br class="visible-xs">
-          <div class="col-sm-2 col-sm-offset-3">
-            <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary text-right">
-              Get Places
+          <div class="col-sm-6 col-xs-12 text-center">
+            <h4 ng-class="{ white: !customUrl }">http://www.middleof.us/?l={{customUrl}}</h4>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary full-width">
+              Get Places <div ng-show="processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>
             </button>
-            <div ng-show="processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>
           </div>
         </div>
       </form>
     </div>
   </div>
   <br class="hidden-xs">
-  <div class="row no-gutter">
+  <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div ng-show="results" id="results">
         <h2>Closest {{results.length}} results</h2>
