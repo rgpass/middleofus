@@ -61629,7 +61629,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/team.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("team.html", '<div class="text-center visible-xs visible-sm">\n  <div class="row visible-xs visible-sm">\n    <div class="col-xs-6">\n      <p><img src="assets/Gerry400.jpg" class="img-circle team"/></p>\n      <p class="lead">Gerry Pass</p>\n      <p class="role">Lead Developer</p>\n      <p class="bio">Gerry had a useful idea for how he could hack the planet, but being short on time, he gave the idea to Chris and Amanda for their group project at General Assembly. After seeing what they could accomplish, he asked them if they wanted to remake it from scratch to continue their learning, and like that, MiddleOf.Us was born.</p>\n    </div>\n    <div class="col-xs-6">\n      <p><img src="assets/Amanda400.jpg" class="img-circle team"/></p>\n      <p class="lead">Amanda Raymond</p>\n      <p class="role">Developer</p>\n      <p class="bio">Amanda joined MiddleOf.Us excited to create, code, and collaborate. She is enjoying advancing her full-stack skills and working with such a great team. Outside of MiddleOf.Us and other coding ventures, Amanda likes traveling and going to concerts.</small></p>\n    </div>\n  </div>\n  <br>\n  <div class="row">\n    <div class="col-xs-6">\n      <p><img src="assets/Chris400.jpg" class="img-circle team"/></p>\n      <p class="lead">Chris Markel</p>\n      <p class="role">Developer</p>\n      <p class="bio">Chris joined MiddleOf.Us excited to recreate and improve upon its predecessor, Connect.Us. He is enjoying sharpening his development skills while collaborating with the team on core functionalities, UX, and design. When away from the code, Chris is likely dabbling outdoors or spending time with his wife.</small></p>\n    </div>\n    <div class="col-xs-6">\n      <p><img src="assets/KA_400by400_2.jpg" class="img-circle team"/></p>\n      <p class="lead">Kevin Abdo</p>\n      <p class="role">Product Manager</p>\n      <p class="bio">Kevin approached the MiddleOf.Us team to gain experience to product management within the tech sector. Since then he has helped develop a vision for the site based on strong functionality for users and intuitive designs. Outside of MiddleOf.Us, Kevin can be found playing guitar in his rock band, The Better Brother.</small></p>\n    </div>\n  </div>\n</div>\n\n<div class="row text-center hidden-xs hidden-sm">\n  <div class="col-md-3">\n    <p><img src="assets/Gerry400.jpg" class="img-circle team"/></p>\n    <p class="lead">Gerry Pass</p>\n    <p class="role">Lead Developer</p>\n    <p class="bio">Gerry had a useful idea for how he could hack the planet, but being short on time, he gave the idea to Chris and Amanda for their group project at General Assembly. After seeing what they could accomplish, he asked them if they wanted to remake it from scratch to continue their learning, and like that, MiddleOf.Us was born.</p>\n  </div>\n  <div class="col-md-3">\n    <p><img src="assets/Amanda400.jpg" class="img-circle team"/></p>\n    <p class="lead">Amanda Raymond</p>\n    <p class="role">Developer</p>\n    <p class="bio">Amanda joined MiddleOf.Us excited to create, code, and collaborate. She is enjoying advancing her full-stack skills and working with such a great team. Outside of MiddleOf.Us and other coding ventures, Amanda likes traveling and going to concerts.</small></p>\n  </div>\n  <div class="col-md-3">\n    <p><img src="assets/Chris400.jpg" class="img-circle team"/></p>\n    <p class="lead">Chris Markel</p>\n    <p class="role">Developer</p>\n    <p class="bio">Chris joined MiddleOf.Us excited to recreate and improve upon its predecessor, Connect.Us. He is enjoying sharpening his development skills while collaborating with the team on core functionalities, UX, and design. When away from the code, Chris is likely dabbling outdoors or spending time with his wife.</small></p>\n  </div>\n  <div class="col-md-3">\n    <p><img src="assets/KA_400by400_2.jpg" class="img-circle team"/></p>\n    <p class="lead">Kevin Abdo</p>\n    <p class="role">Product Manager</p>\n    <p class="bio">Kevin approached the MiddleOf.Us team to gain experience to product management within the tech sector. Since then he has helped develop a vision for the site based on strong functionality for users and intuitive designs. Outside of MiddleOf.Us, Kevin can be found playing guitar in his rock band, The Better Brother.</small></p>\n  </div>\n</div>')
+  $templateCache.put("team.html", '<div ng-controller="TeamCtrl">\n  <div class="text-center container-fluid">\n    <div class="row">\n      <div ng-repeat="member in teamMembers">\n        <div class="col-xs-6 col-sm-3">\n          <p><img src="{{member.img}}" class="img-circle team"></p>\n          <h5>{{member.name}}</h5>\n          <h6>{{member.role}}</h6>\n          <br class="visible-xs">\n          <p class="bio hidden-xs">{{member.bio}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>')
 }]);
 
 /*!
@@ -61694,6 +61694,7 @@ angular.module('myApp')
 
   $scope.placeType  = "free wifi";
   $scope.addresses = addressesService.addresses;
+  checkIfAllEmptyAndValid();
 
   if ($location.search().l) {
     console.log($location.search().l);
@@ -61900,6 +61901,45 @@ angular.module('myApp')
     })
   }
 
+}]);
+angular.module('myApp')
+.controller('TeamCtrl', ['$scope', function ($scope) {
+  var gerry = {
+    name: "Gerry Pass",
+    role: "Lead Developer",
+    bio: "Gerry had a useful idea for how he could hack the planet, but being short on time, \
+          he gave the idea to Chris and Amanda for their group project at General Assembly. \
+          After seeing what they could accomplish, he asked them if they wanted to remake it \
+          from scratch to continue their learning, and like that, MiddleOf.Us was born.",
+    img: "assets/Gerry400.jpg"
+  };
+  var amanda = {
+    name: 'Amanda Raymond',
+    role: 'Developer',
+    bio: "Amanda joined MiddleOf.Us excited to create, code, and collaborate. She is enjoying \
+          advancing her full-stack skills and working with such a great team. Outside of \
+          MiddleOf.Us and other coding ventures, Amanda likes traveling and going to concerts.",
+    img: 'assets/Amanda400.jpg'
+  }
+  var chris = {
+    name: 'Chris Markel',
+    role: 'Developer',
+    bio: "Chris joined MiddleOf.Us excited to recreate and improve upon its predecessor, \
+          Connect.Us. He is enjoying sharpening his development skills while collaborating with \
+          the team on core functionalities, UX, and design. When away from the code, Chris is \
+          likely dabbling outdoors or spending time with his wife.",
+    img: 'assets/Chris400.jpg'
+  }
+  var kevin = {
+    name: 'Kevin Abdo',
+    role: 'Product Manager',
+    bio: "Kevin approached the MiddleOf.Us team to gain experience to product management within \
+          the tech sector. Since then he has helped develop a vision for the site based on strong \
+          functionality for users and intuitive designs. Outside of MiddleOf.Us, Kevin can be found \
+          playing guitar in his rock band, The Better Brother.",
+    img: 'assets/KA_400by400_2.jpg'
+  }
+  $scope.teamMembers = [gerry, amanda, chris, kevin];
 }]);
 angular.module('myApp')
 .directive('focusFirstEmptyInput', ['$timeout', function ($timeout) {
