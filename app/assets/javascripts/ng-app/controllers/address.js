@@ -3,6 +3,7 @@ angular.module('myApp')
 
   $scope.placeType  = "free wifi";
   $scope.addresses = addressesService.addresses;
+  checkIfAllEmptyAndValid();
 
   if ($location.search().l) {
     console.log($location.search().l);
