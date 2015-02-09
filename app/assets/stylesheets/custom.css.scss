@@ -17,12 +17,18 @@ p.lead {
   margin-bottom: 2px;
 }
 
-.fa-star,.fa-star-half-o,.fa-star-o {
-  color: #56b4d4 ;
+
+.table-striped > tbody > tr:nth-child(odd) {
+  color: white ;
+  .fa-star, .fa-star-half-o, .fa-star-o {
+  color: orange ;
+  }
+}
+.table-striped > tbody > tr:nth-child(even) {
+  color: #008cba;
+  .fa-star, .fa-star-half-o, .fa-star-o {
+  color: orange ;
+  }
 }
 
-
-.results-hover > tbody > tr:hover{
-  background-color: rgba(0,120,174,0.4);
-}
 

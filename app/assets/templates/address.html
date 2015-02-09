@@ -65,7 +65,7 @@
       <div ng-show="results" id="results">
         <h2>Closest {{results.length}} results</h2>
         <p>Click for more info</p>
-        <table class="table results-hover ">
+        <table class="table table-striped results-hover">
           <thead>
             <tr>
               <th>Name</th>
@@ -76,7 +76,7 @@
             </tr>
           </thead>
           <tbody id="results">
-            <tr ng-repeat="result in results" class="hvr-push" ng-click="selectResult(result);" ng-class="{success: result.deals}">
+            <tr ng-repeat="result in results" ng-click="selectResult(result);" ng-class="{success: result.deals}">
               <td>
                 <i class="fa fa-dollar strong deal" ng-show="result.deals"></i>{{result.name}}
               </td>
@@ -93,7 +93,7 @@
                 <div ng-show="result.rating == 2.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
                 <div ng-show="result.rating == 1.5"><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
                 <div ng-show="result.rating == 1.0"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
-                <div ng-show="result.rating == 0.5"><i class="fa fa-star-half-o"></i></div>    
+                <div ng-show="result.rating == 0.5"><i class="fa fa-star-half-o"></i></div>
               </td>
               <td class="hidden-xs">{{result.address}}</td>
             </tr>
