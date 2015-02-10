@@ -120,3 +120,15 @@ select.custom {
 .full-width {
   width: 100%;
 }
+
+.team {
+  a:hover {
+    text-decoration: none;
+  }
+  h6 {
+    margin-bottom: 8px;
+  }
+  section {
+    margin-bottom: 10px;
+  }
+}
