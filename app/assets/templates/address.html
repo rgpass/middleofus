@@ -59,7 +59,7 @@
             <br>
           </div>
           <div class="col-sm-6 col-xs-12 text-center">
-            <h4 ng-class="{ white: !customUrl }">http://www.middleof.us/?l={{customUrl}}</h4>
+            <input onClick="this.setSelectionRange(0, this.value.length)" value="{{customUrl}}" class="form-control" readonly placeholder="Generate a link to share with friends/colleagues"/>
           </div>
         </div>
         <br>

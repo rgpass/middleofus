@@ -206,8 +206,8 @@ angular.module('myApp')
       return address.address;
     });
     addressesService.generateCustomUrl(addressesOnly).success(function(data) {
-      $scope.customUrl = data.key;
+      $scope.customUrl = "http://www.middleof.us/?l=" + data.key;
     })
-  }
+  };
 
 }]);
