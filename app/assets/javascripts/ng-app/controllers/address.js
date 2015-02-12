@@ -3,6 +3,7 @@ angular.module('myApp')
 
   $scope.placeType  = "free wifi";
   $scope.addresses = addressesService.addresses;
+  $scope.customUrl = addressesService.customUrl;
   checkIfAllEmptyAndValid();
 
   if ($location.search().l) {
@@ -206,7 +207,8 @@ angular.module('myApp')
       return address.address;
     });
     addressesService.generateCustomUrl(addressesOnly).success(function(data) {
-      $scope.customUrl = "http://www.middleof.us/?l=" + data.key;
+      addressesService.customUrl = "http://www.middleof.us/?l=" + data.key;
+      $scope.customUrl = addressesService.customUrl;
     })
   };
 
