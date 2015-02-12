@@ -3611,7 +3611,7 @@ output {
 .form-control[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: #eeeeee;
+  /*background-color: #eeeeee;*/
   opacity: 1;
 }
 
@@ -9534,57 +9534,65 @@ form label {
 /* line 77, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .address-status {
   display: block;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
   font-size: 80%;
   padding-bottom: 0px;
   padding-top: 25px;
 }
 
 /* line 85, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-.addresses {
-  padding-bottom: 15px;
-}
-
-/* line 89, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
-.single-address {
-  margin-bottom: 15px;
-}
-
-/* line 93, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .deal {
   margin-right: 5px;
 }
 
-/* line 97, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 89, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .container-fluid {
   margin-left: 0px;
 }
 
-/* line 101, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 93, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .no-gutter > [class*='col-'] {
   padding-right: 0;
   padding-left: 0;
 }
 
-/* line 106, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 98, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 select.custom {
   padding: 0px 15px 0px 0px;
 }
 
 @-moz-document url-prefix() {
-  /* line 111, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+  /* line 103, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
   .btn-info {
     margin-top: 5px !important;
     margin-bottom: 5px;
   }
 }
 
-/* line 117, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 109, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .action {
   margin-bottom: 3px;
 }
 
-/* line 121, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+/* line 113, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
 .full-width {
   width: 100%;
+}
+
+/* line 118, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.team a:hover {
+  text-decoration: none;
+}
+/* line 121, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.team h6 {
+  margin-bottom: 8px;
+}
+/* line 124, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+.team section {
+  margin-bottom: 10px;
+}
+
+/* line 129, /Users/rgpass/rails_projects/middleofus/app/assets/stylesheets/application.css.scss */
+h1 {
+  margin-top: 0px;
 }
