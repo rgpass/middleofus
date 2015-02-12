@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <form name="addressForm" ng-submit="submitInfo();" focus-first-empty-input>
-        <div ng-repeat="address in addresses" class="addresses">
+        <div ng-repeat="address in addresses">
           <div class="form-group">
             <label class="control-label">
               Location {{addresses.indexOf(address)+1}}
@@ -29,9 +29,6 @@
                  (or <a ng-click="getGeolocation();"><i class="fa fa-location-arrow"></i> Use My Location</a>)
                  <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
                  <span ng-show="isGeolocationError">Error: {{geolocationErrorMessage}}</span>
-              </span>
-              <span ng-show="addresses.indexOf(address) == addresses.length-1 && addresses.length > 1">
-                 <a ng-click="addLocation();" ng-show="addresses.indexOf(address) == addresses.length - 1"><i class="fa fa-plus validation-indicator"></i> Add Location</a>
               </span>
             </label>
             <br>
@@ -44,13 +41,15 @@
               </a>
             </div>
           </div>
-          <div class="address-status" ng-class="{'single-address':addresses.length==1}">
+          <div class="address-status">
             <span class="white" ng-show="address.isEmpty && !address.isProcessing">Empty</span>
             <span ng-show="address.isProcessing"><i class="fa fa-spinner fa-spin"></i> Searching...</span>
             <span ng-show="address.isValid && !address.isEmpty"><i class="fa fa-check green"></i> Found: {{address.foundAddress}}</span>
             <span ng-hide="address.isValid || address.isEmpty"><i class="fa fa-times red"></i> Address not found</span>
           </div>
-          <a ng-show="addresses.length == 1" ng-click="addLocation();"><i class="fa fa-plus validation-indicator"></i> Add Location</a>
+          <a ng-show="addresses.indexOf(address) == addresses.length - 1" ng-click="addLocation();">
+            <i class="fa fa-plus validation-indicator"></i> Add Location
+          </a>
         </div>
         <br>
         <div class="row">
