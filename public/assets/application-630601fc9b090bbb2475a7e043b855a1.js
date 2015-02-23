@@ -61632,6 +61632,13 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
   $templateCache.put("team.html", '<div ng-controller="TeamCtrl">\n  <div class="text-center container-fluid team">\n    <div class="row">\n      <div ng-repeat="member in teamMembers">\n        <div class="col-xs-6 col-sm-3">\n          <p><img src="{{member.img}}" class="img-circle team"></p>\n          <h5>{{member.name}}</h5>\n          <h6>{{member.role}}</h6>\n          <section>\n            <a href="tel:+1{{member.phoneNumber}}" ng-show="{{member.phoneNumber}}">\n              <i class="fa fa-phone-square fa-lg"></i>\n            </a>\n            <a href="mailto:{{member.email}}" ng-show="{{member.email}}">\n              <i class="fa fa-envelope-square fa-lg"></i>\n            </a>\n            <a href="{{member.github}}" ng-show="{{member.github}}">\n              <i class="fa fa-github-square fa-lg"></i>\n            </a>\n            <a href="{{member.linkedin}}" ng-show="{{member.linkedin}}">\n              <i class="fa fa-linkedin-square fa-lg"></i>\n            </a>\n            <a href="{{member.twitter}}" ng-show="{{member.twitter}}">\n              <i class="fa fa-twitter-square fa-lg"></i>\n            </a>\n            <a href="{{member.facebook}}" ng-show="{{member.facebook}}">\n              <i class="fa fa-facebook-square fa-lg"></i>\n            </a>\n            <a href="{{member.personal}}" ng-show="{{member.personal}}">\n              <i class="fa fa-pencil-square fa-lg"></i>\n            </a>\n          </section>\n          <br class="visible-xs">\n          <p class="bio hidden-xs">{{member.bio}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>')
 }]);
 
+// Angular Rails Template
+// source: app/assets/templates/tips.html
+
+angular.module("templates").run(["$templateCache", function($templateCache) {
+  $templateCache.put("tips.html", '<div class="row">\n  <div class="col-md-9 col-md-offset-2 dynamic-center">\n    <br class="visible-md visible-lg">\n    <h1>Tips</h1>\n\n    <h3>General</h3>\n    <ul>\n      <li>When generating a Shareable Link, put your address second so that the recipient can use Geolocation</li>\n      <li>Add a Shareable Link to a calendar invite, asking the recipient to pick a place</li>\n      <li>Trading something off of Craigslist? Input an address that\'s *near* your house (don\'t use your home address for </li>safety reasons) and send it to them\n    </ul>\n\n    <h3>Social</h3>\n    <ul>\n      <li>Use geolocation and explore places near you</li>\n      <li>Have friends who live 20 minutes to 1 hour away? Find a midpoint and reconnect</li>\n      <li>Going on a sweet road trip? Find a hotel or food at a good halfway point</li>\n    </ul>\n\n    <h3>Professionals</h3>\n    <ul>\n      <li>Append your email signatures with a link to your saved work address and call it "Meet with me for lunch"</li>\n      <li>Add a shareable link to your LinkedIn profile with your work address</li>\n      <li>If you\'re married and moving to a new place, input your work addresses to find an apartment/house in the middle</li>\n      <li>Put it on your personal site to meet with local clients and recruiters</li>\n      <li>Working on a project with some peers, colleagues, or friends? Find a good spot for wifi</li>\n      <li>Planning a conference or tournament is stressful. Use MiddleOf.Us to find nearby hotels and food</li>\n    </ul>\n  </div>\n</div>')
+}]);
+
 /*!
  * Bootstrap v3.3.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -61681,6 +61688,10 @@ angular
         .state('team', {
           url: '/team',
           templateUrl: 'team.html'
+        })
+        .state('tips', {
+          url: '/tips',
+          templateUrl: 'tips.html'
         });
 
       // default fall back route
@@ -61694,6 +61705,7 @@ angular.module('myApp')
 
   $scope.placeType  = "free wifi";
   $scope.addresses = addressesService.addresses;
+  $scope.customUrl = addressesService.customUrl;
   checkIfAllEmptyAndValid();
 
   if ($location.search().l) {
@@ -61897,7 +61909,8 @@ angular.module('myApp')
       return address.address;
     });
     addressesService.generateCustomUrl(addressesOnly).success(function(data) {
-      $scope.customUrl = "http://www.middleof.us/?l=" + data.key;
+      addressesService.customUrl = "http://www.middleof.us/?l=" + data.key;
+      $scope.customUrl = addressesService.customUrl;
     })
   };
 
