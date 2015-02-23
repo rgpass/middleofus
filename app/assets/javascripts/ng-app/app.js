@@ -32,6 +32,10 @@ angular
         .state('team', {
           url: '/team',
           templateUrl: 'team.html'
+        })
+        .state('tips', {
+          url: '/tips',
+          templateUrl: 'tips.html'
         });
 
       // default fall back route
