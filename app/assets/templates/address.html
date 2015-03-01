@@ -54,20 +54,20 @@
         </div>
         <br>
         <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary full-width">
+              Get Places <div ng-show="processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>
+            </button>
+          </div>
+        </div>
+        <br>
+        <div class="row">
           <div class="col-sm-6 col-xs-12">
             <a ng-click="generateCustomUrl()" class="btn btn-success full-width">Create Shareable Link</a>
             <br>
           </div>
           <div class="col-sm-6 col-xs-12 text-center">
-            <input onClick="this.setSelectionRange(0, this.value.length)" value="{{customUrl}}" class="form-control" readonly placeholder="Generate a link to share with friends/colleagues"/>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-            <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary full-width">
-              Get Places <div ng-show="processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>
-            </button>
+            <input onClick="this.setSelectionRange(0, this.value.length)" value="{{customUrl}}" class="form-control" placeholder="Generate a link to share with friends/colleagues"/>
           </div>
         </div>
       </form>
@@ -99,7 +99,7 @@
               <td>
                 {{result.distance}} <span class="hidden-xs">mile(s)</span><span class="visible-xs">mi</span>
               </td>
-              <td>
+              <td style="white-space:nowrap;">
                 <div ng-show="result.rating == 5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                  <div ng-show="result.rating == 4.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
                 <div ng-show="result.rating == 4.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>
