@@ -35,7 +35,7 @@ angular.module('myApp')
     })
   };
 
-  this.isValidAddress = function(location) {
+  this.isValidAddress = function(location) {    
     params = { address: location.address };
     return $http.get(validityUrl + '.json', { params: params }).success(function(data) {
       location.isValid = data.is_valid;

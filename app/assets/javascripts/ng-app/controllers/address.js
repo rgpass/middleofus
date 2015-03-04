@@ -43,7 +43,7 @@ angular.module('myApp')
   };
 
   $scope.$watch('addresses', function(newValue, oldValue) {
-
+    // /?l=ltjgklzf
     for (var i = 0; i < newValue.length; i++) {
       newLocation = newValue[i];
       oldLocation = oldValue[i];
@@ -126,27 +126,28 @@ angular.module('myApp')
     }
   });
 
-  $scope.$watch('addresses', function(newValue, oldValue) {
-
-    for (var i = 0; i < newValue.length; i++) {
-      newLocation = newValue[i];
-      oldLocation = oldValue[i];
-      if (newLocation.address != oldLocation.address) {
-        $scope.customUrl = null;
-        newLocation.isEmpty = true;
-        newLocation.isProcessing = true;
-        addressesService.isValidAddress(newLocation);
-      } else if (newLocation.address == "") {
-        newLocation.isEmpty = true;
-        newLocation.isProcessing = false;
-        newLocation.isValid = true;
-      }
-    }
-    if (newValue != oldValue) {
-      $timeout(checkIfAllEmptyAndValid, 1);
-    }
-    addressesService.setAddresses($scope.addresses);
-  }, true);
+  // $scope.$watch('addresses', function(newValue, oldValue) {
+  //   // /?l=ltjgklzf
+  //   for (var i = 0; i < newValue.length; i++) {
+  //     newLocation = newValue[i];
+  //     oldLocation = oldValue[i];
+  //     if (newLocation.address != oldLocation.address) {
+  //       $scope.customUrl = null;
+  //       newLocation.isEmpty = true;
+  //       newLocation.isProcessing = true;
+  //       console.log('Running from $watch addresses -- ' + location.address);
+  //       // addressesService.isValidAddress(newLocation);
+  //     } else if (newLocation.address == "") {
+  //       newLocation.isEmpty = true;
+  //       newLocation.isProcessing = false;
+  //       newLocation.isValid = true;
+  //     }
+  //   }
+  //   if (newValue != oldValue) {
+  //     // $timeout(checkIfAllEmptyAndValid, 1);
+  //   }
+  //   addressesService.setAddresses($scope.addresses);
+  // }, true);
 
   function setTextVariables() {
     $scope.sendingText = false;
