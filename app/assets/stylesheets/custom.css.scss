@@ -16,6 +16,19 @@ p.role {
 p.lead {
   margin-bottom: 2px;
 }
-.fa-star,.fa-star-half-o,.fa-star-o {
-  color: #007196 ;
+
+
+.table-striped > tbody > tr:nth-child(odd) {
+  color: white ;
+  .fa-star, .fa-star-half-o, .fa-star-o {
+  color: orange ;
+  }
 }
+.table-striped > tbody > tr:nth-child(even) {
+  color: #008cba;
+  .fa-star, .fa-star-half-o, .fa-star-o {
+  color: orange ;
+  }
+}
+
+
