@@ -2,10 +2,10 @@
 
   angular
     .module('myApp')
-    .controller('AddressCtrl',
-      ['$timeout', 'addressesService', '$location', AddressCtrl]);
+    .controller('AddressController',
+      ['$timeout', 'addressesService', '$location', AddressController]);
 
-    function AddressCtrl($timeout, addressesService, $location) {
+    function AddressController($timeout, addressesService, $location) {
 
       var vm = this;
 
