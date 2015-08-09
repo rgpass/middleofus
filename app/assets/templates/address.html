@@ -3,7 +3,9 @@
     <div class="col-md-9 col-md-offset-2 dynamic-center">
       <br class="visible-md visible-lg">
       <h1>Find
-        <select class="btn btn-primary btn-lg custom" ng-model="addressCtrl.placeType">
+        <select
+          ng-model="addressCtrl.placeType"
+          class="btn btn-primary btn-lg custom">
           <option value="free wifi">free wifi</option>
           <option value="food">food</option>
           <option value="coffee">coffee</option>
@@ -18,21 +20,38 @@
       </h1>
     </div>
   </div>
+
   <br>
+
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <form name="addressForm" ng-submit="addressCtrl.submitInfo();" focus-first-empty-input>
+      <form
+        focus-first-empty-input
+        ng-submit="addressCtrl.submitInfo();"
+        name="addressForm">
         <div ng-repeat="address in addressCtrl.addresses">
           <div class="form-group">
             <label class="control-label">
               Location {{addressCtrl.addresses.indexOf(address)+1}}
               <span ng-show="addressCtrl.addresses.indexOf(address) == 0">
-                 (or <a ng-click="addressCtrl.getGeolocation();"><i class="fa fa-location-arrow"></i> Use My Location</a>)
-                 <div class="inline-block" ng-show="addressCtrl.isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>
-                 <span ng-show="addressCtrl.isGeolocationError">Error: {{addressCtrl.geolocationErrorMessage}}</span>
+                (or 
+                <a ng-click="addressCtrl.getGeolocation();">
+                  <i class="fa fa-location-arrow"></i> Use My Location
+                </a>
+                )
+                <div
+                  ng-show="addressCtrl.isGeolocationProcessing"
+                  class="inline-block">
+                  <i class="fa fa-spin fa-spinner validation-indicator"></i>
+                </div>
+                <span ng-show="addressCtrl.isGeolocationError">
+                  Error: {{addressCtrl.geolocationErrorMessage}}
+                </span>
               </span>
             </label>
+
             <br>
+
             <div class="col-xs-11 input">
               <input
                 type="text"
@@ -43,43 +62,78 @@
                 class="form-control">
             </div>
             <div class="col-xs-1 minus">
-              <a ng-click="addressCtrl.removeLocation(address);" ng-show="addressCtrl.addresses.indexOf(address) != 0">
+              <a
+                ng-show="addressCtrl.addresses.indexOf(address) != 0"
+                ng-click="addressCtrl.removeLocation(address);">
                 <i class="fa fa-minus"></i>
               </a>
             </div>
           </div>
           <div class="address-status">
-            <span class="white" ng-show="address.isEmpty && !address.isProcessing">Empty</span>
-            <span ng-show="address.isProcessing"><i class="fa fa-spinner fa-spin"></i> Searching...</span>
-            <span ng-show="address.isValid && !address.isEmpty"><i class="fa fa-check green"></i> Found: {{address.foundAddress}}</span>
-            <span ng-hide="address.isValid || address.isEmpty"><i class="fa fa-times red"></i> Address not found</span>
+            <span
+              ng-show="address.isEmpty && !address.isProcessing"
+              class="white">
+              Empty
+            </span>
+            <span ng-show="address.isProcessing">
+              <i class="fa fa-spinner fa-spin"></i> 
+              Searching...
+            </span>
+            <span ng-show="address.isValid && !address.isEmpty">
+              <i class="fa fa-check green"></i> Found: {{address.foundAddress}}
+            </span>
+            <span ng-hide="address.isValid || address.isEmpty">
+              <i class="fa fa-times red"></i> Address not found
+            </span>
           </div>
-          <a ng-show="addressCtrl.addresses.indexOf(address) == addressCtrl.addresses.length - 1" ng-click="addressCtrl.addLocation();">
+          <a
+            ng-show="addressCtrl.addresses.indexOf(address) == addressCtrl.addresses.length - 1"
+            ng-click="addressCtrl.addLocation();">
             <i class="fa fa-plus validation-indicator"></i> Add Location
           </a>
         </div>
         <br>
         <div class="row">
           <div class="col-xs-12 col-md-12">
-            <button type="submit" ng-disabled="addressForm.$invalid || !addressCtrl.isAllValid || addressCtrl.isAllEmpty" ng-click="addressCtrl.processing=true" ng-init="addressCtrl.processing=false" class="btn btn-primary full-width">
-              Get Places <div ng-show="addressCtrl.processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>
+            <button
+              type="submit"
+              ng-disabled="addressForm.$invalid
+                          || !addressCtrl.isAllValid
+                          || addressCtrl.isAllEmpty"
+              ng-click="addressCtrl.processing=true"
+              ng-init="addressCtrl.processing=false"
+              class="btn btn-primary full-width">
+              Get Places 
+              <div ng-show="addressCtrl.processing" class="inline-block">
+                <i class="fa fa-spin fa-spinner"></i>
+              </div>
             </button>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-sm-6 col-xs-12">
-            <a ng-click="addressCtrl.generateCustomUrl()" class="btn btn-success full-width">Create Shareable Link</a>
+            <a
+              ng-click="addressCtrl.generateCustomUrl()"
+              class="btn btn-success full-width">
+              Create Shareable Link
+            </a>
             <br>
           </div>
           <div class="col-sm-6 col-xs-12 text-center">
-            <input onClick="this.setSelectionRange(0, this.value.length)" value="{{addressCtrl.customUrl}}" class="form-control" placeholder="Generate a link to share with friends/colleagues"/>
+            <input
+              onClick="this.setSelectionRange(0, this.value.length)"
+              value="{{addressCtrl.customUrl}}"
+              class="form-control"
+              placeholder="Generate a link to share with friends/colleagues" />
           </div>
         </div>
       </form>
     </div>
   </div>
+
   <br class="hidden-xs">
+
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div ng-show="addressCtrl.results" id="results">
@@ -89,8 +143,12 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th ng-show="addressCtrl.addressesOnly.length > 1">From Midpoint</th>
-              <th ng-hide="addressCtrl.addressesOnly.length > 1">Distance</th>
+              <th ng-show="addressCtrl.addressesOnly.length > 1">
+                From Midpoint
+              </th>
+              <th ng-hide="addressCtrl.addressesOnly.length > 1">
+                Distance
+              </th>
               <th>
                 Yelp Rating
               </th>
@@ -98,12 +156,19 @@
             </tr>
           </thead>
           <tbody id="results">
-            <tr ng-repeat="result in addressCtrl.results" ng-click="addressCtrl.selectResult(result);" ng-class="{success: result.deals}">
+            <tr
+              ng-repeat="result in addressCtrl.results"
+              ng-click="addressCtrl.selectResult(result);"
+              ng-class="{success: result.deals}">
               <td>
-                <i class="fa fa-dollar strong deal" ng-show="result.deals"></i>{{result.name}}
+                <i
+                  ng-show="result.deals"
+                  class="fa fa-dollar strong deal"></i>{{result.name}}
               </td>
               <td>
-                {{result.distance}} <span class="hidden-xs">mile(s)</span><span class="visible-xs">mi</span>
+                {{result.distance}} 
+                <span class="hidden-xs">mile(s)</span>
+                <span class="visible-xs">mi</span>
               </td>
               <td style="white-space:nowrap;">
                 <div ng-show="result.rating == 5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
@@ -133,7 +198,12 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div ng-show="addressCtrl.selectedResult" id="result">
         <div class="alert alert-dismissable alert-primary">
-          <button type="button" class="close" ng-click="addressCtrl.clearSelectedResult();">close</button>
+          <button
+            type="button"
+            class="close"
+            ng-click="addressCtrl.clearSelectedResult();">
+            close
+          </button>
           <h2>{{addressCtrl.selectedResult.name}}</h2>
           <h4>
             {{addressCtrl.selectedResult.address_first}}
@@ -142,16 +212,28 @@
           </h4>
           <br>
           <h4>Actions:</h4>
-          <a href="{{addressCtrl.selectedResult.deals['hash']['purchase_url']}}" class="btn btn-success action" target="_blank" ng-show="addressCtrl.selectedResult.deals">
+          <a
+            ng-show="addressCtrl.selectedResult.deals"
+            href="{{addressCtrl.selectedResult.deals['hash']['purchase_url']}}"
+            class="btn btn-success action"
+            target="_blank">
             Coupon: {{addressCtrl.selectedResult.deals["hash"]["title"]}}
           </a>
-          <a href="{{addressCtrl.selectedResult.website}}" class="btn btn-info action" target="_blank">
+          <a
+            href="{{addressCtrl.selectedResult.website}}"
+            class="btn btn-info action"
+            target="_blank">
             View on Yelp
           </a>
-          <a href="https://maps.google.com?q={{addressCtrl.selectedResult.address}}" class="btn btn-info action" target="_blank">
+          <a
+            href="https://maps.google.com?q={{addressCtrl.selectedResult.address}}"
+            class="btn btn-info action"
+            target="_blank">
             View on Google Maps
           </a>
+
           <br><br>
+
           <h4>Text Address To:</h4>
           <form name="addressForm" ng-submit="addressCtrl.createMessage();">
             <input
@@ -161,10 +243,28 @@
               style="height:38px;color:black;font-size:150%"
               placeholder="5558675309" />
             <br class="visible-xs"><br class="visible-xs">
-            <button type="submit" class="btn btn-info" style="margin-top:-5px;">Send</button>
-            <div ng-show="addressCtrl.sendingText" style="display:inline-block;"><i class="fa fa-spin fa-spinner" style="display:inline-block;"></i></div>
-            <i ng-show="addressCtrl.sentText"  class="fa fa-check white validation-indicator"></i>
-            <i ng-show="addressCtrl.textError"  class="fa fa-times white validation-indicator"></i>
+            <button
+              type="submit"
+              class="btn btn-info"
+              style="margin-top:-5px;">
+              Send
+            </button>
+            <div
+              ng-show="addressCtrl.sendingText"
+              style="display:inline-block;">
+              <i
+                class="fa fa-spin fa-spinner"
+                style="display:inline-block;">
+              </i>
+              </div>
+            <i
+              ng-show="addressCtrl.sentText"
+              class="fa fa-check white validation-indicator">
+            </i>
+            <i
+              ng-show="addressCtrl.textError"
+              class="fa fa-times white validation-indicator">
+            </i>
           </form>
         </div>
       </div>
