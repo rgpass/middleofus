@@ -61615,7 +61615,7 @@ angular.module('uiGmapgoogle-maps.extensions')
 // source: app/assets/templates/address.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("address.html", '<div ng-controller="AddressCtrl">\n  <div class="row">\n    <div class="col-md-9 col-md-offset-2 dynamic-center">\n      <br class="visible-md visible-lg">\n      <h1>Find\n        <select class="btn btn-primary btn-lg custom" ng-model="placeType">\n          <option value="free wifi">free wifi</option>\n          <option value="food">food</option>\n          <option value="coffee">coffee</option>\n          <option value="bar">bars</option>\n          <option value="fast food">fast food</option>\n          <option value="hotel">hotels</option>\n          <option value="yogurt">yogurt</option>\n          <option value="">anything</option>\n        </select>\n        <br class="visible-xs">\n        in the middle of...\n      </h1>\n    </div>\n  </div>\n  <br>\n  <div class="row">\n    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">\n      <form name="addressForm" ng-submit="submitInfo();" focus-first-empty-input>\n        <div ng-repeat="address in addresses">\n          <div class="form-group">\n            <label class="control-label">\n              Location {{addresses.indexOf(address)+1}}\n              <span ng-show="addresses.indexOf(address) == 0">\n                 (or <a ng-click="getGeolocation();"><i class="fa fa-location-arrow"></i> Use My Location</a>)\n                 <div class="inline-block" ng-show="isGeolocationProcessing"><i class="fa fa-spin fa-spinner validation-indicator"></i></div>\n                 <span ng-show="isGeolocationError">Error: {{geolocationErrorMessage}}</span>\n              </span>\n            </label>\n            <br>\n            <div class="col-xs-11 input">\n              <input type="text" ng-model="address.address" placeholder="{{address.placeholder}}" ng-debounce="300" class="form-control">\n            </div>\n            <div class="col-xs-1 minus">\n              <a ng-click="removeLocation(address);" ng-show="addresses.indexOf(address) != 0">\n                <i class="fa fa-minus"></i>\n              </a>\n            </div>\n          </div>\n          <div class="address-status">\n            <span class="white" ng-show="address.isEmpty && !address.isProcessing">Empty</span>\n            <span ng-show="address.isProcessing"><i class="fa fa-spinner fa-spin"></i> Searching...</span>\n            <span ng-show="address.isValid && !address.isEmpty"><i class="fa fa-check green"></i> Found: {{address.foundAddress}}</span>\n            <span ng-hide="address.isValid || address.isEmpty"><i class="fa fa-times red"></i> Address not found</span>\n          </div>\n          <a ng-show="addresses.indexOf(address) == addresses.length - 1" ng-click="addLocation();">\n            <i class="fa fa-plus validation-indicator"></i> Add Location\n          </a>\n        </div>\n        <br>\n        <div class="row">\n          <div class="col-xs-12 col-md-12">\n            <button type="submit" ng-disabled="addressForm.$invalid || !isAllValid || isAllEmpty" ng-click="processing=true" ng-init="processing=false" class="btn btn-primary full-width">\n              Get Places <div ng-show="processing" class="inline-block"><i class="fa fa-spin fa-spinner"></i></div>\n            </button>\n          </div>\n        </div>\n        <br>\n        <div class="row">\n          <div class="col-sm-6 col-xs-12">\n            <a ng-click="generateCustomUrl()" class="btn btn-success full-width">Create Shareable Link</a>\n            <br>\n          </div>\n          <div class="col-sm-6 col-xs-12 text-center">\n            <input onClick="this.setSelectionRange(0, this.value.length)" value="{{customUrl}}" class="form-control" placeholder="Generate a link to share with friends/colleagues"/>\n          </div>\n        </div>\n      </form>\n    </div>\n  </div>\n  <br class="hidden-xs">\n  <div class="row">\n    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">\n      <div ng-show="results" id="results">\n        <h2>Closest {{results.length}} results</h2>\n        <p>Click for more info</p>\n        <table class="table table-striped table-hover">\n          <thead>\n            <tr>\n              <th>Name</th>\n              <th ng-show="addressesOnly.length > 1">From Midpoint</th>\n              <th ng-hide="addressesOnly.length > 1">Distance</th>\n              <th>\n                Yelp Rating\n              </th>\n              <th class="hidden-xs">Address</th>\n            </tr>\n          </thead>\n          <tbody id="results">\n            <tr ng-repeat="result in results" ng-click="selectResult(result);" ng-class="{success: result.deals}">\n              <td>\n                <i class="fa fa-dollar strong deal" ng-show="result.deals"></i>{{result.name}}\n              </td>\n              <td>\n                {{result.distance}} <span class="hidden-xs">mile(s)</span><span class="visible-xs">mi</span>\n              </td>\n              <td style="white-space:nowrap;">\n                <div ng-show="result.rating == 5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>\n                 <div ng-show="result.rating == 4.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>\n                <div ng-show="result.rating == 4.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 3.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 3.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 2.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 2.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 1.5"><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 1.0"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 0.5"><i class="fa fa-star-half-o"></i></div>    \n              </td>\n              <td class="hidden-xs">{{result.address}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div ng-show="error">\n        <h2>{{error}}</h2>\n      </div>\n    </div>\n  </div>\n\n  <div class="row no-gutter">\n    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">\n      <div ng-show="selectedResult" id="result">\n        <div class="alert alert-dismissable alert-primary">\n          <button type="button" class="close" ng-click="clearSelectedResult();">close</button>\n          <h2>{{selectedResult.name}}</h2>\n          <h4>\n            {{selectedResult.address_first}}\n            <br>\n            {{selectedResult.address_last}}\n          </h4>\n          <br>\n          <h4>Actions:</h4>\n          <a href="{{selectedResult.deals[\'hash\'][\'purchase_url\']}}" class="btn btn-success action" target="_blank" ng-show="selectedResult.deals">\n            Coupon: {{selectedResult.deals["hash"]["title"]}}\n          </a>\n          <a href="{{selectedResult.website}}" class="btn btn-info action" target="_blank">\n            View on Yelp\n          </a>\n          <a href="https://maps.google.com?q={{selectedResult.address}}" class="btn btn-info action" target="_blank">\n            View on Google Maps\n          </a>\n          <br><br>\n          <h4>Text Address To:</h4>\n          <form name="addressForm" ng-submit="createMessage();">\n            <input type="text" ng-model="phoneNumber" style="height:38px;color:black;font-size:150%" placeholder="5558675309">\n            <br class="visible-xs"><br class="visible-xs">\n            <button type="submit" class="btn btn-info" style="margin-top:-5px;">Send</button>\n            <div ng-show="sendingText" style="display:inline-block;"><i class="fa fa-spin fa-spinner" style="display:inline-block;"></i></div>\n            <i ng-show="sentText"  class="fa fa-check white validation-indicator"></i>\n            <i ng-show="textError"  class="fa fa-times white validation-indicator"></i>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>')
+  $templateCache.put("address.html", '<div>\n  <div class="row">\n    <div class="col-md-9 col-md-offset-2 dynamic-center">\n      <br class="visible-md visible-lg">\n      <h1>Find\n        <select\n          ng-model="addressCtrl.placeType"\n          class="btn btn-primary btn-lg custom">\n          <option value="free wifi">free wifi</option>\n          <option value="food">food</option>\n          <option value="coffee">coffee</option>\n          <option value="bar">bars</option>\n          <option value="fast food">fast food</option>\n          <option value="hotel">hotels</option>\n          <option value="yogurt">yogurt</option>\n          <option value="">anything</option>\n        </select>\n        <br class="visible-xs">\n        in the middle of...\n      </h1>\n    </div>\n  </div>\n\n  <br>\n\n  <div class="row">\n    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">\n      <form\n        focus-first-empty-input\n        ng-submit="addressCtrl.submitInfo();"\n        name="addressForm">\n        <div ng-repeat="address in addressCtrl.addresses">\n          <div class="form-group">\n            <label class="control-label">\n              Location {{addressCtrl.addresses.indexOf(address)+1}}\n              <span ng-show="addressCtrl.addresses.indexOf(address) == 0">\n                (or \n                <a ng-click="addressCtrl.getGeolocation();">\n                  <i class="fa fa-location-arrow"></i> Use My Location\n                </a>\n                )\n                <div\n                  ng-show="addressCtrl.isGeolocationProcessing"\n                  class="inline-block">\n                  <i class="fa fa-spin fa-spinner validation-indicator"></i>\n                </div>\n                <span ng-show="addressCtrl.isGeolocationError">\n                  Error: {{addressCtrl.geolocationErrorMessage}}\n                </span>\n              </span>\n            </label>\n\n            <br>\n\n            <div class="col-xs-11 input">\n              <input\n                type="text"\n                ng-model="address.address"\n                ng-change="addressCtrl.checkIfValidAddress(address)"\n                placeholder="{{address.placeholder}}"\n                ng-debounce="300"\n                class="form-control">\n            </div>\n            <div class="col-xs-1 minus">\n              <a\n                ng-show="addressCtrl.addresses.indexOf(address) != 0"\n                ng-click="addressCtrl.removeLocation(address);">\n                <i class="fa fa-minus"></i>\n              </a>\n            </div>\n          </div>\n          <div class="address-status">\n            <span\n              ng-show="address.isEmpty && !address.isProcessing"\n              class="white">\n              Empty\n            </span>\n            <span ng-show="address.isProcessing">\n              <i class="fa fa-spinner fa-spin"></i> \n              Searching...\n            </span>\n            <span ng-show="address.isValid && !address.isEmpty">\n              <i class="fa fa-check green"></i> Found: {{address.foundAddress}}\n            </span>\n            <span ng-hide="address.isValid || address.isEmpty">\n              <i class="fa fa-times red"></i> Address not found\n            </span>\n          </div>\n          <a\n            ng-show="addressCtrl.addresses.indexOf(address) == addressCtrl.addresses.length - 1"\n            ng-click="addressCtrl.addLocation();">\n            <i class="fa fa-plus validation-indicator"></i> Add Location\n          </a>\n        </div>\n        <br>\n        <div class="row">\n          <div class="col-xs-12 col-md-12">\n            <button\n              type="submit"\n              ng-disabled="addressForm.$invalid\n                          || !addressCtrl.isAllValid\n                          || addressCtrl.isAllEmpty"\n              ng-click="addressCtrl.processing=true"\n              ng-init="addressCtrl.processing=false"\n              class="btn btn-primary full-width">\n              Get Places \n              <div ng-show="addressCtrl.processing" class="inline-block">\n                <i class="fa fa-spin fa-spinner"></i>\n              </div>\n            </button>\n          </div>\n        </div>\n        <br>\n        <div class="row">\n          <div class="col-sm-6 col-xs-12">\n            <a\n              ng-click="addressCtrl.generateCustomUrl()"\n              class="btn btn-success full-width">\n              Create Shareable Link\n            </a>\n            <br>\n          </div>\n          <div class="col-sm-6 col-xs-12 text-center">\n            <input\n              onClick="this.setSelectionRange(0, this.value.length)"\n              value="{{addressCtrl.customUrl}}"\n              class="form-control"\n              placeholder="Generate a link to share with friends/colleagues" />\n          </div>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <br class="hidden-xs">\n\n  <div class="row">\n    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">\n      <div ng-show="addressCtrl.results" id="results">\n        <h2>Closest {{addressCtrl.results.length}} results</h2>\n        <p>Click for more info</p>\n        <table class="table table-striped table-hover">\n          <thead>\n            <tr>\n              <th>Name</th>\n              <th ng-show="addressCtrl.addressesOnly.length > 1">\n                From Midpoint\n              </th>\n              <th ng-hide="addressCtrl.addressesOnly.length > 1">\n                Distance\n              </th>\n              <th>\n                Yelp Rating\n              </th>\n              <th class="hidden-xs">Address</th>\n            </tr>\n          </thead>\n          <tbody id="results">\n            <tr\n              ng-repeat="result in addressCtrl.results"\n              ng-click="addressCtrl.selectResult(result);"\n              ng-class="{success: result.deals}">\n              <td>\n                <i\n                  ng-show="result.deals"\n                  class="fa fa-dollar strong deal"></i>{{result.name}}\n              </td>\n              <td>\n                {{result.distance}} \n                <span class="hidden-xs">mile(s)</span>\n                <span class="visible-xs">mi</span>\n              </td>\n              <td style="white-space:nowrap;">\n                <div ng-show="result.rating == 5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>\n                 <div ng-show="result.rating == 4.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>\n                <div ng-show="result.rating == 4.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 3.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 3.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 2.5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 2.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 1.5"><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 1.0"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>\n                <div ng-show="result.rating == 0.5"><i class="fa fa-star-half-o"></i></div>    \n              </td>\n              <td class="hidden-xs">{{result.address}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div ng-show="addressCtrl.error">\n        <h2>{{addressCtrl.error}}</h2>\n      </div>\n    </div>\n  </div>\n\n  <div class="row no-gutter">\n    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">\n      <div ng-show="addressCtrl.selectedResult" id="result">\n        <div class="alert alert-dismissable alert-primary">\n          <button\n            type="button"\n            class="close"\n            ng-click="addressCtrl.clearSelectedResult();">\n            close\n          </button>\n          <h2>{{addressCtrl.selectedResult.name}}</h2>\n          <h4>\n            {{addressCtrl.selectedResult.address_first}}\n            <br>\n            {{addressCtrl.selectedResult.address_last}}\n          </h4>\n          <br>\n          <h4>Actions:</h4>\n          <a\n            ng-show="addressCtrl.selectedResult.deals"\n            href="{{addressCtrl.selectedResult.deals[\'hash\'][\'purchase_url\']}}"\n            class="btn btn-success action"\n            target="_blank">\n            Coupon: {{addressCtrl.selectedResult.deals["hash"]["title"]}}\n          </a>\n          <a\n            href="{{addressCtrl.selectedResult.website}}"\n            class="btn btn-info action"\n            target="_blank">\n            View on Yelp\n          </a>\n          <a\n            href="https://maps.google.com?q={{addressCtrl.selectedResult.address}}"\n            class="btn btn-info action"\n            target="_blank">\n            View on Google Maps\n          </a>\n\n          <br><br>\n\n          <h4>Text Address To:</h4>\n          <form name="addressForm" ng-submit="addressCtrl.createMessage();">\n            <input\n              type="text"\n              ng-model="addressCtrl.phoneNumber"\n              ng-change="addressCtrl.hideIcons()"\n              style="height:38px;color:black;font-size:150%"\n              placeholder="5558675309" />\n            <br class="visible-xs"><br class="visible-xs">\n            <button\n              type="submit"\n              class="btn btn-info"\n              style="margin-top:-5px;">\n              Send\n            </button>\n            <div\n              ng-show="addressCtrl.sendingText"\n              style="display:inline-block;">\n              <i\n                class="fa fa-spin fa-spinner"\n                style="display:inline-block;">\n              </i>\n              </div>\n            <i\n              ng-show="addressCtrl.sentText"\n              class="fa fa-check white validation-indicator">\n            </i>\n            <i\n              ng-show="addressCtrl.textError"\n              class="fa fa-times white validation-indicator">\n            </i>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -61629,7 +61629,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/team.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("team.html", '<div ng-controller="TeamCtrl">\n  <div class="text-center container-fluid team">\n    <div class="row">\n      <div ng-repeat="member in teamMembers">\n        <div class="col-xs-6 col-sm-3">\n          <p><img src="{{member.img}}" class="img-circle team"></p>\n          <h5>{{member.name}}</h5>\n          <h6>{{member.role}}</h6>\n          <section>\n            <a href="tel:+1{{member.phoneNumber}}" ng-show="{{member.phoneNumber}}">\n              <i class="fa fa-phone-square fa-lg"></i>\n            </a>\n            <a href="mailto:{{member.email}}" ng-show="{{member.email}}">\n              <i class="fa fa-envelope-square fa-lg"></i>\n            </a>\n            <a href="{{member.github}}" ng-show="{{member.github}}" target="_blank">\n              <i class="fa fa-github-square fa-lg"></i>\n            </a>\n            <a href="{{member.linkedin}}" ng-show="{{member.linkedin}}" target="_blank">\n              <i class="fa fa-linkedin-square fa-lg"></i>\n            </a>\n            <a href="{{member.twitter}}" ng-show="{{member.twitter}}" target="_blank">\n              <i class="fa fa-twitter-square fa-lg"></i>\n            </a>\n            <a href="{{member.facebook}}" ng-show="{{member.facebook}}" target="_blank">\n              <i class="fa fa-facebook-square fa-lg"></i>\n            </a>\n            <a href="{{member.personal}}" ng-show="{{member.personal}}" target="_blank">\n              <i class="fa fa-pencil-square fa-lg"></i>\n            </a>\n          </section>\n          <br class="visible-xs">\n          <p class="bio hidden-xs">{{member.bio}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>')
+  $templateCache.put("team.html", '<div>\n  <div class="text-center container-fluid team">\n    <div class="row">\n      <div ng-repeat="member in teamCtrl.teamMembers">\n        <div class="col-xs-6 col-sm-3">\n          <p><img src="{{member.img}}" class="img-circle team"></p>\n          <h5>{{member.name}}</h5>\n          <h6>{{member.role}}</h6>\n          <section>\n            <a\n              href="tel:+1{{member.phoneNumber}}"\n              ng-show="{{member.phoneNumber}}">\n              <i class="fa fa-phone-square fa-lg"></i>\n            </a>\n            <a\n              href="mailto:{{member.email}}"\n              ng-show="{{member.email.length > 0}}">\n              <i class="fa fa-envelope-square fa-lg"></i>\n            </a>\n            <a\n              href="{{member.github}}"\n              ng-show="{{member.github.length > 0}}"\n              target="_blank">\n              <i class="fa fa-github-square fa-lg"></i>\n            </a>\n            <a\n              href="{{member.linkedin}}"\n              ng-show="{{member.linkedin.length > 0}}"\n              target="_blank">\n              <i class="fa fa-linkedin-square fa-lg"></i>\n            </a>\n            <a\n              href="{{member.twitter}}"\n              ng-show="{{member.twitter.length > 0}}"\n              target="_blank">\n              <i class="fa fa-twitter-square fa-lg"></i>\n            </a>\n            <a\n              href="{{member.facebook}}"\n              ng-show="{{member.facebook.length > 0}}"\n              target="_blank">\n              <i class="fa fa-facebook-square fa-lg"></i>\n            </a>\n            <a\n              href="{{member.personal}}"\n              ng-show="{{member.personal.length > 0}}"\n              target="_blank">\n              <i class="fa fa-pencil-square fa-lg"></i>\n            </a>\n          </section>\n\n          <br class="visible-xs">\n\n          <p class="bio hidden-xs">{{member.bio}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -61654,300 +61654,363 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-58672107-1', 'auto');
 ga('send', 'pageview');
-angular
-  .module('myApp', [
-    'ngAnimate',
-    'ngSanitize',
-    'ui.router',
-    'ct.ui.router.extras',
-    'uiGmapgoogle-maps',
-    'templates'
-  ])
-  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'uiGmapGoogleMapApiProvider',
-    function ($stateProvider, $urlRouterProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
+(function() {
 
-      uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyC1dmAqADx6Jsu2eeaWBMCIW2U1EW05B_c',
-        v: '3.17',
-        libraries: 'geometry,visualization'
-      });
+  angular
+    .module('myApp', [
+      'ngAnimate',
+      'ngSanitize',
+      'ui.router',
+      'ct.ui.router.extras',
+      'uiGmapgoogle-maps',
+      'templates'
+    ])
+    .config([
+      '$stateProvider', '$urlRouterProvider', '$locationProvider',
+      'uiGmapGoogleMapApiProvider', routes
+    ]);
 
-      /**
-       * Routes and States
-       */
-      $stateProvider
-        .state('address', {
-            url: '/',
-            templateUrl: 'address.html',
-            controller: 'AddressCtrl'
-        })
-        .state('donations', {
-          url: '/donations',
-          templateUrl: 'donations.html'
-        })
-        .state('team', {
-          url: '/team',
-          templateUrl: 'team.html'
-        })
-        .state('tips', {
-          url: '/tips',
-          templateUrl: 'tips.html'
-        });
+  function routes(
+    $stateProvider, $urlRouterProvider, $locationProvider, 
+    uiGmapGoogleMapApiProvider
+  ) {
 
-      // default fall back route
-      $urlRouterProvider.otherwise('/');
-
-      // enable HTML5 Mode for SEO
-      $locationProvider.html5Mode(true);
-  }]);
-angular.module('myApp')
-.controller('AddressCtrl', ['$scope', '$timeout', 'addressesService', '$location', function ($scope, $timeout, addressesService, $location) {
-
-  $scope.placeType  = "free wifi";
-  $scope.addresses = addressesService.addresses;
-  $scope.customUrl = addressesService.customUrl;
-  checkIfAllEmptyAndValid();
-
-  if ($location.search().l) {
-    console.log($location.search().l);
-    $scope.addresses = [];
-    $timeout(function() {
-      addressesService.loadInAddresses($location.search().l).success(function() {
-        $scope.addresses = addressesService.addresses;
-      });
-    }, 1);
-    $timeout(function() {
-        _.each($scope.addresses, function(address) {
-        address.isEmpty = true;
-        address.isProcessing = true;
-        addressesService.isValidAddress(address);
-      });
-    }, 1000);
-  }
-
-  function checkIfAllEmptyAndValid() {
-    $scope.isAllValid = true;
-    $scope.isAllEmpty = true;
-    _.each($scope.addresses, function(address) {
-      if (address.isValid == false) {
-        $scope.isAllValid = false;
-      }
-      if (address.address != "") {
-        $scope.isAllEmpty = false;
-      }
-    })
-  }
-
-  $scope.addLocation = function() {
-    // TODO: Figure out why this causes an error
-    var newLocation = { address: "", placeholder: "optional address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
-    $scope.addresses.push(newLocation);
-  };
-
-  $scope.$watch('addresses', function(newValue, oldValue) {  
-
-    for (var i = 0; i < newValue.length; i++) {
-      newLocation = newValue[i];
-      oldLocation = oldValue[i];
-      if (newLocation.address != oldLocation.address) {
-        newLocation.isEmpty = true;
-        newLocation.isProcessing = true;
-        addressesService.isValidAddress(newLocation);
-      } else if (newLocation.address == "") {
-        newLocation.isEmpty = true;
-        newLocation.isProcessing = false;
-        newLocation.isValid = true;
-      }
-    }
-    if (newValue != oldValue) {
-      $timeout(checkIfAllEmptyAndValid, 1);
-    }
-    addressesService.setAddresses($scope.addresses);
-  }, true);
-
-  $scope.submitInfo = function() {
-    $scope.results = false;
-    $scope.selectedResult = null;
-    var addressesOnly = _.map($scope.addresses, function(address) {
-      return address.address;
+    uiGmapGoogleMapApiProvider.configure({
+      key: 'AIzaSyC1dmAqADx6Jsu2eeaWBMCIW2U1EW05B_c',
+      v: '3.17',
+      libraries: 'geometry,visualization'
     });
-    $scope.addressesOnly = _.filter(addressesOnly, function(address) { return address });
-    addressesService.getResults($scope.addressesOnly, $scope.placeType).success(setVariables).error(setVariables);
-  };
 
-  function setVariables() {
-    $scope.processing = false;
-    $scope.error      = addressesService.error;
-    $scope.results    = addressesService.results;
-    if ($scope.error == null) {
-      $timeout(scrollToResults, 1);
-    }
+    $stateProvider
+      .state('address', {
+        url: '/',
+        templateUrl: 'address.html',
+        controller: 'AddressController as addressCtrl'
+      })
+      .state('donations', {
+        url: '/donations',
+        templateUrl: 'donations.html'
+      })
+      .state('team', {
+        url: '/team',
+        templateUrl: 'team.html',
+        controller: 'TeamController as teamCtrl'
+      })
+      .state('tips', {
+        url: '/tips',
+        templateUrl: 'tips.html'
+      });
+
+    // default fall back route
+    $urlRouterProvider.otherwise('/');
+
+    // enable HTML5 Mode for SEO
+    $locationProvider.html5Mode(true);
   }
+})();
+(function() {
 
-  function scrollToResults() {
-    $('body,html').animate({
-      scrollTop: $("#results").offset().top
-    }, 500);
-  }
+  angular
+    .module('myApp')
+    .controller('AddressController',
+      ['$timeout', 'addressesService', '$location', AddressController]);
 
-  $scope.selectResult = function(result) {
-    $scope.selectedResult = result;
-    $scope.sentText       = false;
-    $scope.textError      = false; 
-    $timeout(scrollToResult, 1);
-  };
+    function AddressController($timeout, addressesService, $location) {
 
-  function scrollToResult() {
-    $('body,html').animate({
-      scrollTop: $("#result").offset().top
-    }, 250);
-  }
+      var vm = this;
 
-  $scope.clearSelectedResult = function() {
-    $timeout(scrollToResults, 1);
-    $timeout(function() {
-      $scope.selectedResult = null;
-    }, 500);
-  };
+      vm.addLocation = addLocation;
+      vm.addresses = addressesService.addresses;
+      vm.addressesOnly = [];
+      vm.checkIfValidAddress = checkIfValidAddress;
+      vm.clearSelectedResult = clearSelectedResult;
+      vm.createMessage = createMessage;
+      vm.customUrl = addressesService.customUrl;
+      vm.error      = addressesService.error;
+      vm.getGeolocation = getGeolocation;
+      vm.generateCustomUrl = generateCustomUrl;
+      vm.geolocationErrorMessage = 'Your browser does not support geolocation.'
+      vm.hideIcons = hideIcons;
+      vm.isAllEmpty = true;
+      vm.isAllValid = true;
+      vm.isGeolocationProcessing = false;
+      vm.isGeolocationError = false;
+      vm.phoneNumber = '';
+      vm.placeType = 'free wifi';
+      vm.processing = false;
+      vm.removeLocation = removeLocation;
+      vm.results = false;
+      vm.selectResult = selectResult;
+      vm.selectedResult = null;
+      vm.sendingText = false;
+      vm.sentText    = false;
+      vm.submitInfo = submitInfo;
+      vm.textError   = false; 
 
-  $scope.createMessage = function() {
-    $scope.sentText    = false;
-    $scope.textError   = false; 
-    $scope.sendingText = true;
-    var phoneNumber = $scope.phoneNumber;
-    var place       = $scope.selectedResult.name;
-    var address     = $scope.selectedResult.address;
-    addressesService.sendMessage(phoneNumber, place, address).success(setTextVariables).error(setTextVariables);
-  };
+      activate();
 
-  $scope.$watch('phoneNumber', function(newValue, oldValue) {
-    if (newValue != oldValue) {
-      $scope.sendingText = false;
-      $scope.sentText    = false;
-      $scope.textError   = false; 
-    }
-  });
 
-  function setTextVariables() {
-    $scope.sendingText = false;
-    $scope.sentText    = addressesService.sentText;
-    $scope.textError   = addressesService.textError;  
-  }
+      ///// PUBLIC METHODS /////////////////////////////////////////////////////
+      function activate() {
+        checkIfAllEmptyAndValid();
 
-  $scope.map = {
-    center: {
-      latitude: 30,
-      longitude: -84
-    },
-    zoom: 10
-  };
-  $scope.options = {
-    scrollWheel: false
-  };
+        checkIfSharedLink();
+      }
 
-  $scope.getGeolocation = function() {
-    $scope.isGeolocationProcessing = true;
-    $scope.isGeolocationError = false;
-    $scope.addresses[0].placeholder = "Finding your location...";
-    $scope.addresses[0].address = "";
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
+      function addLocation() {
+        // TODO: Figure out why this causes an error
+        var newLocation = {
+          address: '',
+          placeholder: 'optional address, city, or zip',
+          isProcessing: false,
+          isValid: true,
+          isEmpty: true
+        };
+
+        vm.addresses.push(newLocation);
+      }
+
+      function checkIfValidAddress(address) {
+        var actualAddress = address.address;
+
+        if (actualAddress) {
+          address.isEmpty = true;
+          address.isProcessing = true;
+          addressesService
+            .isValidAddress(address)
+            .success(checkIfAllEmptyAndValid);
+        } else {
+          address.isEmpty = true;
+          address.isProcessing = false;
+          address.isValid = true;
+          checkIfAllEmptyAndValid();
+        }
+      }
+
+      function clearSelectedResult() {
+        $timeout(scrollToResults, 1);
         $timeout(function() {
-          var coords = position.coords.latitude + ", " + position.coords.longitude;
-          addressesService.addressFromGeolocation(coords);
-          $scope.isGeolocationProcessing = false;
-        }, 1);
-      }, function() {
-        handleNoGeolocation(true);
-      });
-    } else {
-      handleNoGeolocation(false);
+          vm.selectedResult = null;
+        }, 500);
+      }
+
+      function createMessage() {
+        var phoneNumber = vm.phoneNumber,
+          place         = vm.selectedResult.name,
+          address       = vm.selectedResult.address;
+        vm.sentText    = false;
+        vm.textError   = false; 
+        vm.sendingText = true;
+
+        addressesService
+          .sendMessage(phoneNumber, place, address)
+            .success(setTextVariables)
+            .error(setTextVariables);
+      }
+
+      function generateCustomUrl() {
+        var addressesOnly = _.map(vm.addresses, function(address) {
+          return address.address;
+        });
+        addressesService.generateCustomUrl(addressesOnly).success(function(data) {
+          addressesService.customUrl = 'http://www.middleof.us/?l=' + data.key;
+          vm.customUrl = addressesService.customUrl;
+        })
+      }
+
+      function getGeolocation() {
+        vm.isGeolocationProcessing = true;
+        vm.isGeolocationError = false;
+        vm.addresses[0].placeholder = 'Finding your location...';
+        vm.addresses[0].address = '';
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            $timeout(function() {
+              var coords = position.coords.latitude + ', ' + position.coords.longitude;
+              addressesService.addressFromGeolocation(coords);
+              vm.isGeolocationProcessing = false;
+            }, 1);
+          }, function() {
+            handleNoGeolocation(true);
+          });
+        } else {
+          handleNoGeolocation(false);
+        }
+      }
+
+      function hideIcons() {
+        vm.sendingText = false;
+        vm.sentText    = false;
+        vm.textError   = false;
+      }
+
+      function removeLocation(address) {
+        var i = vm.addresses.indexOf(address);
+        vm.addresses.splice(i, 1);
+      }
+
+      function selectResult(result) {
+        vm.selectedResult = result;
+        vm.sentText       = false;
+        vm.textError      = false; 
+        $timeout(scrollToResult, 1);
+      }
+
+      function submitInfo() {
+        var addressesOnly = _.map(vm.addresses, function(address) {
+          return address.address;
+        });
+        vm.results = false;
+        vm.selectedResult = null;
+        vm.addressesOnly = _.filter(addressesOnly, function(address) { return address });
+        addressesService.getResults(vm.addressesOnly, vm.placeType)
+          .success(setVariables)
+          .error(setVariables);
+      }
+
+
+      ///// PRIVATE METHODS ////////////////////////////////////////////////////
+      function checkIfAllEmptyAndValid() {
+        vm.isAllValid = true;
+        vm.isAllEmpty = true;
+        _.each(vm.addresses, function(address) {
+          if (!address.isValid) {
+            vm.isAllValid = false;
+          }
+          if (address.address) {
+            vm.isAllEmpty = false;
+          }
+        });
+      }
+
+      function checkIfSharedLink() {
+        var key = $location.search().l;
+        if (key) {
+          vm.addresses = [];
+          addressesService.loadInAddresses(key)
+            .success(function() {
+              vm.addresses = addressesService.addresses;
+              _.each(vm.addresses, function(address) {
+                if (address.address) {
+                  address.isEmpty = true;
+                  address.isProcessing = true;
+                  addressesService.isValidAddress(address)
+                    .success(checkIfAllEmptyAndValid);
+                } else {
+                  address.isEmpty = true;
+                  address.isProcessing = false;
+                  checkIfAllEmptyAndValid();
+                }
+              });
+            });
+          }
+        }
+      }
+
+      function handleNoGeolocation(errorFlag) {
+        if (errorFlag) {
+          vm.isGeolocationProcessing = false;
+          vm.isGeolocationError = true;
+          vm.geolocationErrorMessage = 'Geolocation failed. Try again.'
+        } else {
+          vm.isGeolocationProcessing = false;
+          vm.isGeolocationError = true;
+          vm.geolocationErrorMessage = 'Your browser does not support geolocation.'
+        }
+      }
+
+      function scrollToResults() {
+        $('body,html').animate({
+          scrollTop: $('#results').offset().top
+        }, 500);
+      }
+
+      function scrollToResult() {
+        $('body,html').animate({
+          scrollTop: $('#result').offset().top
+        }, 250);
+      }
+
+      function setTextVariables() {
+        vm.sendingText = false;
+        vm.sentText    = addressesService.sentText;
+        vm.textError   = addressesService.textError;  
+      }
+
+      function setVariables() {
+        vm.processing = false;
+        vm.error      = addressesService.error;
+        vm.results    = addressesService.results;
+        if (!vm.error) {
+          $timeout(scrollToResults, 1);
+        }
+      }
     }
-  }
+})();
+(function() {
 
-  function handleNoGeolocation(errorFlag) {
-    if (errorFlag) {
-      $scope.isGeolocationProcessing = false;
-      $scope.isGeolocationError = true;
-      $scope.geolocationErrorMessage = "Geolocation failed. Try again."
-    } else {
-      $scope.isGeolocationProcessing = false;
-      $scope.isGeolocationError = true;
-      $scope.geolocationErrorMessage = "Your browser does not support geolocation."
-    }
-  }
+  angular
+    .module('myApp')
+    .controller('TeamController', [TeamController]);
 
-  $scope.removeLocation = function(address) {
-    var i = $scope.addresses.indexOf(address);
-    $scope.addresses.splice(i, 1);
-  }
+  function TeamController() {
+    var gerry = {
+      name: 'Gerry Pass',
+      role: 'Lead Developer',
+      bio: 'Gerry had a useful idea for how he could hack the planet, but being short on time, \
+            he gave the idea to Chris and Amanda for their group project at General Assembly. \
+            After seeing what they could accomplish, he asked them if they wanted to remake it \
+            from scratch to continue their learning, and like that, MiddleOf.Us was born.',
+      img: 'assets/Gerry400.jpg',
+      phoneNumber: '4049539976',
+      email: 'rgpass@gmail.com',
+      github: 'https://github.com/rgpass',
+      linkedin: 'https://www.linkedin.com/pub/gerry-pass/40/793/113',
+      facebook: 'https://www.facebook.com/gerry.pass',
+      personal: 'http://www.gerrypass.com/'
+    },
+      amanda = {
+        name: 'Amanda Raymond',
+        role: 'Developer',
+        bio: 'Amanda joined MiddleOf.Us excited to create, code, and collaborate. She is enjoying \
+              advancing her full-stack skills and working with such a great team. Outside of \
+              MiddleOf.Us and other coding ventures, Amanda likes traveling and going to concerts.',
+        img: 'assets/Amanda400.jpg',
+        phoneNumber: '8042918214',
+        email: 'amandawraymond@gmail.com',
+        github: 'https://github.com/amandawraymond',
+        linkedin: 'https://www.linkedin.com/in/amandawraymond',
+        twitter: 'https://twitter.com/amandawraymond',
+        personal: 'http://www.amandawraymond.com/'
+      },
+      chris = {
+        name: 'Chris Markel',
+        role: 'Developer',
+        bio: 'Chris joined MiddleOf.Us excited to recreate and improve upon its predecessor, \
+              Connect.Us. He is enjoying sharpening his development skills while collaborating with \
+              the team on core functionalities, UX, and design. When away from the code, Chris is \
+              likely dabbling outdoors or spending time with his wife.',
+        img: 'assets/Chris400.jpg',
+        email: 'cmarkel5@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/chrismarkel5'
+      },
+      kevin = {
+        name: 'Kevin Abdo',
+        role: 'Product Manager',
+        bio: 'Kevin approached the MiddleOf.Us team to gain experience to product management within \
+              the tech sector. Since then he has helped develop a vision for the site based on strong \
+              functionality for users and intuitive designs. Outside of MiddleOf.Us, Kevin can be found \
+              playing guitar in his rock band, The Better Brother.',
+        img: 'assets/KA_400by400_2.jpg',
+        email: 'vedomano@gmail.com',
+        linkedin: 'https://www.linkedin.com/pub/kevin-abdo-pmp/28/a92/476'
+      };
 
-  $scope.generateCustomUrl = function() {
-    var addressesOnly = _.map($scope.addresses, function(address) {
-      return address.address;
-    });
-    addressesService.generateCustomUrl(addressesOnly).success(function(data) {
-      addressesService.customUrl = "http://www.middleof.us/?l=" + data.key;
-      $scope.customUrl = addressesService.customUrl;
-    })
-  };
+    var vm = this;
 
-}]);
-angular.module('myApp')
-.controller('TeamCtrl', ['$scope', function ($scope) {
-  var gerry = {
-    name: "Gerry Pass",
-    role: "Lead Developer",
-    bio: "Gerry had a useful idea for how he could hack the planet, but being short on time, \
-          he gave the idea to Chris and Amanda for their group project at General Assembly. \
-          After seeing what they could accomplish, he asked them if they wanted to remake it \
-          from scratch to continue their learning, and like that, MiddleOf.Us was born.",
-    img: "assets/Gerry400.jpg",
-    phoneNumber: '4049539976',
-    email: "rgpass@gmail.com",
-    github: "https://github.com/rgpass",
-    linkedin: "https://www.linkedin.com/pub/gerry-pass/40/793/113",
-    facebook: "https://www.facebook.com/gerry.pass",
-    personal: "http://www.gerrypass.com/"
-  };
-  var amanda = {
-    name: 'Amanda Raymond',
-    role: 'Developer',
-    bio: "Amanda joined MiddleOf.Us excited to create, code, and collaborate. She is enjoying \
-          advancing her full-stack skills and working with such a great team. Outside of \
-          MiddleOf.Us and other coding ventures, Amanda likes traveling and going to concerts.",
-    img: 'assets/Amanda400.jpg',
-    phoneNumber: '8042918214',
-    email: 'amandawraymond@gmail.com',
-    github: 'https://github.com/amandawraymond',
-    linkedin: 'https://www.linkedin.com/in/amandawraymond',
-    twitter: 'https://twitter.com/amandawraymond',
-    personal: 'http://www.amandawraymond.com/'
+    vm.teamMembers = [gerry, amanda, chris, kevin];
   }
-  var chris = {
-    name: 'Chris Markel',
-    role: 'Developer',
-    bio: "Chris joined MiddleOf.Us excited to recreate and improve upon its predecessor, \
-          Connect.Us. He is enjoying sharpening his development skills while collaborating with \
-          the team on core functionalities, UX, and design. When away from the code, Chris is \
-          likely dabbling outdoors or spending time with his wife.",
-    img: 'assets/Chris400.jpg',
-    email: 'cmarkel5@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/chrismarkel5'
-  }
-  var kevin = {
-    name: 'Kevin Abdo',
-    role: 'Product Manager',
-    bio: "Kevin approached the MiddleOf.Us team to gain experience to product management within \
-          the tech sector. Since then he has helped develop a vision for the site based on strong \
-          functionality for users and intuitive designs. Outside of MiddleOf.Us, Kevin can be found \
-          playing guitar in his rock band, The Better Brother.",
-    img: 'assets/KA_400by400_2.jpg',
-    email: 'vedomano@gmail.com',
-    linkedin: 'https://www.linkedin.com/pub/kevin-abdo-pmp/28/a92/476'
-  }
-  $scope.teamMembers = [gerry, amanda, chris, kevin];
-}]);
+})();
 angular.module('myApp')
 .directive('focusFirstEmptyInput', ['$timeout', function ($timeout) {
   return {
@@ -62068,7 +62131,7 @@ angular.module('myApp')
 
   this.loadInAddresses = function(key) {
     params = { key: key };
-    $http.get(addressesUrl + '.json', { params: params }).success(function(data) {
+    return $http.get(addressesUrl + '.json', { params: params }).success(function(data) {
       var addressesOnly = data.addresses;
       for (var i = 0; i < addressesOnly.length; i++) {
         that.addresses[i] = { address: addressesOnly[i], placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };
