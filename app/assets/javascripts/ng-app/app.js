@@ -16,14 +16,11 @@ angular
         libraries: 'geometry,visualization'
       });
 
-      /**
-       * Routes and States
-       */
       $stateProvider
         .state('address', {
             url: '/',
             templateUrl: 'address.html',
-            controller: 'AddressCtrl'
+            controller: 'AddressCtrl as addressCtrl'
         })
         .state('donations', {
           url: '/donations',
