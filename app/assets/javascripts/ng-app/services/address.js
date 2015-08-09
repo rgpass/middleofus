@@ -63,7 +63,7 @@ angular.module('myApp')
 
   this.loadInAddresses = function(key) {
     params = { key: key };
-    $http.get(addressesUrl + '.json', { params: params }).success(function(data) {
+    return $http.get(addressesUrl + '.json', { params: params }).success(function(data) {
       var addressesOnly = data.addresses;
       for (var i = 0; i < addressesOnly.length; i++) {
         that.addresses[i] = { address: addressesOnly[i], placeholder: "address, city, or zip", isProcessing: false, isValid: true, isEmpty: true };

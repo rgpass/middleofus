@@ -37,8 +37,8 @@
       })
       .state('team', {
         url: '/team',
-        templateUrl: 'team.html'
-        controller: 'TeamController'
+        templateUrl: 'team.html',
+        controller: 'TeamController as teamCtrl'
       })
       .state('tips', {
         url: '/tips',

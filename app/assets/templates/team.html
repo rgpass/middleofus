@@ -1,35 +1,56 @@
-<div ng-controller="TeamController">
+<div>
   <div class="text-center container-fluid team">
     <div class="row">
-      <div ng-repeat="member in teamMembers">
+      <div ng-repeat="member in teamCtrl.teamMembers">
         <div class="col-xs-6 col-sm-3">
           <p><img src="{{member.img}}" class="img-circle team"></p>
           <h5>{{member.name}}</h5>
           <h6>{{member.role}}</h6>
           <section>
-            <a href="tel:+1{{member.phoneNumber}}" ng-show="{{member.phoneNumber}}">
+            <a
+              href="tel:+1{{member.phoneNumber}}"
+              ng-show="{{member.phoneNumber}}">
               <i class="fa fa-phone-square fa-lg"></i>
             </a>
-            <a href="mailto:{{member.email}}" ng-show="{{member.email}}">
+            <a
+              href="mailto:{{member.email}}"
+              ng-show="{{member.email.length > 0}}">
               <i class="fa fa-envelope-square fa-lg"></i>
             </a>
-            <a href="{{member.github}}" ng-show="{{member.github}}" target="_blank">
+            <a
+              href="{{member.github}}"
+              ng-show="{{member.github.length > 0}}"
+              target="_blank">
               <i class="fa fa-github-square fa-lg"></i>
             </a>
-            <a href="{{member.linkedin}}" ng-show="{{member.linkedin}}" target="_blank">
+            <a
+              href="{{member.linkedin}}"
+              ng-show="{{member.linkedin.length > 0}}"
+              target="_blank">
               <i class="fa fa-linkedin-square fa-lg"></i>
             </a>
-            <a href="{{member.twitter}}" ng-show="{{member.twitter}}" target="_blank">
+            <a
+              href="{{member.twitter}}"
+              ng-show="{{member.twitter.length > 0}}"
+              target="_blank">
               <i class="fa fa-twitter-square fa-lg"></i>
             </a>
-            <a href="{{member.facebook}}" ng-show="{{member.facebook}}" target="_blank">
+            <a
+              href="{{member.facebook}}"
+              ng-show="{{member.facebook.length > 0}}"
+              target="_blank">
               <i class="fa fa-facebook-square fa-lg"></i>
             </a>
-            <a href="{{member.personal}}" ng-show="{{member.personal}}" target="_blank">
+            <a
+              href="{{member.personal}}"
+              ng-show="{{member.personal.length > 0}}"
+              target="_blank">
               <i class="fa fa-pencil-square fa-lg"></i>
             </a>
           </section>
+
           <br class="visible-xs">
+
           <p class="bio hidden-xs">{{member.bio}}</p>
         </div>
       </div>

@@ -153,7 +153,9 @@
         vm.results = false;
         vm.selectedResult = null;
         vm.addressesOnly = _.filter(addressesOnly, function(address) { return address });
-        addressesService.getResults(vm.addressesOnly, vm.placeType).success(setVariables).error(setVariables);
+        addressesService.getResults(vm.addressesOnly, vm.placeType)
+          .success(setVariables)
+          .error(setVariables);
       }
 
 
@@ -175,18 +177,23 @@
         var key = $location.search().l;
         if (key) {
           vm.addresses = [];
-          $timeout(function() {
-            addressesService.loadInAddresses(key).success(function() {
+          addressesService.loadInAddresses(key)
+            .success(function() {
               vm.addresses = addressesService.addresses;
+              _.each(vm.addresses, function(address) {
+                if (address.address) {
+                  address.isEmpty = true;
+                  address.isProcessing = true;
+                  addressesService.isValidAddress(address)
+                    .success(checkIfAllEmptyAndValid);
+                } else {
+                  address.isEmpty = true;
+                  address.isProcessing = false;
+                  checkIfAllEmptyAndValid();
+                }
+              });
             });
-          }, 1);
-          $timeout(function() {
-            _.each(vm.addresses, function(address) {
-              address.isEmpty = true;
-              address.isProcessing = true;
-              addressesService.isValidAddress(address);
-            });
-          }, 1000);
+          }
         }
       }
 
@@ -224,7 +231,7 @@
         vm.processing = false;
         vm.error      = addressesService.error;
         vm.results    = addressesService.results;
-        if (vm.error == null) {
+        if (!vm.error) {
           $timeout(scrollToResults, 1);
         }
       }
